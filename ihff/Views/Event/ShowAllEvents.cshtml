@@ -1,0 +1,32 @@
+﻿@using ihff.Models
+@model IEnumerable<Event>
+@{
+    ViewBag.Title = "Alle evenementen";
+}
+
+<h2>Alle evenementen</h2>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Naam</th>
+            <th>Dag</th>
+            <th>Tijd</th>
+            <th>Locatie</th>
+            <th>Capaciteit</th>
+            <th>Soort</th>
+        </tr>
+    </thead>
+    @foreach (var evenement in Model)
+    {
+        <tr>
+            <td>@evenement.Name</td>
+            <td>@evenement.Day</td>
+            <td>@evenement.Time</td>
+            <td>@evenement.Location</td>
+            <td>@evenement.Capacity</td>       
+            <td>@evenement.Type</td>
+        </tr>
+    }
+</table>
