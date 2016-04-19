@@ -6,32 +6,76 @@
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/Site.css")
+        @Styles.Render("~/Content/main.css")
+        @Styles.Render("~/Content/normalize.css")
+        @Scripts.Render("~/Models/Scripts/SliderCycle.js")
+        @Styles.Render("~/Content/fonts/font-awesome/css/font-awesome.min.css")
     </head>
     <body>
-        <header>
-       <h1>Hallo</h1>
-        </header>
-        <div id="body">
-            <section>
-                @RenderBody()
-            </section>
-        </div>
-        <footer>
-            <div id="MenuBar">
-                <div id="LogoUnder"></div>
-                <ul>
-                    <li>Home</li>
-                    <li>Film</li>
-                    <li>Food</li>
-                    <li>Culture</li>
-                    <li>Haarlem</li>
-                    <li>Tickets</li>
-                    <li>About Us</li>
-                </ul>
+        <main>
+            <header>
+                <a class="wishlist" href="#">Wishlist</a>
+                <div id="logo"></div>
+                <div class="menu">
+                    <ul class="clearfix">
+                        <li class="current-item"><a href="@Url.Action("Index", "Home")"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                        <li><i class="fa fa-film" aria-hidden="true"></i>  
+                            Films
+                            <ul class="sub-menu">
+                                <li><a href="@Url.Action("Index", "Home")">Films</a></li>
+                                <li class="last"><a href="@Url.Action("Index", "Home")">Location</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-cutlery" aria-hidden="true"></i> Food</a></li>
+                        <li><i class="fa fa-weixin" aria-hidden="true"></i> 
+                            Culture
+                            <ul class="sub-menu">
+                                <li><a href="@Url.Action("Index", "Home")">Specials</a></li>
+                                <li class="last"><a href="@Url.Action("Index", "Home")">Location</a></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa fa-university" aria-hidden="true"></i> 
+                            Haarlem
+                            <ul class="sub-menu">
+                                <li><a href="@Url.Action("Index", "Home")">The City</a></li>
+                                <li class="last"><a href="@Url.Action("Index", "Home")">Sights</a></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa fa-ticket" aria-hidden="true"></i> 
+                            Tickets
+                            <ul class="sub-menu">
+                                <li><a href="@Url.Action("Index", "Home")">Film Ticket</a></li>
+                                <li><a href="@Url.Action("Index", "Home")">Daypass</a></li>
+                                <li><a href="@Url.Action("Index", "Home")">Program</a></li>
+                                <li class="last"><a href="@Url.Action("Index", "Home")">Food &amp; Film</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </header>
+            <div id="body">
+                <section>
+                    @RenderBody()
+                </section>
             </div>
-        </footer>
-        <p class="AfterFooter" align="center"> @Html.ActionLink("Disclaimer","Disclaimer","Home") - @Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home") - @Html.ActionLink("Site Map", "SiteMap", "Home") </p>
-        <p class="AfterFooter" align="center"> &copy; Internationaal Haarlem Film Festival</p>
-        <p class="AfterFooter" align="right"> Powered by: Feel Good Inc.</p>
+            <footer>
+                <div id="MenuBar">
+                    <div id="LogoUnder"></div>
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                        <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-film" aria-hidden="true"></i> Film</a></li>
+                        <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-cutlery" aria-hidden="true"></i> Food</a></li>
+                        <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-cutlery" aria-hidden="true"></i> Culture</a></li>
+                        <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-university" aria-hidden="true"></i> Haarlem</a></li>
+                        <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-ticket" aria-hidden="true"></i> Tickets</a></li>
+                        <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-info" aria-hidden="true"></i> About Us</a></li>
+                    </ul>
+                </div>
+            </footer>
+            <p class="AfterFooter" align="center"> @Html.ActionLink("Disclaimer","Disclaimer","Home") - @Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home") - @Html.ActionLink("Site Map", "SiteMap", "Home") </p>
+            <p class="AfterFooter" align="center"> &copy; Internationaal Haarlem Film Festival</p>
+            <p class="AfterFooter" align="right"> Powered by: Feel Good Inc.</p>
+        </main>
     </body>
 </html>

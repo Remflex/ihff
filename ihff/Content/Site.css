@@ -1,10 +1,157 @@
-﻿main{
+﻿/*----------Main----------*/
+body{
+    background: #F3F5F5;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: #dd0426;
+}
+
+main{
 	width: 968px;
 	margin: 0 auto;
 }
+
+/*----------Header----------*/
+.clearfix:after {
+	display: block;
+	clear: both;
+}
+
+header{
+    margin-bottom: 30px;
+	margin-top: 80px;
+	background-color: #26282B;
+	height: 31px;
+	box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+}
+
+header #logo{
+	background-image: url('images/LogoHeader.PNG');
+	width: 146px;
+	height: 71px;
+	margin-top: -40px;
+	margin-left: 67px;
+	position: absolute;
+}
+ 
+/*----- Menu Outline -----*/
+ 
+.menu ul {
+	margin-left: 200px;
+}
+.menu li {
+    margin-left:0px;
+    padding: 2px 20px;
+    list-style:none;
+    color: white;
+    cursor: default;
+}
+ 
+.menu a {
+    transition:all linear 0.15s;
+    color: white;
+}
+ 
+.menu li:hover > a, .menu .current-item > a {
+    text-decoration: none;
+    color: #dd0426;
+}
+
+.menu li:hover {
+	color: #dd0426;
+}
+ 
+.menu .arrow {
+    font-size:11px;
+    line-height:0%;
+}
+ 
+/*----- Top Level -----*/
+.menu > ul > li {
+    float:left;
+    display:inline-block;
+    position:relative;
+    font-size:19px;
+}
+ 
+.menu > ul > li > a {
+    display:inline-block;
+    text-shadow:0px 1px 0px rgba(0,0,0,0.4);
+    text-decoration: none;
+}
+ 
+.menu > ul > li:hover > a, .menu > ul > .current-item > a {
+    background:#26282B;
+}
+ 
+/*----- Bottom Level -----*/
+.menu li:hover .sub-menu {
+    z-index:1;
+    opacity:1;
+}
+ 
+.sub-menu {
+    width:107%;
+    padding:5px 0px;
+    position:absolute;
+    top:100%;
+    left:0;
+    z-index:-1;
+    opacity:0;
+    transition:opacity linear 0.15s;
+    box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+    background:#26282B;
+}
+
+ul.sub-menu{
+	margin-left: 0px;
+	margin-top: 0px;
+}
+ 
+.sub-menu li {
+    display:block;
+    font-size:16px;
+    border-bottom:1px solid #FFFFFF;
+}
+
+.sub-menu li.last{
+	border:none;
+}
+ 
+.sub-menu li a {
+    display:block;
+    text-decoration: none;
+}
+ 
+.sub-menu li a:hover, .sub-menu .current-item a {
+    background:#26282B;
+}
+
+header a.wishlist{
+	padding: 0px;
+	position: absolute;
+	margin-top: -40px;
+	float:right;
+	margin-left: 910px;
+	text-decoration: none;
+	color: #26282B;
+}
+
+header a.wishlist:hover{
+    color: #dd0426;
+}
+
+/*----------Footer----------*/
 footer{
 	height: 130px;
 	background-color: #231F20;
+    box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+    margin-top: 30px;
 }
 #MenuBar{
 	height: 60px;
@@ -16,7 +163,7 @@ footer{
 	width: 968px;
 }
 #LogoUnder{
-	background-image: url('../images/LogoFooter.png');
+	background-image: url('images/LogoFooter.png');
 	width: 109px;
 	height: 55px;
 	margin-left: 44px;
@@ -38,14 +185,31 @@ footer li{
 	color: #FFFFFF;
 	border: 1px solid #797979;
 	text-align: center;
-	padding-bottom: 19.5px;
+	padding-bottom: 18.5px;
 	width: 113px;
-	padding-top: 19.5px;
+	padding-top: 18.5px;
 	text-decoration: none;
 }
 footer li:hover{
 	color: #dd0426;
 }
-.AfterFooter{
-    text-decoration-style:none;
+p.AfterFooter a{
+    text-decoration: none;
+    color: #26282B;
+}
+
+p.AfterFooter a:hover{
+    color: #dd0426;
+}
+
+/*----------Disclaimer----------*/
+
+.DiscNum{
+    list-style-type:decimal;
+}
+.DiscRound{
+    list-style-type:circle;
+}
+.NoBullet{
+   list-style-type: none;
 }
