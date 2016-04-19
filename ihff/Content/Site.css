@@ -1,1 +1,51 @@
-﻿
+﻿main{
+	width: 968px;
+	margin: 0 auto;
+}
+footer{
+	height: 130px;
+	background-color: #231F20;
+}
+#MenuBar{
+	height: 60px;
+	background-color: #26282B;
+	border-top: 1px solid #797979;
+	border-bottom: 1px solid #797979;
+	position: absolute;
+	margin-top: 35px;
+	width: 968px;
+}
+#LogoUnder{
+	background-image: url('../images/LogoFooter.png');
+	width: 109px;
+	height: 55px;
+	margin-left: 44px;
+	margin-top: 5px;
+	position: absolute;
+}
+footer ul{
+	margin-top: -1px;
+	margin-left: 163px;
+	list-style: none;
+	padding: 0;
+	overflow: hidden;
+}
+footer li{
+	float:left;
+	display: block;
+	font-weight: bold;
+	font-size: 17px;
+	color: #FFFFFF;
+	border: 1px solid #797979;
+	text-align: center;
+	padding-bottom: 19.5px;
+	width: 113px;
+	padding-top: 19.5px;
+	text-decoration: none;
+}
+footer li:hover{
+	color: #dd0426;
+}
+.AfterFooter{
+    text-decoration-style:none;
+}

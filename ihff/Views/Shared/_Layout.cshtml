@@ -5,7 +5,7 @@
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/Site.css")
     </head>
     <body>
         <header>
@@ -17,7 +17,21 @@
             </section>
         </div>
         <footer>
-<h1>Doei</h1>
+            <div id="MenuBar">
+                <div id="LogoUnder"></div>
+                <ul>
+                    <li>Home</li>
+                    <li>Film</li>
+                    <li>Food</li>
+                    <li>Culture</li>
+                    <li>Haarlem</li>
+                    <li>Tickets</li>
+                    <li>About Us</li>
+                </ul>
+            </div>
         </footer>
+        <p class="AfterFooter" align="center"> @Html.ActionLink("Disclaimer","Disclaimer","Home") - @Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home") - @Html.ActionLink("Site Map", "SiteMap", "Home") </p>
+        <p class="AfterFooter" align="center"> &copy; Internationaal Haarlem Film Festival</p>
+        <p class="AfterFooter" align="right"> Powered by: Feel Good Inc.</p>
     </body>
 </html>
