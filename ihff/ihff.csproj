@@ -228,11 +228,15 @@
     <Content Include="Content\images\netherlands.jpg" />
     <Content Include="Content\images\LogoFooter.png" />
     <Content Include="Content\images\LogoHeader.PNG" />
+    <Content Include="Content\images\slider\en_Header_Films.jpg" />
+    <Content Include="Content\images\slider\en_Header_Restaurant.jpg" />
+    <Content Include="Content\images\slider\Header_Bezienswaardigheid.jpg" />
     <Content Include="Content\main.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\SliderCycle.js" />
+    <Content Include="Scripts\jquery-2.2.3.min.js" />
+    <Content Include="Scripts\SliderCycle.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

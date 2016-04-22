@@ -1,6 +1,7 @@
 ﻿/*----------Main----------*/
 body{
     background: #F3F5F5;
+    overflow-x: hidden;
 }
 a{
     text-decoration: none;
@@ -16,6 +17,49 @@ main{
 	margin: 0 auto;
 }
 
+.slider{
+    margin: 0 auto;
+    width: 100%;
+    z-index: 0;
+}
+
+.slider img{
+    width: 100%; 
+    display:block; 
+    height: auto;
+}
+
+@media (max-width: 1920px) {
+    .slider{
+        height: 170px;
+    }
+
+    .slider img{
+        height: 170px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .slider{
+        height: 150px;
+    }
+
+    .slider img{
+        height: 150px;
+    }
+}
+
+@media (max-width: 1058px) {
+    .slider{
+        height: 130px;
+    }
+
+    .slider img{
+        height: 130px;
+    }
+}
+
+
 /*----------Header----------*/
 .clearfix:after {
 	display: block;
@@ -23,7 +67,7 @@ main{
 }
 
 header{
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 	margin-top: 40px;
 	background-color: #26282B;
 	height: 31px;
@@ -40,12 +84,12 @@ header #logo{
 }
 
 #flagtainer {
-    margin-left: 30px;
-    margin-top: 20px;
+    margin-left: 10px;
+    margin-top: 15px;
 }
 
 .flags{
-    margin-left: 10px;
+    margin-left: 5px;
     border: 1px solid #26282B;
 }
  

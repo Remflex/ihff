@@ -4,12 +4,21 @@
         <meta charset="utf-8" />
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         @Styles.Render("~/Content/Site.css")
         @Styles.Render("~/Content/main.css")
         @Styles.Render("~/Content/normalize.css")
-        @Scripts.Render("~/Models/Scripts/SliderCycle.js")
+        @Scripts.Render("~/Scripts/jquery-2.2.3.min.js")
+        @Scripts.Render("~/Scripts/SliderCycle.min.js")
         @Styles.Render("~/Content/fonts/font-awesome/css/font-awesome.min.css")
+        <script>
+            $(document).ready(function() {
+                $('.slider').cycle({
+                    timeout: 15000,
+                    speed: 2000,
+                });
+            });
+        </script>
     </head>
     <body>
         <div id="flagtainer">
@@ -56,7 +65,6 @@
                         </li>
                     </ul>
                 </div>
-
             </header>
             <div id="body">
                 <section>
