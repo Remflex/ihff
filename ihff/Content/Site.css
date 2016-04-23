@@ -200,6 +200,56 @@ header a.wishlist:hover{
     color: #dd0426;
 }
 
+/*----------HomePage--------*/
+#Welcome{
+    width: 453px;
+    font-size: 24px;
+}
+
+#WelcomeText{
+    width: 628px;
+    font-size: 13px;
+}
+#WelcomeImg{
+    background-image: url('images/IHFFBios.png');
+    width: 325px;
+    height: 190px;
+    float:right;
+    margin-top:-180px;
+}
+#Suggested{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+.Suggested{
+    display:block;
+    width: 301px;
+    height: 168px;
+    margin-right: 27px;
+    margin-bottom: 60px; 
+}
+.Suggested div{
+    background-color: violet;
+    width: 117px;
+    height:168px;
+    margin-right: 10px;
+}
+.Suggested h1{    
+    font-size: 18px;
+    font-weight: bold;
+}
+.Suggested h2{    
+    font-size: 16px;
+    width: 175px;
+    font-weight: bold;
+}
+.Suggested h2{    
+    font-size: 13px;
+    width: 175px;
+    height:117px;
+    overflow:hidden;
+}
 /*----------Footer----------*/
 footer{
 	height: 130px;
