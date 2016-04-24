@@ -250,6 +250,32 @@ header a.wishlist:hover{
     height:117px;
     overflow:hidden;
 }
+
+/*--------Film Page---------*/
+.FilmFilter{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: absolute;
+}
+.FilmFilter ul{
+    list-style: none;
+	padding: 0;
+}
+.FilmFilter li{
+    float:left;
+	display: block;
+	font-weight: bold;
+	font-size: 22px;
+    text-decoration: none;
+    padding:10px;
+}
+.FilmFilter li:hover{
+    color: #dd0426;
+}
+.FilmFilter li::selection{
+    color: #dd0426;
+}
+
 /*----------Footer----------*/
 footer{
 	height: 130px;

@@ -27,5 +27,10 @@ namespace ihff.Controllers
             return View(allEvents);
         }
 
+        public ActionResult ShowFilms()
+        {
+            return View();
+        }
+
     }
 }
