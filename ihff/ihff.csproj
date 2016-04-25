@@ -225,6 +225,7 @@
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\font-awesome\HELP-US-OUT.txt" />
     <Content Include="Content\images\english.jpg" />
+    <Content Include="Content\images\Films\2001.jpg" />
     <Content Include="Content\images\IHFFBios.png" />
     <Content Include="Content\images\netherlands.jpg" />
     <Content Include="Content\images\LogoFooter.png" />

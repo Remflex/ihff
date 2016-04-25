@@ -228,38 +228,52 @@ header a.wishlist:hover{
     height: 168px;
     margin-right: 27px;
     margin-bottom: 60px; 
+    float: left;
 }
+
+.third{
+    margin-right: 0;
+}
+
 .Suggested div{
     background-color: violet;
     width: 117px;
     height:168px;
     margin-right: 10px;
+    float: left;
 }
-.Suggested h1{    
+.Suggested h4{    
     font-size: 18px;
     font-weight: bold;
+    margin: 0;
 }
-.Suggested h2{    
-    font-size: 16px;
-    width: 175px;
-    font-weight: bold;
-}
-.Suggested h2{    
+.Suggested h5{    
     font-size: 13px;
-    width: 175px;
-    height:117px;
+    font-weight: bold;
+    margin: 0;
+}
+.Suggested p{    
+    font-size: 11px;
+    height:85px;
     overflow:hidden;
+    margin-top:5px;
 }
 
 /*--------Film Page---------*/
 .FilmFilter{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    position: absolute;
+    width: 561px;
+    margin: 0 auto;
 }
+
+.Top{
+    width: 210px;
+}
+
 .FilmFilter ul{
     list-style: none;
 	padding: 0;
+    display: block;
+    clear:both;
 }
 .FilmFilter li{
     float:left;
@@ -269,11 +283,49 @@ header a.wishlist:hover{
     text-decoration: none;
     padding:10px;
 }
-.FilmFilter li:hover{
+
+.FilmFilter a{
+    color: #26282B;
+}
+.FilmFilter a:hover{
     color: #dd0426;
 }
-.FilmFilter li::selection{
+
+.filmcontainer{
+    width: 760px;
+    margin: 0 auto;
+}
+
+.film{
+    float: left;
+    width: 120px;
+    height: 250px;
+    margin-right: 28px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.film img{
+    border: 2px solid #F3F5F5;
+}
+
+.film:hover img{
+    border: 2px solid #dd0426;
+}
+
+.film:hover h4{
     color: #dd0426;
+}
+
+.film h4{
+    display:block;
+    margin-top: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.last{
+    margin-right: 0;
 }
 
 /*----------Footer----------*/
@@ -315,7 +367,7 @@ footer li{
 	color: #FFFFFF;
 	border: 1px solid #797979;
 	text-align: center;
-	padding-bottom: 17.5px;
+	padding-bottom: 18.5px;
 	width: 113px;
 	padding-top: 18.5px;
 	text-decoration: none;
