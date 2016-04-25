@@ -15,7 +15,7 @@ namespace ihff.Controllers
 
         //All actions are done via eventrepository
         private IEventRepository eventrep = new DbEventRepository();
-        // test
+        
         public ActionResult Index()
         {
             return View();
