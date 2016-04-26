@@ -16,5 +16,10 @@ namespace ihff.Controllers
             return View();
         }
 
+        public ActionResult ShowWishlist()
+        {
+            return View();
+        }
+
     }
 }

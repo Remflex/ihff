@@ -29,6 +29,35 @@ main{
     height: auto;
 }
 
+.button{
+ text-decoration:none; 
+ text-align:center; 
+ padding:3px 3px; 
+ border:solid 3px #010530; 
+ -webkit-border-radius:5px;
+ -moz-border-radius:5px; 
+ border-radius: 5px; 
+ font-weight:bold; 
+ color:#ffffff; 
+ background:#26282b; 
+ -webkit-box-shadow:0px 0px 2px #bfbfbf, inset 0px 0px 1px #bfbfbf; 
+ -moz-box-shadow: 0px 0px 2px #bfbfbf,,  inset 0px 0px 1px #bfbfbf;  
+ box-shadow:0px 0px 2px #bfbfbf,, inset 0px 0px 1px #bfbfbf;   
+  }
+.button:hover{
+ padding:3px 3px; 
+ border:solid 3px #010530; 
+ -webkit-border-radius:5px;
+ -moz-border-radius:5px; 
+ border-radius: 5px; 
+ font-weight:bold; 
+ color:#dd0426; 
+ background:#26282b; 
+ -webkit-box-shadow:0px 0px 2px #bfbfbf, inset 0px 0px 1px #bfbfbf; 
+ -moz-box-shadow: 0px 0px 2px #bfbfbf,,  inset 0px 0px 1px #bfbfbf;  
+ box-shadow:0px 0px 2px #bfbfbf,, inset 0px 0px 1px #bfbfbf;    
+ }
+
 @media (max-width: 1920px) {
     .slider{
         height: 170px;
@@ -328,6 +357,187 @@ header a.wishlist:hover{
     margin-right: 0;
 }
 
+/*----------Film Info----------*/
+#FilmPoster{
+    float:left;
+    margin-right: 55px;
+}
+
+#FilmPoster img{
+    margin-top: 55px;
+}
+
+#FilmInfo{
+    float:right;
+    width: 708px;
+    margin-top: 10px;
+}
+
+#FilmInfo h3{
+    display:inline;
+    font-size: 32px;
+    font-weight:bold;
+}
+#FilmInfo i{
+    color: #FFCC00;
+}
+
+#FilmInfo #titel{
+    display: inline;
+    font-size: 35px;
+    margin-left: 10px;
+}
+
+#FilmInfo #genre {
+    display: inline;
+    float: right;
+    margin-top: 27px;
+    font-size: 13px;
+}
+
+#FilmInfo #description{
+    margin-top: 15px;
+    height: 153px;
+    font-size: 18px;
+}
+#FilmInfo #Information{
+    float: left;
+    width: 480px;
+}
+#FilmInfo #Information h4{
+    font-size:18px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+#FilmInfo #Information p{
+    font-size:14px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+#FilmInfo #Cast h4{
+    font-size:18px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+#FilmInfo #Cast p{
+    font-size:14px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+#FilmInfo #imdb{
+    float:left;
+    font-size: 14px;
+}
+
+#FilmInfo #imdb a{
+    font-weight: bold;
+    color: #26282B;
+    text-decoration: underline;
+}
+#FilmInfo #imdb a:hover{
+    font-weight: bold;
+    color: #dd0426;
+    text-decoration: underline;
+}
+
+#filmorder{
+    margin-top: 10px;
+}
+
+#filmorder #left{
+    width: 400px;
+    float: left;
+}
+
+#filmorder input{
+    margin-right: 10px;
+}
+#filmorder span::after{
+    content: " | ";
+}
+
+#filmorder .last::after{
+    content: none;
+}
+
+#filmorder #right{
+    float:right;
+    padding-top: 18px;
+    font-weight: bold;
+}
+
+#filmorder #right select{
+    margin-right: 15px;
+}
+
+#filmorder #right button{
+    margin-left: 15px;
+    width: 161px;
+    height: 33px;
+}
+
+#filmorder .fa-info-circle{
+    margin-top: -22px;
+    position: absolute;
+    font-size: 20px;
+    margin-left: 15px;
+}
+#filmorder #TicketInfo{
+    position: absolute;
+    margin-top: -87px;
+    margin-left: 252px;
+    font-size: 13px;
+    width: 133px;
+    height: 48px;
+}
+
+/*---------WishList---------*/
+#TableWL{
+    width: 888px;
+    text-align:center; 
+}
+
+#TableWL thead td{
+    height: 30px;
+    font-size: 16px;
+    font-weight:bold
+}
+
+#TableWL td{
+    width:111px;
+    height: 111px;
+    font-size: 13px;
+}
+
+#TableWL button{
+    width: 100px;
+    height: 35px;
+}
+
+#WLTotal{
+    Font-Size: 18px;
+    font-weight:bold;
+    margin-left: 595px;
+    margin-top: -25px;
+}
+
+#tijdelijk{
+    width:760px;
+    height: 200px;
+    background-color: #26282b;
+    float: left;
+}
+
+#OrderButton{
+    width: 130px;
+    height: 85px;
+    text-align: center;
+    margin-left: 21px;
+}
 /*----------Footer----------*/
 footer{
 	height: 130px;

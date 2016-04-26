@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "ShowWishlist";
+}
+</main>
+<div class="slider" align="center">
+    <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/en_Header_Films.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/Header_Bezienswaardigheid.jpg" class="sliderimage" />
+</div>
+<main>
+    <h2>Wish List</h2>
+    <table id="TableWL">
+        <thead>
+            <tr>
+            <td></td>
+            <td>Name</td>
+            <td>Activity</td>
+            <td>Date/Time</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Price Total</td>
+            <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><img src="~/Content/images/Films/2001.jpg" alt="Film Poster" width="60" height="90" /></td>
+            <td>2001: A Space Odyssey</td>
+            <td>Film</td>
+            <td>Wedsnesday 19:00 - 22:30</td>
+            <td>2x</td>
+            <td>€ 7,50</td>
+            <td>€ 15,00</td>
+            <td><button class="button">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="WLTotal">Price Total: € 15,00</p>
+    <div id="tijdelijk"></div>
+    <button type="submit" class="button" id="OrderButton">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Wish List
+    </button>
+    <div class="clearfix"></div>

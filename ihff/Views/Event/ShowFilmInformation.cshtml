@@ -1,3 +1,77 @@
 ﻿@{
     ViewBag.Title = "Film naam";
 }
+
+<script>
+    $(document).ready(function () {
+        $("#TicketInfo").hide()
+        $(".fa-info-circle").hover(
+            function() {
+                $("#TicketInfo").show();
+            }, function() {
+                $("#TicketInfo").hide();
+            });
+    })
+</script>
+
+<div id="FilmPoster">
+    <img src="~/Content/images/Films/2001.jpg" alt="Film Poster" width="204" height="300" />
+</div>
+<div id="FilmInfo">
+    <h3>2001: A Spaced Odyssey</h3>
+    <span id="titel"><i class="fa fa-star" aria-hidden="true"></i> 8.3</span>
+    <span id="genre">Sci-Fi | 2001</span>
+    <div id="description">
+        Sometime in the distant past, someone or something nudged evolution by placing a monolith on Earth. Evolution then enabled humankind to reach the moon's surface,
+        where yet another monolith is found, one that signals the monolith placers that humankind has evolved that far. Now a race begins between computers (HAL) and
+        human (Bowman) to reach the monolith placers. The winner will achieve the next step in evolution, whatever that may be.
+    </div>
+    <div id="Information">
+        <h4>Film Information:</h4>
+        <p>UK/VS</p>
+        <p>Runtime: 142 min</p>
+        <p>Rating: Al</p>
+        <p>Directed by: Stanley Kubrick</p>
+    </div>
+    <div id="Cast">
+        <h4>Main Cast:</h4>
+        <p>Keir Dullea, Gary Lockwood, William Sylvester</p>
+    </div>
+    <span id="imdb">For more information <a href="www.imdb.com">Click Here</a> to visit the IMDB page of this movie.</span>
+</div>
+<div class="clearfix"></div>
+
+<form action="" id="filmorder">
+    <div id="left">
+        <input type="radio" name="film" value="19:00"><span>19:00 - 22:30 </span><span>Wednesday</span><span class="last">Toneelschuur</span><br>
+        <input type="radio" name="film" value="21:30"><span>21:30 - 23:30</span><span>Saturday</span><span class="last">Toneelschuur</span><br>
+    </div>
+    <div id="right">
+            Quantity
+            <select name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        Price: €7,50
+
+        <i class="fa fa-info-circle" aria-hidden="true"></i>
+        <p id="TicketInfo">Tickets must be added
+        to the wish list before
+        purchase.
+        </p>
+        <button type="submit" class="button">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
+        </button>
+    </div>
+</form>
+</main>
+<!---<div class="slider" align="center">
+    <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/en_Header_Films.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/Header_Bezienswaardigheid.jpg" class="sliderimage" />
+<div>>-->
+<main>
+
+    <div class="clearfix"></div>
