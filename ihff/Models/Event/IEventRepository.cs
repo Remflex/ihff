@@ -8,6 +8,6 @@ namespace ihff.Models
 {
     interface IEventRepository
     {
-        IEnumerable<Event> GetAllEvents();
+
     }
 }

@@ -15,6 +15,7 @@ namespace ihff.Controllers
 
         //All actions are done via eventrepository
         private IEventRepository eventrep = new DbEventRepository();
+        private IFilmRepository filmrep = new DbFilmRepository();
         
         public ActionResult Index()
         {
@@ -23,15 +24,15 @@ namespace ihff.Controllers
 
         public ActionResult ShowAllEvents()
         {
-            IEnumerable<Event> allEvents = eventrep.GetAllEvents();
-            return View(allEvents);
+            return View();
         }
 
         //Films
         //Show all films and filters
         public ActionResult ShowFilms()
         {
-            return View();
+            IEnumerable<Film> allFilms = filmrep.ShowAllfilms();
+            return View(allFilms);
         }
 
         //Show FilmInformation

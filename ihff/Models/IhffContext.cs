@@ -12,6 +12,8 @@ namespace ihff.Models
         public IhffContext()
             : base("IHFFConnection") { }
 
-        public DbSet<Event> Events { get; set; }
+      //  public DbSet<Event> EVENTS { get; set; }
+        public DbSet<Film> FILMS { get; set; }
+
     }
 }

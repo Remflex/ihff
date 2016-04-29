@@ -9,10 +9,5 @@ namespace ihff.Models
     {
         private IhffContext ctx = new IhffContext();
 
-        public IEnumerable<Event> GetAllEvents()
-        {
-            IEnumerable<Event> allEvents = ctx.Events;
-            return allEvents;
         }
     }
-}

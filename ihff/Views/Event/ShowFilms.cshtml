@@ -1,5 +1,8 @@
-﻿@{
-    ViewBag.Title = "Films";
+﻿@using ihff.Models
+@model IEnumerable<Film>
+
+@{
+    ViewBag.Title = "All Films";
 }
 
 </main>
@@ -27,66 +30,12 @@
     </div>
 
     <div class="filmcontainer">
+        @foreach (Film film in Model)
+        {
         <div class="film">
             <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120"/>
-            <h4>2001: A Space Odyssey</h4>
+            <h4>@film.Name</h4>
         </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-        <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120" />
-            <h4>2001: A Space Odyssey</h4>
-        </div>
-
+        }
         <div class="clearfix"></div>
     </div>
