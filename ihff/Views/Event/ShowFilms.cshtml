@@ -5,7 +5,146 @@
     ViewBag.Title = "All Films";
 }
 
-</main>
+<script>
+    $(document).ready(function () {
+        $("#All").css('color', '#dd0426')
+        $("#FilmsWednesday").hide()
+        $("#FilmsThursday").hide()
+        $("#FilmsFriday").hide()
+        $("#FilmsSaturday").hide()
+        $("#FilmsSunday").hide()
+        $("#TopFilms").hide()
+
+        $('#All').click(
+    function () {
+        $(this).css('color', '#dd0426')
+        $('#Thursday').css('color', 'black')
+        $('#Friday').css('color', 'black')
+        $('#Saturday').css('color', 'black')
+        $('#Sunday').css('color', 'black')
+        $('#Wednesday').css('color', 'black')
+        $('#Top').css('color', 'black')
+        $('#AllFilms').show();
+        $('#FilmsWednesday').hide();
+        $("#FilmsThursday").hide()
+        $("#FilmsFriday").hide()
+        $("#FilmsSaturday").hide()
+        $("#FilmsSunday").hide()
+        $("#TopFilms").hide()
+    })
+
+        $('#Wednesday').click(
+            function () {
+                $(this).css('color', '#dd0426')
+                $('#Thursday').css('color', 'black')
+                $('#Friday').css('color', 'black')
+                $('#Saturday').css('color', 'black')
+                $('#Sunday').css('color', 'black')
+                $('#All').css('color', 'black')
+                $('#Top').css('color', 'black')
+                $('#FilmsWednesday').show();
+                $('#AllFilms').hide();
+                $("#FilmsThursday").hide()
+                $("#FilmsFriday").hide()
+                $("#FilmsSaturday").hide()
+                $("#FilmsSunday").hide()
+                $("#TopFilms").hide()
+            })
+
+        $('#Thursday').click(
+    function () {
+        $(this).css('color', '#dd0426')
+        $('#Wednesday').css('color', 'black')
+        $('#Friday').css('color', 'black')
+        $('#Saturday').css('color', 'black')
+        $('#Sunday').css('color', 'black')
+        $('#All').css('color', 'black')
+        $('#Top').css('color', 'black')
+        $('#FilmsThursday').show();
+        $("#FilmsWednesday").hide()
+        $("#AllFilms").hide()
+        $("#FilmsFriday").hide()
+        $("#FilmsSaturday").hide()
+        $("#FilmsSunday").hide()
+        $("#TopFilms").hide()
+    })
+
+        $('#Friday').click(
+    function () {
+        $(this).css('color', '#dd0426')
+        $('#Wednesday').css('color', 'black')
+        $('#Thursday').css('color', 'black')
+        $('#Saturday').css('color', 'black')
+        $('#Sunday').css('color', 'black')
+        $('#All').css('color', 'black')
+        $('#Top').css('color', 'black')
+        $('#FilmsFriday').show();
+        $("#FilmsWednesday").hide()
+        $("#FilmsThursday").hide()
+        $("#AllFilms").hide()
+        $("#FilmsSaturday").hide()
+        $("#FilmsSunday").hide()
+        $("#TopFilms").hide()
+    })
+
+        $('#Saturday').click(
+    function () {
+        $(this).css('color', '#dd0426')
+        $('#Wednesday').css('color', 'black')
+        $('#Friday').css('color', 'black')
+        $('#Thursday').css('color', 'black')
+        $('#Sunday').css('color', 'black')
+        $('#All').css('color', 'black')
+        $('#Top').css('color', 'black')
+        $('#FilmsSaturday').show();
+        $("#FilmsWednesday").hide()
+        $("#FilmsThursday").hide()
+        $("#FilmsFriday").hide()
+        $("#AllFilms").hide()
+        $("#FilmsSunday").hide()
+        $("#TopFilms").hide()
+    })
+
+        $('#Sunday').click(
+    function () {
+        $(this).css('color', '#dd0426');
+        $('#Wednesday').css('color', 'black')
+        $('#Friday').css('color', 'black')
+        $('#Saturday').css('color', 'black')
+        $('#Thursday').css('color', 'black')
+        $('#All').css('color', 'black')
+        $('#Top').css('color', 'black')
+        $('#FilmsSunday').show();
+        $("#FilmsWednesday").hide()
+        $("#FilmsThursday").hide()
+        $("#FilmsFriday").hide()
+        $("#FilmsSaturday").hide()
+        $("#AllFilms").hide()
+        $("#TopFilms").hide()
+    })
+
+        $('#Top').click(
+    function () {
+        $(this).css('color', '#dd0426');
+        $('#Wednesday').css('color', 'black')
+        $('#Friday').css('color', 'black')
+        $('#Saturday').css('color', 'black')
+        $('#Sunday').css('color', 'black')
+        $('#All').css('color', 'black')
+        $('#Thursday').css('color', 'black')
+        $('#TopFilms').show();
+        $("#FilmsWednesday").hide()
+        $("#FilmsThursday").hide()
+        $("#FilmsFriday").hide()
+        $("#FilmsSaturday").hide()
+        $("#FilmsSunday").hide()
+        $("#AllFilms").hide()
+    })
+    });
+
+</script>
+
+        </main>
 <div class="slider" align="center">
     <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />
     <img src="~/Content/images/slider/en_Header_Films.jpg" class="sliderimage" />
@@ -15,27 +154,85 @@
 
     <div class="FilmFilter Top">
         <ul>
-            <li><a href="#">Film offer</a></li>
-            <li><a href="#">Top 10</a></li>
+            <li><a href="#" id="All">Film offer</a></li>
+            <li><a href="#" id="Top">Top 10</a></li>
         </ul>
     </div>
     <div class="FilmFilter">
         <ul>
-            <li><a href="#">Wednesday</a></li>
-            <li><a href="#">Thursday</a></li>
-            <li><a href="#">Friday</a></li>
-            <li><a href="#">Saturday</a></li>
-            <li><a href="#">Sunday</a></li>
+            <li><a href="#" id="Wednesday">Wednesday</a></li>
+            <li><a href="#" id="Thursday">Thursday</a></li>
+            <li><a href="#" id="Friday">Friday</a></li>
+            <li><a href="#" id="Saturday">Saturday</a></li>
+            <li><a href="#" id="Sunday">Sunday</a></li>
         </ul>
     </div>
 
-    <div class="filmcontainer">
-        @foreach (Film film in Model)
-        {
+    <div class="filmcontainer" id="AllFilms">
         <div class="film">
-            <img src="~/Content/images/Films/2001.jpg" alt="Filmpje" height="197" width="120"/>
-            <h4>@film.Name</h4>
+            <img src="~/Content/images/Films/1007.png" alt="Filmpje" height="197" width="120" />
+            <h4>Space Oddissey</h4>
         </div>
-        }
-        <div class="clearfix"></div>
     </div>
+
+    <div class="filmcontainer" id="TopFilms">
+        <div class="FilmDay">
+            <img src="~/Content/images/Films/1002.png" alt="Filmpje" height="130" width="90" />
+            <h4>Wall-E</h4>
+            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
+            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
+            <p id="Extra">Family friendly</p>
+        </div>
+    </div>
+
+    <div class="filmcontainer" id="FilmsWednesday">
+        <div class="FilmDay">
+            <img src="~/Content/images/Films/1004.png" alt="Filmpje" height="130" width="90" />
+            <h4>Wall-E</h4>
+            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
+            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
+            <p id="Extra">Family friendly</p>
+        </div>
+    </div>
+
+    <div class="filmcontainer" id="FilmsThursday">
+        <div class="FilmDay">
+            <img src="~/Content/images/Films/1005.png" alt="Filmpje" height="130" width="90" />
+            <h4>Wall-E</h4>
+            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
+            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
+            <p id="Extra">Family friendly</p>
+        </div>
+    </div>
+
+    <div class="filmcontainer" id="FilmsFriday">
+        <div class="FilmDay">
+            <img src="~/Content/images/Films/1006.png" alt="Filmpje" height="130" width="90" />
+            <h4>Wall-E</h4>
+            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
+            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
+            <p id="Extra">Family friendly</p>
+        </div>
+    </div>
+
+    <div class="filmcontainer" id="FilmsSaturday">
+        <div class="FilmDay">
+            <img src="~/Content/images/Films/1007.png" alt="Filmpje" height="130" width="90" />
+            <h4>Wall-E</h4>
+            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
+            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
+            <p id="Extra">Family friendly</p>
+        </div>
+    </div>
+
+    <div class="filmcontainer" id="FilmsSunday">
+        <div class="FilmDay">
+            <img src="~/Content/images/Films/1008.png" alt="Filmpje" height="130" width="90" />
+            <h4>Wall-E</h4>
+            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
+            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
+            <p id="Extra">Family friendly</p>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+

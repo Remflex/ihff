@@ -1,331 +1,342 @@
 ﻿/*----------Main----------*/
-body{
+body {
     background: #F3F5F5;
     overflow-x: hidden;
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
 }
 
-a:hover{
-    color: #dd0426;
+    a:hover {
+        color: #dd0426;
+    }
+
+main {
+    width: 968px;
+    margin: 0 auto;
 }
 
-main{
-	width: 968px;
-	margin: 0 auto;
-}
-
-.slider{
+.slider {
     margin: 0 auto;
     width: 100%;
     z-index: 0;
 }
 
-.slider img{
-    width: 100%; 
-    display:block; 
-    height: auto;
+    .slider img {
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+
+.button {
+    text-decoration: none;
+    text-align: center;
+    padding: 3px 3px;
+    border: solid 3px #010530;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #26282b;
+    -webkit-box-shadow: 0px 0px 2px #bfbfbf, inset 0px 0px 1px #bfbfbf;
+    -moz-box-shadow: 0px 0px 2px #bfbfbf,, inset 0px 0px 1px #bfbfbf;
+    box-shadow: 0px 0px 2px #bfbfbf,, inset 0px 0px 1px #bfbfbf;
 }
 
-.button{
- text-decoration:none; 
- text-align:center; 
- padding:3px 3px; 
- border:solid 3px #010530; 
- -webkit-border-radius:5px;
- -moz-border-radius:5px; 
- border-radius: 5px; 
- font-weight:bold; 
- color:#ffffff; 
- background:#26282b; 
- -webkit-box-shadow:0px 0px 2px #bfbfbf, inset 0px 0px 1px #bfbfbf; 
- -moz-box-shadow: 0px 0px 2px #bfbfbf,,  inset 0px 0px 1px #bfbfbf;  
- box-shadow:0px 0px 2px #bfbfbf,, inset 0px 0px 1px #bfbfbf;   
-  }
-.button:hover{
- padding:3px 3px; 
- border:solid 3px #010530; 
- -webkit-border-radius:5px;
- -moz-border-radius:5px; 
- border-radius: 5px; 
- font-weight:bold; 
- color:#dd0426; 
- background:#26282b; 
- -webkit-box-shadow:0px 0px 2px #bfbfbf, inset 0px 0px 1px #bfbfbf; 
- -moz-box-shadow: 0px 0px 2px #bfbfbf,,  inset 0px 0px 1px #bfbfbf;  
- box-shadow:0px 0px 2px #bfbfbf,, inset 0px 0px 1px #bfbfbf;    
- }
+    .button:hover {
+        padding: 3px 3px;
+        border: solid 3px #010530;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        font-weight: bold;
+        color: #dd0426;
+        background: #26282b;
+        -webkit-box-shadow: 0px 0px 2px #bfbfbf, inset 0px 0px 1px #bfbfbf;
+        -moz-box-shadow: 0px 0px 2px #bfbfbf,, inset 0px 0px 1px #bfbfbf;
+        box-shadow: 0px 0px 2px #bfbfbf,, inset 0px 0px 1px #bfbfbf;
+    }
 
 @media (max-width: 1920px) {
-    .slider{
+    .slider {
         height: 170px;
     }
 
-    .slider img{
-        height: 170px;
-    }
+        .slider img {
+            height: 170px;
+        }
 }
 
 @media (max-width: 1366px) {
-    .slider{
+    .slider {
         height: 150px;
     }
 
-    .slider img{
-        height: 150px;
-    }
+        .slider img {
+            height: 150px;
+        }
 }
 
 @media (max-width: 1058px) {
-    .slider{
+    .slider {
         height: 130px;
     }
 
-    .slider img{
-        height: 130px;
-    }
+        .slider img {
+            height: 130px;
+        }
 }
 
 
 /*----------Header----------*/
 .clearfix:after {
-	display: block;
-	clear: both;
+    display: block;
+    clear: both;
 }
 
-header{
+header {
     margin-bottom: 15px;
-	margin-top: 40px;
-	background-color: #26282B;
-	height: 31px;
-	box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+    margin-top: 40px;
+    background-color: #26282B;
+    height: 31px;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
 }
 
-header #logo{
-	background-image: url('images/LogoHeader.PNG');
-	width: 146px;
-	height: 71px;
-	margin-top: -40px;
-	margin-left: 67px;
-	position: absolute;
-}
+    header #logo {
+        background-image: url('images/LogoHeader.PNG');
+        width: 146px;
+        height: 71px;
+        margin-top: -40px;
+        margin-left: 67px;
+        position: absolute;
+    }
 
 #flagtainer {
     margin-left: 10px;
     margin-top: 15px;
 }
 
-.flags{
+.flags {
     margin-left: 5px;
     border: 1px solid #26282B;
 }
- 
+
 /*----- Menu Outline -----*/
- 
+
 .menu ul {
-	margin-left: 200px;
+    margin-left: 200px;
 }
+
 .menu li {
-    margin-left:0px;
+    margin-left: 0px;
     padding: 2px 20px;
-    list-style:none;
+    list-style: none;
     color: white;
     cursor: default;
 }
- 
+
 .menu a {
-    transition:all linear 0.15s;
+    transition: all linear 0.15s;
     color: white;
 }
- 
+
 .menu li:hover > a, .menu .current-item > a {
     text-decoration: none;
     color: #dd0426;
 }
 
 .menu li:hover {
-	color: #dd0426;
-}
- 
-.menu .arrow {
-    font-size:11px;
-    line-height:0%;
-}
- 
-/*----- Top Level -----*/
-.menu > ul > li {
-    float:left;
-    display:inline-block;
-    position:relative;
-    font-size:19px;
-}
- 
-.menu > ul > li > a {
-    display:inline-block;
-    text-shadow:0px 1px 0px rgba(0,0,0,0.4);
-    text-decoration: none;
-}
- 
-.menu > ul > li:hover > a, .menu > ul > .current-item > a {
-    background:#26282B;
-}
- 
-/*----- Bottom Level -----*/
-.menu li:hover .sub-menu {
-    z-index:1;
-    opacity:1;
-}
- 
-.sub-menu {
-    width:107%;
-    padding:5px 0px;
-    position:absolute;
-    top:100%;
-    left:0;
-    z-index:-1;
-    opacity:0;
-    transition:opacity linear 0.15s;
-    box-shadow:0px 2px 3px rgba(0,0,0,0.2);
-    background:#26282B;
-}
-
-ul.sub-menu{
-	margin-left: 0px;
-	margin-top: 0px;
-}
- 
-.sub-menu li {
-    display:block;
-    font-size:16px;
-    border-bottom:1px solid #FFFFFF;
-}
-
-.sub-menu li.last{
-	border:none;
-}
- 
-.sub-menu li a {
-    display:block;
-    text-decoration: none;
-}
- 
-.sub-menu li a:hover, .sub-menu .current-item a {
-    background:#26282B;
-}
-
-header a.wishlist{
-	padding: 0px;
-	position: absolute;
-	margin-top: -40px;
-	float:right;
-	margin-left: 910px;
-	text-decoration: none;
-	color: #26282B;
-}
-
-header a.wishlist:hover{
     color: #dd0426;
 }
 
+.menu .arrow {
+    font-size: 11px;
+    line-height: 0%;
+}
+
+/*----- Top Level -----*/
+.menu > ul > li {
+    float: left;
+    display: inline-block;
+    position: relative;
+    font-size: 19px;
+}
+
+    .menu > ul > li > a {
+        display: inline-block;
+        text-shadow: 0px 1px 0px rgba(0,0,0,0.4);
+        text-decoration: none;
+    }
+
+    .menu > ul > li:hover > a, .menu > ul > .current-item > a {
+        background: #26282B;
+    }
+
+/*----- Bottom Level -----*/
+.menu li:hover .sub-menu {
+    z-index: 1;
+    opacity: 1;
+}
+
+.sub-menu {
+    width: 107%;
+    padding: 5px 0px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity linear 0.15s;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+    background: #26282B;
+}
+
+ul.sub-menu {
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.sub-menu li {
+    display: block;
+    font-size: 16px;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+    .sub-menu li.last {
+        border: none;
+    }
+
+    .sub-menu li a {
+        display: block;
+        text-decoration: none;
+    }
+
+        .sub-menu li a:hover, .sub-menu .current-item a {
+            background: #26282B;
+        }
+
+header a.wishlist {
+    padding: 0px;
+    position: absolute;
+    margin-top: -40px;
+    float: right;
+    margin-left: 910px;
+    text-decoration: none;
+    color: #26282B;
+}
+
+    header a.wishlist:hover {
+        color: #dd0426;
+    }
+
 /*----------HomePage--------*/
-#Welcome{
+#Welcome {
     width: 453px;
     font-size: 24px;
 }
 
-#WelcomeText{
+#WelcomeText {
     width: 628px;
     font-size: 13px;
 }
-#WelcomeImg{
+
+#WelcomeImg {
     background-image: url('images/IHFFBios.png');
     width: 325px;
     height: 190px;
-    float:right;
-    margin-top:-180px;
+    float: right;
+    margin-top: -180px;
 }
-#Suggested{
+
+#Suggested {
     font-size: 20px;
     font-weight: bold;
     margin-top: 40px;
 }
-.Suggested{
-    display:block;
+
+.Suggested {
+    display: block;
     width: 301px;
     height: 168px;
     margin-right: 27px;
-    margin-bottom: 60px; 
+    margin-bottom: 60px;
     float: left;
 }
 
-.third{
+.third {
     margin-right: 0;
 }
 
-.Suggested div{
+.Suggested div {
     background-color: violet;
     width: 117px;
-    height:168px;
+    height: 168px;
     margin-right: 10px;
     float: left;
 }
-.Suggested h4{    
+
+.Suggested h4 {
     font-size: 18px;
     font-weight: bold;
     margin: 0;
 }
-.Suggested h5{    
+
+.Suggested h5 {
     font-size: 13px;
     font-weight: bold;
     margin: 0;
 }
-.Suggested p{    
+
+.Suggested p {
     font-size: 11px;
-    height:85px;
-    overflow:hidden;
-    margin-top:5px;
+    height: 85px;
+    overflow: hidden;
+    margin-top: 5px;
 }
 
 /*--------Film Page---------*/
-.FilmFilter{
+.FilmFilter {
     width: 561px;
     margin: 0 auto;
 }
 
-.Top{
+.Top {
     width: 210px;
 }
 
-.FilmFilter ul{
+.FilmFilter ul {
     list-style: none;
-	padding: 0;
+    padding: 0;
     display: block;
-    clear:both;
-}
-.FilmFilter li{
-    float:left;
-	display: block;
-	font-weight: bold;
-	font-size: 22px;
-    text-decoration: none;
-    padding:10px;
+    clear: both;
 }
 
-.FilmFilter a{
+.FilmFilter li {
+    float: left;
+    display: block;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.FilmFilter a {
     color: #26282B;
 }
-.FilmFilter a:hover{
-    color: #dd0426;
-}
 
-.filmcontainer{
+    .FilmFilter a:hover {
+        color: #dd0426;
+    }
+
+.filmcontainer {
     width: 760px;
     margin: 0 auto;
 }
 
-.film{
+.film {
     float: left;
     width: 120px;
     height: 250px;
@@ -334,205 +345,246 @@ header a.wishlist:hover{
     cursor: pointer;
 }
 
-.film img{
-    border: 2px solid #F3F5F5;
-}
+    .film img {
+        border: 2px solid #F3F5F5;
+    }
 
-.film:hover img{
-    border: 2px solid #dd0426;
-}
+    .film:hover img {
+        border: 2px solid #dd0426;
+    }
 
-.film:hover h4{
-    color: #dd0426;
-}
+    .film:hover h4 {
+        color: #dd0426;
+    }
 
-.film h4{
-    display:block;
-    margin-top: 10px;
-    font-size: 15px;
-    text-align: center;
-}
+    .film h4 {
+        display: block;
+        margin-top: 10px;
+        font-size: 15px;
+        text-align: center;
+    }
 
-.last{
+.last {
     margin-right: 0;
 }
 
+.FilmDay {
+    width: 615px;
+    height: 130px;
+}
+
+    .FilmDay img {
+        float: left;
+        margin-right: 18px;
+    }
+
+    .FilmDay h4 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        margin-top: 0;
+    }
+
+    .FilmDay h5 {
+        font-size: 18px;
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+
+    .FilmDay p {
+        font-size: 13px;
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+
+#Extra {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
 /*----------Film Info----------*/
-#FilmPoster{
-    float:left;
+#FilmPoster {
+    float: left;
     margin-right: 55px;
 }
 
-#FilmPoster img{
-    margin-top: 55px;
-}
+    #FilmPoster img {
+        margin-top: 55px;
+    }
 
-#FilmInfo{
-    float:right;
+#FilmInfo {
+    float: right;
     width: 708px;
     margin-top: 10px;
 }
 
-#FilmInfo h3{
-    display:inline;
-    font-size: 32px;
-    font-weight:bold;
-}
-#FilmInfo i{
-    color: #FFCC00;
-}
+    #FilmInfo h3 {
+        display: inline;
+        font-size: 32px;
+        font-weight: bold;
+    }
 
-#FilmInfo #titel{
-    display: inline;
-    font-size: 35px;
-    margin-left: 10px;
-}
+    #FilmInfo i {
+        color: #FFCC00;
+    }
 
-#FilmInfo #genre {
-    display: inline;
-    float: right;
-    margin-top: 27px;
-    font-size: 13px;
-}
+    #FilmInfo #titel {
+        display: inline;
+        font-size: 35px;
+        margin-left: 10px;
+    }
 
-#FilmInfo #description{
-    margin-top: 15px;
-    height: 153px;
-    font-size: 18px;
-}
-#FilmInfo #Information{
-    float: left;
-    width: 480px;
-}
-#FilmInfo #Information h4{
-    font-size:18px;
-    margin-bottom: 2px;
-    margin-top: 2px;
-}
+    #FilmInfo #genre {
+        display: inline;
+        float: right;
+        margin-top: 27px;
+        font-size: 13px;
+    }
 
-#FilmInfo #Information p{
-    font-size:14px;
-    margin-bottom: 2px;
-    margin-top: 2px;
-}
+    #FilmInfo #description {
+        margin-top: 15px;
+        height: 153px;
+        font-size: 18px;
+    }
 
-#FilmInfo #Cast h4{
-    font-size:18px;
-    margin-bottom: 2px;
-    margin-top: 2px;
-}
+    #FilmInfo #Information {
+        float: left;
+        width: 480px;
+    }
 
-#FilmInfo #Cast p{
-    font-size:14px;
-    margin-bottom: 2px;
-    margin-top: 2px;
-}
+        #FilmInfo #Information h4 {
+            font-size: 18px;
+            margin-bottom: 2px;
+            margin-top: 2px;
+        }
 
-#FilmInfo #imdb{
-    float:left;
-    font-size: 14px;
-}
+        #FilmInfo #Information p {
+            font-size: 14px;
+            margin-bottom: 2px;
+            margin-top: 2px;
+        }
 
-#FilmInfo #imdb a{
-    font-weight: bold;
-    color: #26282B;
-    text-decoration: underline;
-}
-#FilmInfo #imdb a:hover{
-    font-weight: bold;
-    color: #dd0426;
-    text-decoration: underline;
-}
+    #FilmInfo #Cast h4 {
+        font-size: 18px;
+        margin-bottom: 2px;
+        margin-top: 2px;
+    }
 
-#filmorder{
+    #FilmInfo #Cast p {
+        font-size: 14px;
+        margin-bottom: 2px;
+        margin-top: 2px;
+    }
+
+    #FilmInfo #imdb {
+        float: left;
+        font-size: 14px;
+    }
+
+        #FilmInfo #imdb a {
+            font-weight: bold;
+            color: #26282B;
+            text-decoration: underline;
+        }
+
+            #FilmInfo #imdb a:hover {
+                font-weight: bold;
+                color: #dd0426;
+                text-decoration: underline;
+            }
+
+#filmorder {
     margin-top: 10px;
 }
 
-#filmorder #left{
-    width: 400px;
-    float: left;
-}
+    #filmorder #left {
+        width: 400px;
+        float: left;
+    }
 
-#filmorder input{
-    margin-right: 10px;
-}
-#filmorder span::after{
-    content: " | ";
-}
+    #filmorder input {
+        margin-right: 10px;
+    }
 
-#filmorder .last::after{
-    content: none;
-}
+    #filmorder span::after {
+        content: " | ";
+    }
 
-#filmorder #right{
-    float:right;
-    padding-top: 18px;
-    font-weight: bold;
-}
+    #filmorder .last::after {
+        content: none;
+    }
 
-#filmorder #right select{
-    margin-right: 15px;
-}
+    #filmorder #right {
+        float: right;
+        padding-top: 18px;
+        font-weight: bold;
+    }
 
-#filmorder #right button{
-    margin-left: 15px;
-    width: 161px;
-    height: 33px;
-}
+        #filmorder #right select {
+            margin-right: 15px;
+        }
 
-#filmorder .fa-info-circle{
-    margin-top: -22px;
-    position: absolute;
-    font-size: 20px;
-    margin-left: 15px;
-}
-#filmorder #TicketInfo{
-    position: absolute;
-    margin-top: -87px;
-    margin-left: 252px;
-    font-size: 13px;
-    width: 133px;
-    height: 48px;
-}
+        #filmorder #right button {
+            margin-left: 15px;
+            width: 161px;
+            height: 33px;
+        }
+
+    #filmorder .fa-info-circle {
+        margin-top: -22px;
+        position: absolute;
+        font-size: 20px;
+        margin-left: 15px;
+    }
+
+    #filmorder #TicketInfo {
+        position: absolute;
+        margin-top: -87px;
+        margin-left: 252px;
+        font-size: 13px;
+        width: 133px;
+        height: 48px;
+    }
 
 /*---------WishList---------*/
-#TableWL{
+#TableWL {
     width: 888px;
-    text-align:center; 
+    text-align: center;
 }
 
-#TableWL thead td{
-    height: 30px;
-    font-size: 16px;
-    font-weight:bold
-}
+    #TableWL thead td {
+        height: 30px;
+        font-size: 16px;
+        font-weight: bold;
+    }
 
-#TableWL td{
-    width:111px;
-    height: 111px;
-    font-size: 13px;
-}
+    #TableWL td {
+        width: 111px;
+        height: 111px;
+        font-size: 13px;
+    }
 
-#TableWL button{
-    width: 100px;
-    height: 35px;
-}
+    #TableWL button {
+        width: 100px;
+        height: 35px;
+    }
 
-#WLTotal{
+#WLTotal {
     Font-Size: 18px;
-    font-weight:bold;
+    font-weight: bold;
     margin-left: 595px;
     margin-top: -25px;
 }
 
-#tijdelijk{
-    width:760px;
+#tijdelijk {
+    width: 760px;
     height: 200px;
     background-color: #26282b;
     float: left;
 }
 
-#OrderButton{
+#OrderButton {
     width: 130px;
     height: 85px;
     text-align: center;
@@ -540,35 +592,35 @@ header a.wishlist:hover{
 }
 
 /*----------Order-----------*/
-#TableOrder{
+#TableOrder {
     width: 666px;
-    text-align:center; 
+    text-align: center;
 }
 
-#TableOrder thead td{
-    height: 30px;
-    font-size: 16px;
-    font-weight:bold
-}
+    #TableOrder thead td {
+        height: 30px;
+        font-size: 16px;
+        font-weight: bold;
+    }
 
-#TableOrder td{
-    width:111px;
-    height: 111px;
-    font-size: 13px;
-}
+    #TableOrder td {
+        width: 111px;
+        height: 111px;
+        font-size: 13px;
+    }
 
-#OrderTotal{
+#OrderTotal {
     Font-Size: 18px;
-    font-weight:bold;
+    font-weight: bold;
     margin-left: 488px;
     margin-top: -25px;
 }
 
-#Payment{
+#Payment {
     width: 630px;
 }
 
-#PayMeth{
+#PayMeth {
     width: 80px;
     height: 72px;
     font-size: 16px;
@@ -577,112 +629,138 @@ header a.wishlist:hover{
     float: left;
 }
 
-#BankSelect{
+#BankSelect {
     width: 105px;
 }
 
-#InputName{
+#InputName {
     width: 350px;
     margin-bottom: 20px;
 }
 
-#InputEmail{
+#InputEmail {
     width: 350px;
 }
 
-#NameInfo{
+#NameInfo {
     float: left;
     font-size: 16px;
     font-weight: bold;
     margin-right: 80px;
 }
 
-#EmailInfo{
+#EmailInfo {
     float: left;
     font-size: 16px;
     font-weight: bold;
     margin-right: 78px;
 }
 
-.Input{
+.Input {
     width: 200px;
 }
 
-#MailExtra{
-    margin-top:0;
+#MailExtra {
+    margin-top: 0;
     margin-left: 129px;
 }
 
-#PayButton{
+#PayButton {
     width: 120px;
-    height:45px;
-    text-align:center;
+    height: 45px;
+    text-align: center;
     margin-left: 213px;
 }
+
+/*--------Completed---------*/
+#TableComplete {
+    width: 777px;
+    text-align: center;
+}
+
+    #TableComplete thead td {
+        height: 30px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    #TableComplete td {
+        width: 111px;
+        height: 111px;
+        font-size: 13px;
+    }
 /*----------Footer----------*/
-footer{
-	height: 130px;
-	background-color: #231F20;
-    box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+footer {
+    height: 130px;
+    background-color: #231F20;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
     margin-top: 30px;
 }
-#MenuBar{
-	height: 60px;
-	background-color: #26282B;
-	border-top: 1px solid #797979;
-	border-bottom: 1px solid #797979;
-	position: absolute;
-	margin-top: 35px;
-	width: 968px;
+
+#MenuBar {
+    height: 60px;
+    background-color: #26282B;
+    border-top: 1px solid #797979;
+    border-bottom: 1px solid #797979;
+    position: absolute;
+    margin-top: 35px;
+    width: 968px;
 }
-#LogoUnder{
-	background-image: url('images/LogoFooter.png');
-	width: 109px;
-	height: 55px;
-	margin-left: 44px;
-	margin-top: 5px;
-	position: absolute;
+
+#LogoUnder {
+    background-image: url('images/LogoFooter.png');
+    width: 109px;
+    height: 55px;
+    margin-left: 44px;
+    margin-top: 5px;
+    position: absolute;
 }
-footer ul{
-	margin-top: -1px;
-	margin-left: 163px;
-	list-style: none;
-	padding: 0;
-	overflow: hidden;
+
+footer ul {
+    margin-top: -1px;
+    margin-left: 163px;
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
 }
-footer li{
-	float:left;
-	display: block;
-	font-weight: bold;
-	font-size: 17px;
-	color: #FFFFFF;
-	border: 1px solid #797979;
-	text-align: center;
-	padding-bottom: 18.5px;
-	width: 113px;
-	padding-top: 18.5px;
-	text-decoration: none;
+
+footer li {
+    float: left;
+    display: block;
+    font-weight: bold;
+    font-size: 17px;
+    color: #FFFFFF;
+    border: 1px solid #797979;
+    text-align: center;
+    padding-bottom: 18.5px;
+    width: 113px;
+    padding-top: 18.5px;
+    text-decoration: none;
 }
-footer li:hover{
-	color: #dd0426;
-}
-p.AfterFooter a{
+
+    footer li:hover {
+        color: #dd0426;
+    }
+
+p.AfterFooter a {
     text-decoration: none;
     color: #26282B;
 }
 
-p.AfterFooter a:hover{
-    color: #dd0426;
-}
+    p.AfterFooter a:hover {
+        color: #dd0426;
+    }
 
 /*----------Disclaimer----------*/
 
-.DiscNum{
-    list-style-type:decimal;
+.DiscNum {
+    list-style-type: decimal;
 }
-.DiscRound{
-    list-style-type:circle;
+
+.DiscRound {
+    list-style-type: circle;
 }
-.NoBullet{
-   list-style-type: none;
+
+.NoBullet {
+    list-style-type: none;
 }
