@@ -336,6 +336,12 @@
   <ItemGroup>
     <Content Include="Views\Wishlist\ShowWishlist.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Order\ShowOrder.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Order\ShowThanks.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

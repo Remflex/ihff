@@ -16,5 +16,15 @@ namespace ihff.Controllers
             return View();
         }
 
+        public ActionResult ShowOrder()
+        {
+            return View();
+        }
+
+        public ActionResult ShowThanks()
+        {
+            return View();
+        }
+
     }
 }

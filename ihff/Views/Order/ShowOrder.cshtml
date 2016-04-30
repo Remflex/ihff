@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Payment details";
+}
+
+<script>
+    $(document).ready(function () {
+        $("#CounterInfo").hide()
+        $("#Bank").hide()
+        $('input[type="Radio"]').click(
+            function () {
+                if ($(this).attr('id') == 'CounterBtn') {
+                    $('#CounterInfo').show();
+                }
+
+                else {
+                    $('#CounterInfo').hide();
+                }
+            });
+        $('input[type="Radio"]').click(
+    function () {
+        if ($(this).attr('id') == 'IDealBtn') {
+            $('#Bank').show();
+        }
+
+        else {
+            $('#Bank').hide();
+        }
+    });
+    });
+</script>
+
+<h2>Payment details</h2>
+<table id="TableOrder">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Activity</td>
+            <td>Date/Time</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Price Total</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2001: A Space Odyssey</td>
+            <td>Film</td>
+            <td>Wedsnesday 19:00 - 22:30</td>
+            <td>2x</td>
+            <td>€ 7,50</td>
+            <td>€ 15,00</td>
+        </tr>
+    </tbody>
+</table>
+<p id="OrderTotal">Price Total: € 15,00</p>
+
+<p>You can pick up your ticket(s) at the counter of your chosen cinema and/or restaurant</p>
+
+<div id="Payment">
+    <div id="PayMeth">Payment method:</div>
+    <input type="radio" name="Payment" value="Counter" id="CounterBtn"><span> Counter   </span><span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+    <span id="CounterInfo">   At the counter, you can pay with debit card or Creditcard.</span><br />
+    <input type="radio" name="Payment" value="Counter"><span> Paypal   </span><br />
+    <input type="radio" name="Payment" value="Counter" id="IDealBtn"><span> I-Deal   </span><br />
+</div>
+<div id="Bank">
+    <span>Select Bank: </span>
+    <span id="BankSelect">
+        <select name="Banks">
+            <option value="1">ABN AMRO</option>
+            <option value="2">ASN Bank</option>
+            <option value="3">Bunq</option>
+            <option value="4">ING</option>
+            <option value="5">Knab</option>
+            <option value="6">Rabobank</option>
+            <option value="7">Regiobank</option>
+            <option value="8">SNS Bank</option>
+            <option value="9">Tridios Bank</option>
+            <option value="10">Van Lanschot</option>
+        </select>
+    </span>
+</div>
+
+<p>To complete your order, the following information is needed.</p>
+<div id="InputName"><div id="NameInfo">Name:</div><form><input type:"text" name="Name" class="Input"/><br /></form></div>
+<div id="InputEmail"><div id="EmailInfo">e-Mail:</div><form><input type:"text" name="e-Mail" class="Input" /><br /></form></div>
+<p id="MailExtra">Your confirmation will be sent to you by email.</p>
+<button type="submit" class="button" id="PayButton">
+    <i class="fa fa-credit-card-alt" aria-hidden="true"></i> Pay
+</button>
+
+<div class="clearfix"></div>
+

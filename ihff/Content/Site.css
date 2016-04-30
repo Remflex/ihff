@@ -538,6 +538,87 @@ header a.wishlist:hover{
     text-align: center;
     margin-left: 21px;
 }
+
+/*----------Order-----------*/
+#TableOrder{
+    width: 666px;
+    text-align:center; 
+}
+
+#TableOrder thead td{
+    height: 30px;
+    font-size: 16px;
+    font-weight:bold
+}
+
+#TableOrder td{
+    width:111px;
+    height: 111px;
+    font-size: 13px;
+}
+
+#OrderTotal{
+    Font-Size: 18px;
+    font-weight:bold;
+    margin-left: 488px;
+    margin-top: -25px;
+}
+
+#Payment{
+    width: 630px;
+}
+
+#PayMeth{
+    width: 80px;
+    height: 72px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 50px;
+    float: left;
+}
+
+#BankSelect{
+    width: 105px;
+}
+
+#InputName{
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+#InputEmail{
+    width: 350px;
+}
+
+#NameInfo{
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 80px;
+}
+
+#EmailInfo{
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 78px;
+}
+
+.Input{
+    width: 200px;
+}
+
+#MailExtra{
+    margin-top:0;
+    margin-left: 129px;
+}
+
+#PayButton{
+    width: 120px;
+    height:45px;
+    text-align:center;
+    margin-left: 213px;
+}
 /*----------Footer----------*/
 footer{
 	height: 130px;
