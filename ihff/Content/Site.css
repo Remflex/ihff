@@ -106,7 +106,7 @@ header {
 }
 
     header #logo {
-        background-image: url('images/LogoHeader.PNG');
+        background-image: url('images/Logo/LogoHeader.PNG');
         width: 146px;
         height: 71px;
         margin-top: -40px;
@@ -297,6 +297,7 @@ header a.wishlist {
     margin-top: 5px;
 }
 
+/*          Films           */
 /*--------Film Page---------*/
 .FilmFilter {
     width: 561px;
@@ -547,6 +548,41 @@ header a.wishlist {
         height: 48px;
     }
 
+/*         Haarlem          */
+/*-------- The City---------*/
+#City{
+    height: 360px;
+    width: 883px;
+    margin-top: 20px;
+}
+#CityShield{
+    float: left;
+    margin-top: 115px;
+    margin-bottom: 75px;
+    margin-right: 10px;
+}
+#CityInfo h4{
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+#CityInfo p{
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+#CityInfo a{
+    color:black;
+    font-weight:bold;
+}
+#CityInfo a:hover{
+    color: #dd0426;
+}
+#Skyline{
+    margin-left: 8px;
+}
+
 /*---------WishList---------*/
 #TableWL {
     width: 888px;
@@ -708,7 +744,7 @@ footer {
 }
 
 #LogoUnder {
-    background-image: url('images/LogoFooter.png');
+    background-image: url('images/Logo/LogoFooter.png');
     width: 109px;
     height: 55px;
     margin-left: 44px;

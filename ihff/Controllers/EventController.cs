@@ -16,7 +16,7 @@ namespace ihff.Controllers
         //All actions are done via eventrepository
         private IEventRepository eventrep = new DbEventRepository();
         private IFilmRepository filmrep = new DbFilmRepository();
-        
+
         public ActionResult Index()
         {
             return View();
@@ -37,6 +37,13 @@ namespace ihff.Controllers
 
         //Show FilmInformation
         public ActionResult ShowFilmInformation()
+        {
+            return View();
+        }
+
+        //City
+        //Show Information about Haarlem
+        public ActionResult ShowCity()
         {
             return View();
         }
