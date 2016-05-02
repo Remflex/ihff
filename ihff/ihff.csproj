@@ -193,6 +193,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Location\Location.cs" />
     <Compile Include="Models\Order\DbOrderRepository.cs" />
     <Compile Include="Models\Order\IOrderRepository.cs" />
     <Compile Include="Models\Order\Order.cs" />
@@ -366,6 +367,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Event\ShowSpecialInformation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Event\ShowRestaurants.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

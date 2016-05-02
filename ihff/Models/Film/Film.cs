@@ -3,49 +3,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ihff.Models
 {
+    [Table("FILMS")]
+
     public class Film
     {
         // Properties
-        [Required][Key]
+        [Required]
+        [Key]
         public int Film_Id { get; set; }
-        [Required]
         public string Name { get; set; }
-        public string Short_Description { get; set; }
-        public string Full_Description { get; set; }
-        [Required]
+        public string ShortDescription { get; set; }
+        public string FullDescription { get; set; }
         public int Runtime { get; set; }
-        [Required]
         public string Genre { get; set; }
-        [Required]
         public int Year { get; set; }
-        [Required]
         public string Cast { get; set; }
-        [Required]
         public string Director { get; set; }
-        [Required]
         public string Language { get; set; }
         public string Age { get; set; }
-        public float Rating { get; set; }
+        public int Rating { get; set; }
         public string Hyperlink { get; set; }
+        public string Day { get; set; }
+        public string Time { get; set; }
+        public string Location { get; set; }
+
         // Constructor
-        public Film(int id, string name,string shortDes, string longDes, int run, string genre, int year, string cast, string director, string lang, string age, float rating, string link)
+        public Film()
         {
-            Film_Id = id;
+
+        }
+        public Film(int id, string name, string shortDes, string longDes, int run, string genre, int year, string cast, string director, string lang, string age, int rating, string link)
+        {
+            this.Film_Id = id;
             this.Name = name;
-            Short_Description = shortDes;
-            Full_Description = longDes;
-            Runtime = run;
+            this.ShortDescription = shortDes;
+            this.FullDescription = longDes;
+            this.Runtime = run;
             this.Genre = genre;
             this.Year = year;
             this.Cast = cast;
             this.Director = director;
-            Language = lang;
+            this.Language = lang;
             this.Age = age;
             this.Rating = rating;
-            Hyperlink = link;
-        }       
+            this.Hyperlink = link;
         }
+        public Film(int id, string name, string shortDes, string day, string time, string locaction)
+        {
+            Film_Id = id;
+            this.Name = name;
+            this.ShortDescription = shortDes;
+            this.Day = day;
+            this.Time = time;
+            this.Location = Location;
+        }
+    }
 }

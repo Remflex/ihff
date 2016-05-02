@@ -169,15 +169,30 @@
     </div>
 
     <div class="filmcontainer" id="AllFilms">
-        <div class="film">
-            <img src="~/Content/images/Films/1007.png" alt="Filmpje" height="197" width="120" />
-            <h4>Space Oddissey</h4>
-        </div>
+        @{ int i = 0; }
+        @foreach (Film film in Model)
+        {
+            i++;
+            if (i == 21)
+            {
+                <div class="film twentyOne">
+                    <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="197" width="120" />
+                    <h4>@film.Name</h4>
+                </div>
+            }
+            else
+            {
+                <div class="film">
+                    <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="197" width="120" />
+                    <h4>@film.Name</h4>
+                </div>
+            }
+        }
     </div>
 
     <div class="filmcontainer" id="TopFilms">
         <div class="FilmDay">
-            <img src="~/Content/images/Films/1002.png" alt="Filmpje" height="130" width="90" />
+            <img src="~/Content/images/Films/1002.png"  height="130" width="90" />
             <h4>Wall-E</h4>
             <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
             <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
@@ -187,7 +202,7 @@
 
     <div class="filmcontainer" id="FilmsWednesday">
         <div class="FilmDay">
-            <img src="~/Content/images/Films/1004.png" alt="Filmpje" height="130" width="90" />
+            <img src="~/Content/images/Films/1004.png" height="130" width="90" />
             <h4>Wall-E</h4>
             <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
             <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
@@ -197,7 +212,7 @@
 
     <div class="filmcontainer" id="FilmsThursday">
         <div class="FilmDay">
-            <img src="~/Content/images/Films/1005.png" alt="Filmpje" height="130" width="90" />
+            <img src="~/Content/images/Films/1005.png"  height="130" width="90" />
             <h4>Wall-E</h4>
             <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
             <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
@@ -207,7 +222,7 @@
 
     <div class="filmcontainer" id="FilmsFriday">
         <div class="FilmDay">
-            <img src="~/Content/images/Films/1006.png" alt="Filmpje" height="130" width="90" />
+            <img src="~/Content/images/Films/1006.png"  height="130" width="90" />
             <h4>Wall-E</h4>
             <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
             <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
@@ -217,7 +232,7 @@
 
     <div class="filmcontainer" id="FilmsSaturday">
         <div class="FilmDay">
-            <img src="~/Content/images/Films/1007.png" alt="Filmpje" height="130" width="90" />
+            <img src="~/Content/images/Films/1007.png"  height="130" width="90" />
             <h4>Wall-E</h4>
             <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
             <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
@@ -227,7 +242,7 @@
 
     <div class="filmcontainer" id="FilmsSunday">
         <div class="FilmDay">
-            <img src="~/Content/images/Films/1008.png" alt="Filmpje" height="130" width="90" />
+            <img src="~/Content/images/Films/1008.png"  height="130" width="90" />
             <h4>Wall-E</h4>
             <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
             <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>

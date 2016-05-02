@@ -8,6 +8,6 @@ namespace ihff.Models
 {
     interface IFilmRepository
     {
-        IEnumerable<Film> ShowAllfilms();
+        IEnumerable<Film> GetAllfilms();
     }
 }

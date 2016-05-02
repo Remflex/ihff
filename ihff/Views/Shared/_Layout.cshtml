@@ -28,7 +28,7 @@
         </div>
         <main>
             <header>
-                <a class="wishlist" href="#">Wishlist</a>
+                <a class="wishlist" href="@Url.Action("ShowWishlist", "Wishlist")">Wishlist</a>
                 <div id="logo"></div>
                 <div class="menu">
                     <ul class="clearfix">
@@ -44,15 +44,15 @@
                         <li><i class="fa fa-weixin" aria-hidden="true"></i> 
                             Culture
                             <ul class="sub-menu">
-                                <li><a href="@Url.Action("Index", "Home")">Specials</a></li>
+                                <li><a href="@Url.Action("showSpecials", "Event")">Specials</a></li>
                                 <li class="last"><a href="@Url.Action("Index", "Home")">Location</a></li>
                             </ul>
                         </li>
                         <li><i class="fa fa-university" aria-hidden="true"></i> 
                             Haarlem
                             <ul class="sub-menu">
-                                <li><a href="@Url.Action("Index", "Home")">The City</a></li>
-                                <li class="last"><a href="@Url.Action("Index", "Home")">Sights</a></li>
+                                <li><a href="@Url.Action("ShowCity", "Event")">The City</a></li>
+                                <li class="last"><a href="@Url.Action("ShowSights", "Event")">Sights</a></li>
                             </ul>
                         </li>
                         <li><i class="fa fa-ticket" aria-hidden="true"></i> 
@@ -77,8 +77,8 @@
                         <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
                         <li><a href="@Url.Action("ShowFilms", "Event")"><i class="fa fa-film" aria-hidden="true"></i> Film</a></li>
                         <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-cutlery" aria-hidden="true"></i> Food</a></li>
-                        <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-cutlery" aria-hidden="true"></i> Culture</a></li>
-                        <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-university" aria-hidden="true"></i> Haarlem</a></li>
+                        <li><a href="@Url.Action("ShowSpecials", "Event")"><i class="fa fa-cutlery" aria-hidden="true"></i> Culture</a></li>
+                        <li><a href="@Url.Action("ShowSights", "Event")"><i class="fa fa-university" aria-hidden="true"></i> Haarlem</a></li>
                         <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-ticket" aria-hidden="true"></i> Tickets</a></li>
                         <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-info" aria-hidden="true"></i> About Us</a></li>
                     </ul>

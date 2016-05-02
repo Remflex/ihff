@@ -31,7 +31,7 @@ namespace ihff.Controllers
         //Show all films and filters
         public ActionResult ShowFilms()
         {
-            IEnumerable<Film> allFilms = filmrep.ShowAllfilms();
+            IEnumerable<Film> allFilms = filmrep.GetAllfilms();
             return View(allFilms);
         }
 

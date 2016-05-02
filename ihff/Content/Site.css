@@ -360,10 +360,15 @@ header a.wishlist {
 
     .film h4 {
         display: block;
-        margin-top: 10px;
-        font-size: 15px;
+        margin-top: 5px;
+        font-size: 12px;
         text-align: center;
+        font-weight: bold;
     }
+
+.twentyOne {
+    margin-left: 148px;
+}
 
 .last {
     margin-right: 0;
@@ -399,10 +404,10 @@ header a.wishlist {
     }
 
 #Extra {
-        font-size: 16px;
-        font-weight: bold;
-        margin-top: 0;
-    }
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+}
 
 /*----------Film Info----------*/
 #FilmPoster {
@@ -547,47 +552,54 @@ header a.wishlist {
         width: 133px;
         height: 48px;
     }
-#SpecialTicketInfo{
-        position: absolute;
-        margin-top: -87px;
-        margin-left: 170px;
-        font-size: 13px;
-        width: 133px;
-        height: 48px;
+
+#SpecialTicketInfo {
+    position: absolute;
+    margin-top: -87px;
+    margin-left: 170px;
+    font-size: 13px;
+    width: 133px;
+    height: 48px;
 }
 
 /*         Haarlem          */
 /*-------- The City---------*/
-#City{
+#City {
     height: 360px;
     width: 883px;
     margin-top: 20px;
 }
-#CityShield{
+
+#CityShield {
     float: left;
     margin-top: 115px;
     margin-bottom: 75px;
     margin-right: 10px;
 }
-#CityInfo h4{
+
+#CityInfo h4 {
     font-size: 32px;
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 5px;
 }
-#CityInfo p{
+
+#CityInfo p {
     font-size: 13px;
     margin-top: 0;
     margin-bottom: 5px;
 }
-#CityInfo a{
-    color:black;
-    font-weight:bold;
+
+#CityInfo a {
+    color: black;
+    font-weight: bold;
 }
-#CityInfo a:hover{
-    color: #dd0426;
-}
-#Skyline{
+
+    #CityInfo a:hover {
+        color: #dd0426;
+    }
+
+#Skyline {
     margin-left: 8px;
 }
 

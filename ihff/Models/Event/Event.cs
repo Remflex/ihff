@@ -3,40 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ihff.Models
 {
+
+        [Table("EVENTS")]
+
     public class Event
     {
+        [Required]
         [Key]
         public int Event_Id { get; set; }
 
-        public string Name { get; set; }
+        public int Film_Id { get; set; }
+
+        public int Special_Id { get; set; }
 
         public string Day { get; set; }
 
         public string Time { get; set; }
 
-        public string Location { get; set; }
-
-        public int Capacity { get; set; }
-
-        public string Type { get; set; }
+        [Required]
+        public int Location_Id { get; set; }
 
         public Event()
         {
 
         }
 
-        public Event(int id, string name, string day, string time, string location, int capacity, string type)
+        public Event(int id, int film, int special, string day, string time, int location)
         {
             Event_Id = id;
-            this.Name = name;
+            Film_Id = film;
+            Special_Id = special;
             this.Day = day;
             this.Time = time;
-            this.Location = location;
-            this.Capacity = capacity;
-            this.Type = type;
+            Location_Id = location;
         }
     
     }
