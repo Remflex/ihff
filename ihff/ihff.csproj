@@ -257,6 +257,16 @@
     <Content Include="Content\images\slider\en_Header_Films.jpg" />
     <Content Include="Content\images\slider\en_Header_Restaurant.jpg" />
     <Content Include="Content\images\slider\Header_Bezienswaardigheid.jpg" />
+    <Content Include="Content\images\Specials\2000.png" />
+    <Content Include="Content\images\Specials\2001.png" />
+    <Content Include="Content\images\Specials\2002.png" />
+    <Content Include="Content\images\Specials\2003.png" />
+    <Content Include="Content\images\Specials\2004.png" />
+    <Content Include="Content\images\Specials\2005.png" />
+    <Content Include="Content\images\Specials\2006.png" />
+    <Content Include="Content\images\Specials\2007.png" />
+    <Content Include="Content\images\Specials\2008.png" />
+    <Content Include="Content\images\Specials\2009.png" />
     <Content Include="Content\main.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="favicon.ico" />
@@ -347,6 +357,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Event\ShowCity.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Event\ShowSights.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Event\showSpecials.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Event\ShowSpecialInformation.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

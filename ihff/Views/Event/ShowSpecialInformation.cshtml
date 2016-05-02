@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Special naam";
+}
+
+<script>
+    $(document).ready(function () {
+        $("#SpecialTicketInfo").hide()
+        $(".fa-info-circle").hover(
+            function () {
+                $("#SpecialTicketInfo").show();
+            }, function () {
+                $("#SpecialTicketInfo").hide();
+            });
+    })
+</script>
+
+<div id="FilmPoster">
+    <img src="~/Content/images/Specials/2005.png" alt=" film poster" width="204" height="300" />
+</div>
+<div id="FilmInfo">
+    <h3>Hollywood tijdens de crisis</h3>
+    <span id="genre">Lecture | Friday</span>
+    <div id="description">
+        Lecture about what the effect of the crisis of the century had on Hollywood. (given by director and scenarist Marleen Gorris.)
+    </div>
+</div>
+<div class="clearfix"></div>
+
+<form action="" id="filmorder">
+    <div id="left">
+<p>Friday | 15:30 - 16:30 | Patronaat - Small venue</p>
+    </div>
+    <div id="right">
+        Quantity
+        <select name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <i class="fa fa-info-circle" aria-hidden="true"></i>
+        <p id="SpecialTicketInfo">
+            Tickets must be added
+            to the wish list before
+            purchase.
+        </p>
+        <button type="submit" class="button">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
+        </button>
+    </div>
+</form>
+</main>
+<!---<div class="slider" align="center">
+    <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/en_Header_Films.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/Header_Bezienswaardigheid.jpg" class="sliderimage" />
+<div>>-->
+<main>
+
+    <div class="clearfix"></div>

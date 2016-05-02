@@ -297,7 +297,7 @@ header a.wishlist {
     margin-top: 5px;
 }
 
-/*          Films           */
+/*     Films en Specials    */
 /*--------Film Page---------*/
 .FilmFilter {
     width: 561px;
@@ -547,6 +547,14 @@ header a.wishlist {
         width: 133px;
         height: 48px;
     }
+#SpecialTicketInfo{
+        position: absolute;
+        margin-top: -87px;
+        margin-left: 170px;
+        font-size: 13px;
+        width: 133px;
+        height: 48px;
+}
 
 /*         Haarlem          */
 /*-------- The City---------*/

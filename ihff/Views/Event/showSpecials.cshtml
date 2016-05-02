@@ -1,0 +1,202 @@
+﻿@{
+    ViewBag.Title = "All specials";
+}
+
+@using ihff.Models
+@model IEnumerable<Film>
+
+@{
+    ViewBag.Title = "All Specials";
+}
+
+<script>
+    $(document).ready(function () {
+        $("#All").css('color', '#dd0426')
+        $("#SpecialsWednesday").hide()
+        $("#SpecialsThursday").hide()
+        $("#SpecialsFriday").hide()
+        $("#SpecialsSaturday").hide()
+        $("#SpecialsSunday").hide()
+
+        $('#All').click(
+    function () {
+        $(this).css('color', '#dd0426')
+        $('#Thursday').css('color', 'black')
+        $('#Friday').css('color', 'black')
+        $('#Saturday').css('color', 'black')
+        $('#Sunday').css('color', 'black')
+        $('#Wednesday').css('color', 'black')
+        $('#AllSpecials').show();
+        $('#SpecialsWednesday').hide();
+        $("#SpecialsThursday").hide()
+        $("#SpecialsFriday").hide()
+        $("#SpecialsSaturday").hide()
+        $("#SpecialsSunday").hide()
+    })
+
+        $('#Wednesday').click(
+            function () {
+                $(this).css('color', '#dd0426')
+                $('#Thursday').css('color', 'black')
+                $('#Friday').css('color', 'black')
+                $('#Saturday').css('color', 'black')
+                $('#Sunday').css('color', 'black')
+                $('#All').css('color', 'black')
+                $('#SpecialsWednesday').show();
+                $('#AllSpecials').hide();
+                $("#SpecialsThursday").hide()
+                $("#SpecialsFriday").hide()
+                $("#SpecialsSaturday").hide()
+                $("#SpecialsSunday").hide()
+            })
+
+        $('#Thursday').click(
+    function () {
+        $(this).css('color', '#dd0426')
+        $('#Wednesday').css('color', 'black')
+        $('#Friday').css('color', 'black')
+        $('#Saturday').css('color', 'black')
+        $('#Sunday').css('color', 'black')
+        $('#All').css('color', 'black')
+        $('#SpecialsThursday').show();
+        $("#SpecialsWednesday").hide()
+        $("#AllSpecials").hide()
+        $("#SpecialsFriday").hide()
+        $("#SpecialsSaturday").hide()
+        $("#SpecialsSunday").hide()
+    })
+
+        $('#Friday').click(
+    function () {
+        $(this).css('color', '#dd0426')
+        $('#Wednesday').css('color', 'black')
+        $('#Thursday').css('color', 'black')
+        $('#Saturday').css('color', 'black')
+        $('#Sunday').css('color', 'black')
+        $('#All').css('color', 'black')
+        $('#SpecialsFriday').show();
+        $("#SpecialsWednesday").hide()
+        $("#SpecialsThursday").hide()
+        $("#AllSpecials").hide()
+        $("#SpecialsSaturday").hide()
+        $("#SpecialsSunday").hide()
+    })
+
+        $('#Saturday').click(
+    function () {
+        $(this).css('color', '#dd0426')
+        $('#Wednesday').css('color', 'black')
+        $('#Friday').css('color', 'black')
+        $('#Thursday').css('color', 'black')
+        $('#Sunday').css('color', 'black')
+        $('#All').css('color', 'black')
+        $('#SpecialsSaturday').show();
+        $("#SpecialsWednesday").hide()
+        $("#SpecialsThursday").hide()
+        $("#SpecialsFriday").hide()
+        $("#AllSpecials").hide()
+        $("#SpecialsSunday").hide()
+    })
+
+        $('#Sunday').click(
+    function () {
+        $(this).css('color', '#dd0426');
+        $('#Wednesday').css('color', 'black')
+        $('#Friday').css('color', 'black')
+        $('#Saturday').css('color', 'black')
+        $('#Thursday').css('color', 'black')
+        $('#All').css('color', 'black')
+        $('#SpecialsSunday').show();
+        $("#SpecialsWednesday").hide()
+        $("#SpecialsThursday").hide()
+        $("#SpecialsFriday").hide()
+        $("#SpecialsSaturday").hide()
+        $("#AllSpecials").hide()
+    })
+    });
+
+</script>
+
+</main>
+<div class="slider" align="center">
+    <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/en_Header_Specials.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/Header_Bezienswaardigheid.jpg" class="sliderimage" />
+</div>
+<main>
+
+    <div class="FilmFilter Top">
+        <ul>
+            <li><a href="#" id="All">Specials offer</a></li>
+        </ul>
+    </div>
+    <div class="FilmFilter">
+        <ul>
+            <li><a href="#" id="Wednesday">Wednesday</a></li>
+            <li><a href="#" id="Thursday">Thursday</a></li>
+            <li><a href="#" id="Friday">Friday</a></li>
+            <li><a href="#" id="Saturday">Saturday</a></li>
+            <li><a href="#" id="Sunday">Sunday</a></li>
+        </ul>
+    </div>
+
+    <div class="filmcontainer" id="AllSpecials">
+        <div class="film">
+            <img src="~/Content/images/Specials/2000.png" alt="Filmpje" height="197" width="120" />
+            <h4>Space Oddissey</h4>
+        </div>
+    </div>
+
+    <div class="filmcontainer" id="SpecialsWednesday">
+        <div class="FilmDay">
+            <img src="~/Content/images/Specials/2003.png" alt="Filmpje" height="130" width="90" />
+            <h4>Wall-E</h4>
+            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
+            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
+            <p id="Extra">Family friendly</p>
+        </div>
+    </div>
+
+    <div class="filmcontainer" id="SpecialsThursday">
+        <div class="FilmDay">
+            <img src="~/Content/images/Specials/2004.png" alt="Filmpje" height="130" width="90" />
+            <h4>Wall-E</h4>
+            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
+            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
+            <p id="Extra">Family friendly</p>
+        </div>
+    </div>
+
+    <div class="filmcontainer" id="SpecialsFriday">
+        <div class="FilmDay">
+            <img src="~/Content/images/Specials/2005.png" alt="Filmpje" height="130" width="90" />
+            <h4>Wall-E</h4>
+            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
+            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
+            <p id="Extra">Family friendly</p>
+        </div>
+    </div>
+
+    <div class="filmcontainer" id="SpecialsSaturday">
+        <div class="FilmDay">
+            <img src="~/Content/images/Specials/2006.png" alt="Filmpje" height="130" width="90" />
+            <h4>Wall-E</h4>
+            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
+            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
+            <p id="Extra">Family friendly</p>
+        </div>
+    </div>
+
+    <div class="filmcontainer" id="SpecialsSunday">
+        <div class="FilmDay">
+            <img src="~/Content/images/Specials/2007.png" alt="Filmpje" height="130" width="90" />
+            <h4>Wall-E</h4>
+            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
+            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
+            <p id="Extra">Family friendly</p>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+
+

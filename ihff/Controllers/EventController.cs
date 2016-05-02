@@ -41,9 +41,41 @@ namespace ihff.Controllers
             return View();
         }
 
+        //Restaurants
+        //Show all restaurants
+        public ActionResult ShowRestaurants()
+        {
+            return View();
+        }
+
+        public ActionResult ShowRestaurantInformation()
+        {
+            return View();
+        }
+
+
+        //Specials
+        //Show all specials and filters
+        public ActionResult showSpecials()
+        {
+            return View();
+        }
+
+        //Show special information
+        public ActionResult ShowSpecialInformation()
+        {
+            return View();
+        }
+
         //City
         //Show Information about Haarlem
         public ActionResult ShowCity()
+        {
+            return View();
+        }
+
+        // show well known sights
+        public ActionResult ShowSights()
         {
             return View();
         }
