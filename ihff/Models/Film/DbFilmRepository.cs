@@ -50,25 +50,6 @@ namespace ihff.Models
         // Get all the information of one film
         public FilmInformationModel GetFilmInformation(int filmId)
         {
-            //IEnumerable<Film> film = (IEnumerable<Film>)
-            //    (from f in ihff.FILMS
-            //     where filmId == f.Film_Id
-            //     select new Film
-            //     {
-            //         Film_Id = f.Film_Id,
-            //         Name = f.Name,
-            //         ShortDescription = f.ShortDescription,
-            //         FullDescription = f.FullDescription,
-            //         Runtime = f.Runtime,
-            //         Genre = f.Genre,
-            //         Year = f.Year,
-            //         Cast = f.Cast,
-            //         Director = f.Director,
-            //         Language = f.Language,
-            //         Age = f.Age,
-            //         Rating = f.Rating,
-            //         Hyperlink = f.Hyperlink
-            //     });
 
             IEnumerable<Film> film = ihff.FILMS.Where(f => f.Film_Id == filmId);
 
