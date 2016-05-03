@@ -193,6 +193,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\DayTimeLocationModel.cs" />
+    <Compile Include="Models\Film\FilmInformationModel.cs" />
+    <Compile Include="Models\Film\FilmModel.cs" />
     <Compile Include="Models\Location\Location.cs" />
     <Compile Include="Models\Order\DbOrderRepository.cs" />
     <Compile Include="Models\Order\IOrderRepository.cs" />

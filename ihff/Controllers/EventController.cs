@@ -10,12 +10,13 @@ namespace ihff.Controllers
 {
     public class EventController : Controller
     {
-        //
-        // GET: /Event/
 
         //All actions are done via eventrepository
         private IEventRepository eventrep = new DbEventRepository();
         private IFilmRepository filmrep = new DbFilmRepository();
+
+        //Lists
+        List<FilmInformationModel> films = new List<FilmInformationModel>();
 
         public ActionResult Index()
         {
@@ -31,14 +32,19 @@ namespace ihff.Controllers
         //Show all films and filters
         public ActionResult ShowFilms()
         {
-            IEnumerable<Film> allFilms = filmrep.GetAllfilms();
-            return View(allFilms);
+            IEnumerable<Film> allFilms = filmrep.GetAllFilms();
+            IEnumerable<FilmModel> dayFilms = filmrep.GetDayFilms();
+            IEnumerable<Film> topFilms = filmrep.GetTopFilms();
+            var films = new Tuple<IEnumerable<Film>, IEnumerable<FilmModel>, IEnumerable<Film>>(allFilms, dayFilms, topFilms);
+            return View(films);
         }
 
         //Show FilmInformation
-        public ActionResult ShowFilmInformation()
+        public ActionResult ShowFilmInformation(int filmId)
         {
-            return View();
+            FilmInformationModel film = filmrep.GetFilmInformation(filmId);
+            films.Add(film);
+            return View(films);
         }
 
         //Restaurants

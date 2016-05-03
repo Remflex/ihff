@@ -335,8 +335,13 @@ header a.wishlist {
 .filmcontainer {
     width: 760px;
     margin: 0 auto;
+    margin-top: 50px;
 }
 
+.filmcontainer a{
+    text-decoration: none;
+    color: #26282B;
+}
 .film {
     float: left;
     width: 120px;
@@ -360,7 +365,7 @@ header a.wishlist {
 
     .film h4 {
         display: block;
-        margin-top: 5px;
+        margin-top: 4px;
         font-size: 12px;
         text-align: center;
         font-weight: bold;
@@ -375,8 +380,9 @@ header a.wishlist {
 }
 
 .FilmDay {
-    width: 615px;
+    width: 635px;
     height: 130px;
+    margin-bottom : 20px;
 }
 
     .FilmDay img {
@@ -387,12 +393,13 @@ header a.wishlist {
     .FilmDay h4 {
         font-size: 24px;
         font-weight: bold;
-        margin-bottom: 8px;
+        margin-bottom: 2px;
         margin-top: 0;
+        line-height: 1;
     }
 
     .FilmDay h5 {
-        font-size: 18px;
+        font-size: 16px;
         margin-bottom: 5px;
         margin-top: 0;
     }
@@ -408,6 +415,13 @@ header a.wishlist {
     font-weight: bold;
     margin-top: 0;
 }
+.FilmDay:hover img {
+        border: 2px solid #dd0426;
+    }
+
+    .FilmDay:hover h4 {
+        color: #dd0426;
+    }
 
 /*----------Film Info----------*/
 #FilmPoster {
@@ -451,7 +465,7 @@ header a.wishlist {
     #FilmInfo #description {
         margin-top: 15px;
         height: 153px;
-        font-size: 18px;
+        font-size: 15px;
     }
 
     #FilmInfo #Information {

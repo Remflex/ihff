@@ -1,5 +1,5 @@
 ﻿@using ihff.Models
-@model IEnumerable<Film>
+@model Tuple<IEnumerable<Film>, IEnumerable<FilmModel>, IEnumerable<Film>>
 
 @{
     ViewBag.Title = "All Films";
@@ -158,7 +158,7 @@
             <li><a href="#" id="Top">Top 10</a></li>
         </ul>
     </div>
-    <div class="FilmFilter">
+    <div class="FilmFilter Bottom">
         <ul>
             <li><a href="#" id="Wednesday">Wednesday</a></li>
             <li><a href="#" id="Thursday">Thursday</a></li>
@@ -170,84 +170,155 @@
 
     <div class="filmcontainer" id="AllFilms">
         @{ int i = 0; }
-        @foreach (Film film in Model)
+        @foreach (Film film in Model.Item1)
         {
             i++;
             if (i == 21)
             {
-                <div class="film twentyOne">
-                    <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="197" width="120" />
-                    <h4>@film.Name</h4>
-                </div>
+                <a href="@Url.Action("ShowFilmInformation", "Event", new {filmId = film.Film_Id})">
+                    <div class="film twentyOne">
+                        <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="197" width="120" />
+                        <h4>@film.Name</h4>
+                    </div>
+                </a>
             }
             else
             {
-                <div class="film">
-                    <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="197" width="120" />
-                    <h4>@film.Name</h4>
-                </div>
+                <a href="@Url.Action("ShowFilmInformation", "Event", new {filmId = film.Film_Id})">
+                    <div class="film">
+                        <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="197" width="120" />
+                        <h4>@film.Name</h4>
+                    </div>
+                </a>
             }
         }
     </div>
 
     <div class="filmcontainer" id="TopFilms">
-        <div class="FilmDay">
-            <img src="~/Content/images/Films/1002.png"  height="130" width="90" />
-            <h4>Wall-E</h4>
-            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
-            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
-            <p id="Extra">Family friendly</p>
-        </div>
+
+        @{ int t = 0; }
+        @foreach (Film film in Model.Item3)
+        {
+            t++;
+            if (t < 10)
+            {
+                <a href="@Url.Action("ShowFilmInformation", "Event", new {filmId = film.Film_Id})">
+                    <div class="FilmDay">
+                        <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="130" width="90" />
+                        <h4>@film.Name</h4>
+                        <p>@film.ShortDescription</p>
+                        @if (film.Name == "WALL·E" || film.Name == "Robot & Frank")
+                        {
+                            <p id="Extra">Family friendly</p>
+                        }
+                    </div>
+                </a>
+            }
+        }
     </div>
 
     <div class="filmcontainer" id="FilmsWednesday">
-        <div class="FilmDay">
-            <img src="~/Content/images/Films/1004.png" height="130" width="90" />
-            <h4>Wall-E</h4>
-            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
-            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
-            <p id="Extra">Family friendly</p>
-        </div>
+        @foreach (FilmModel film in Model.Item2)
+        {
+            if (film.Day == "Wednesday")
+            {
+                <a href="@Url.Action("ShowFilmInformation", "Event", new {filmId = film.Film_Id})">
+                    <div class="FilmDay">
+                        <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="130" width="90" />
+                        <h4>@film.Name</h4>
+                        <h5>WED @film.Time (@film.Location)</h5>
+                        <p>@film.ShortDescription</p>
+                        @if (film.Name == "WALL·E" || film.Name == "Robot & Frank")
+                        {
+                            <p id="Extra">Family friendly</p>
+                        }
+                    </div>
+                </a>
+            }
+        }
     </div>
 
     <div class="filmcontainer" id="FilmsThursday">
-        <div class="FilmDay">
-            <img src="~/Content/images/Films/1005.png"  height="130" width="90" />
-            <h4>Wall-E</h4>
-            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
-            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
-            <p id="Extra">Family friendly</p>
-        </div>
+        @foreach (FilmModel film in Model.Item2)
+        {
+            if (film.Day == "Thursday")
+            {
+                <a href="@Url.Action("ShowFilmInformation", "Event", new {filmId = film.Film_Id})">
+                    <div class="FilmDay">
+                        <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="130" width="90" />
+                        <h4>@film.Name</h4>
+                        <h5>THU @film.Time (@film.Location)</h5>
+                        <p>@film.ShortDescription</p>
+                        @if (film.Name == "WALL·E" || film.Name == "Robot & Frank")
+                        {
+                            <p id="Extra">Family friendly</p>
+                        }
+                    </div>
+                </a>
+            }
+        }
     </div>
 
     <div class="filmcontainer" id="FilmsFriday">
-        <div class="FilmDay">
-            <img src="~/Content/images/Films/1006.png"  height="130" width="90" />
-            <h4>Wall-E</h4>
-            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
-            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
-            <p id="Extra">Family friendly</p>
-        </div>
+        @foreach (FilmModel film in Model.Item2)
+        {
+            if (film.Day == "Friday")
+            {
+                <a href="@Url.Action("ShowFilmInformation", "Event", new {filmId = film.Film_Id})">
+                    <div class="FilmDay">
+                        <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="130" width="90" />
+                        <h4>@film.Name</h4>
+                        <h5>FRI @film.Time (@film.Location)</h5>
+                        <p>@film.ShortDescription</p>
+                        @if (film.Name == "WALL·E" || film.Name == "Robot & Frank")
+                        {
+                            <p id="Extra">Family friendly</p>
+                        }
+                    </div>
+                </a>
+            }
+        }
     </div>
 
     <div class="filmcontainer" id="FilmsSaturday">
-        <div class="FilmDay">
-            <img src="~/Content/images/Films/1007.png"  height="130" width="90" />
-            <h4>Wall-E</h4>
-            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
-            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
-            <p id="Extra">Family friendly</p>
-        </div>
+        @foreach (FilmModel film in Model.Item2)
+        {
+            if (film.Day == "Saturday")
+            {
+                <
+                <div class="FilmDay">
+                    <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="130" width="90" />
+                    <h4>@film.Name</h4>
+                    <h5>SAT @film.Time (@film.Location)</h5>
+                    <p>@film.ShortDescription</p>
+                    @if (film.Name == "WALL·E" || film.Name == "Robot & Frank")
+                    {
+                        <p id="Extra">Family friendly</p>
+                    }
+                </div>
+            }
+        }
     </div>
 
     <div class="filmcontainer" id="FilmsSunday">
-        <div class="FilmDay">
-            <img src="~/Content/images/Films/1008.png"  height="130" width="90" />
-            <h4>Wall-E</h4>
-            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
-            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
-            <p id="Extra">Family friendly</p>
-        </div>
+        @foreach (FilmModel film in Model.Item2)
+        {
+            if (film.Day == "Sunday")
+            {
+                <a href="@Url.Action("ShowFilmInformation", "Event", new {filmId = film.Film_Id})">
+                    <div class="FilmDay">
+                        <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="130" width="90" />
+                        <h4>@film.Name</h4>
+                        <h5>SUN @film.Time (@film.Location)</h5>
+                        <p>@film.ShortDescription</p>
+                        @if (film.Name == "WALL·E" || film.Name == "Robot & Frank")
+                        {
+                            <p id="Extra">Family friendly</p>
+                        }
+                    </div>
+                </a>
+            }
+        }
     </div>
     <div class="clearfix"></div>
 

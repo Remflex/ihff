@@ -27,9 +27,7 @@ namespace ihff.Models
         public string Age { get; set; }
         public int Rating { get; set; }
         public string Hyperlink { get; set; }
-        public string Day { get; set; }
-        public string Time { get; set; }
-        public string Location { get; set; }
+
 
         // Constructor
         public Film()
@@ -51,15 +49,6 @@ namespace ihff.Models
             this.Age = age;
             this.Rating = rating;
             this.Hyperlink = link;
-        }
-        public Film(int id, string name, string shortDes, string day, string time, string locaction)
-        {
-            Film_Id = id;
-            this.Name = name;
-            this.ShortDescription = shortDes;
-            this.Day = day;
-            this.Time = time;
-            this.Location = Location;
         }
     }
 }
