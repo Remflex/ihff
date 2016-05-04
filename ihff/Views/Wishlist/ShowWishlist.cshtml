@@ -1,6 +1,17 @@
 ﻿@{
     ViewBag.Title = "ShowWishlist";
 }
+<script>
+    $(document).ready(function () {
+        $("#WishListEmail").hide();
+
+        $("#Save").click(function () {
+            $("#WishListEmail").show();
+        });
+    });
+</script>
+
+
 </main>
 <div class="slider" align="center">
     <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />
@@ -9,29 +20,37 @@
 </div>
 <main>
     <h2>Wish List</h2>
+    <p>Would you like to save your wish list? <a href="#" id="Save">Click here!</a></p>
+    <form id="WishListEmail">
+        <p>Wish list code: (code)</p>
+        <p>To retrieve your Wish list enter the code on your next visit of the website</p>
+        <br />
+        <p>If you want to receive your Wish list code via e-mail, enter your e-mail address.</p>
+        <input type="text" id="EmailInfo" placeholder="e-Mail address" />
+    </form>
     <table id="TableWL">
         <thead>
             <tr>
-            <td></td>
-            <td>Name</td>
-            <td>Activity</td>
-            <td>Date/Time</td>
-            <td>Quantity</td>
-            <td>Price</td>
-            <td>Price Total</td>
-            <td></td>
+                <td></td>
+                <td>Name</td>
+                <td>Activity</td>
+                <td>Date/Time</td>
+                <td>Quantity</td>
+                <td>Price</td>
+                <td>Price Total</td>
+                <td></td>
             </tr>
         </thead>
         <tbody>
             <tr>
-            <td><img src="~/Content/images/Films/2001.jpg" alt="Film Poster" width="60" height="90" /></td>
-            <td>2001: A Space Odyssey</td>
-            <td>Film</td>
-            <td>Wedsnesday 19:00 - 22:30</td>
-            <td>2x</td>
-            <td>€ 7,50</td>
-            <td>€ 15,00</td>
-            <td><button class="button">Remove</button></td>
+                <td><img src="~/Content/images/Films/2001.jpg" alt="Film Poster" width="60" height="90" /></td>
+                <td>2001: A Space Odyssey</td>
+                <td>Film</td>
+                <td>Wedsnesday 19:00 - 22:30</td>
+                <td>2x</td>
+                <td>€ 7,50</td>
+                <td>€ 15,00</td>
+                <td><button class="button">Remove</button></td>
             </tr>
         </tbody>
     </table>

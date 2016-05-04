@@ -1,29 +1,36 @@
 ﻿@using ihff.Models;
 @model List<FilmInformationModel>
 
-@foreach(FilmInformationModel filminfo in Model){
-    foreach(Film film in filminfo.Film){
-    ViewBag.Title = film.Name;
-}
+@foreach (FilmInformationModel filminfo in Model)
+{
+    foreach (Film film in filminfo.Film)
+    {
+        ViewBag.Title = film.Name;
+    }
 }
 <script>
     $(document).ready(function () {
-        $("#TicketInfo").hide()
+        var value= 7.50 * "#quantity.value";
+        var price = Math.round(value).toFixed(2);
+
+        $("#TicketInfo").hide();
         $(".fa-info-circle").hover(
             function () {
                 $("#TicketInfo").show();
             }, function () {
                 $("#TicketInfo").hide();
             });
-    })
+    });
+
+
 </script>
 
 @{float rating;}
 @foreach (FilmInformationModel filminfo in Model)
 {
-    foreach(Film film in filminfo.Film)
+    foreach (Film film in filminfo.Film)
     {
-   rating = (float)film.Rating / 10;
+        rating = (float)film.Rating / 10;
         <div id="FilmPoster">
             <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" width="204" height="300" />
         </div>
@@ -48,41 +55,45 @@
             <span id="imdb">For more information <a href=@film.Hyperlink target="_blank">Click Here</a> to visit the IMDB page of this movie.</span>
         </div>
         <div class="clearfix"></div>
-}
-        <form action="" id="filmorder">
-            <div id="left">
-                @foreach (DayTimeLocationModel dTL in filminfo.DTL) {
-                    <input type="radio" name="film" value="19:00"><span>@dTL.Time </span><span>@dTL.Day</span><span class="last">@dTL.Location</span><br>
+    }
+    <form action="" id="filmorder" runat="server">
+        <div id="left">
+            @foreach (DayTimeLocationModel dTL in filminfo.DTL)
+            {
+                <input type="radio" name="film" value="19:00"><span>@dTL.Time </span><span>@dTL.Day</span><span class="last">@dTL.Location</span><br>
+            }
+        </div>
+        <div id="right">
+            Quantity
+            
+            <select name="selection" id="selection">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            @{ double price = 7.50;}
+            @*{ double price = 7.50 * quantity;} *@
+            Price: €@price
+
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            <p id="TicketInfo">
+                Tickets must be added
+                to the wish list before
+                purchase.
+            </p>
+            <button type="submit" class="button">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
+            </button>
+        </div>
+    </form>
                 }
-            </div>
-            <div id="right">
-                Quantity
-                <select name="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                Price: €7,50
-
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                <p id="TicketInfo">
-                    Tickets must be added
-                    to the wish list before
-                    purchase.
-                </p>
-                <button type="submit" class="button">
-                    <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
-                </button>
-            </div>
-        </form>
-}
     </main>
-        <!---<div class="slider" align="center">
-            <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />
-            <img src="~/Content/images/slider/en_Header_Films.jpg" class="sliderimage" />
-            <img src="~/Content/images/slider/Header_Bezienswaardigheid.jpg" class="sliderimage" />
-        <div>>-->
-        <main>
+<!---<div class="slider" align="center">
+    <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/en_Header_Films.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/Header_Bezienswaardigheid.jpg" class="sliderimage" />
+<div>>-->
+<main>
 
-            <div class="clearfix"></div>
+    <div class="clearfix"></div>

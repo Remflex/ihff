@@ -519,12 +519,13 @@ header a.wishlist {
 }
 
     #filmorder #left {
-        width: 400px;
+        width: 490px;
         float: left;
     }
 
     #filmorder input {
         margin-right: 10px;
+        margin-bottom:10px;
     }
 
     #filmorder span::after {
@@ -537,8 +538,8 @@ header a.wishlist {
 
     #filmorder #right {
         float: right;
-        padding-top: 18px;
         font-weight: bold;
+        margin-top: -4px;
     }
 
         #filmorder #right select {
