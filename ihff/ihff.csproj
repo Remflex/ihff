@@ -194,7 +194,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\DayTimeLocationModel.cs" />
-    <Compile Include="Models\EventWishList.cs" />
+    <Compile Include="Models\Wishlist\EventWishList.cs" />
     <Compile Include="Models\Film\FilmInformationModel.cs" />
     <Compile Include="Models\Film\FilmModel.cs" />
     <Compile Include="Models\Location\Location.cs" />
@@ -375,6 +375,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Event\ShowRestaurants.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Wishlist\MakeWishlist.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

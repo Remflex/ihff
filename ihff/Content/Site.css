@@ -352,7 +352,7 @@ header a.wishlist {
 }
 
     .film img {
-        border: 2px solid #F3F5F5;
+        border: 2px solid transparent;
     }
 
     .film:hover img {
@@ -388,6 +388,7 @@ header a.wishlist {
     .FilmDay img {
         float: left;
         margin-right: 18px;
+        border: 2px solid transparent;
     }
 
     .FilmDay h4 {
@@ -519,7 +520,7 @@ header a.wishlist {
 }
 
     #filmorder #left {
-        width: 490px;
+        width: 495px;
         float: left;
     }
 
@@ -575,6 +576,14 @@ header a.wishlist {
     font-size: 13px;
     width: 133px;
     height: 48px;
+}
+
+#filmorder #right span.price::after{
+    content: none;
+}
+
+#filmorder #right span#totalPrice::after{
+    content: none;
 }
 
 /*         Haarlem          */
@@ -645,7 +654,7 @@ header a.wishlist {
     Font-Size: 18px;
     font-weight: bold;
     margin-left: 595px;
-    margin-top: -25px;
+    margin-top: 0;
 }
 
 #tijdelijk {
@@ -742,6 +751,8 @@ header a.wishlist {
     text-align: center;
     margin-left: 213px;
 }
+
+
 
 /*--------Completed---------*/
 #TableComplete {

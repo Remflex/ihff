@@ -44,7 +44,21 @@ namespace ihff.Controllers
         {
             FilmInformationModel film = filmrep.GetFilmInformation(filmId);
             films.Add(film);
-            return View(films);
+            WLEventModel Show = new WLEventModel();
+            var allModels = new Tuple<List<FilmInformationModel>, WLEventModel>(films, Show);
+            return View(allModels);
+        }
+
+        [HttpPost]
+        public ActionResult ShowFilmInformation(WLEventModel show)
+        {
+            if(ModelState.IsValid)
+            {
+                show.Price = show.Quantity * 7.50f;
+                show.Type = "Film";
+                return RedirectToAction("MakeWishlist", "Wishlist", show);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         //Restaurants

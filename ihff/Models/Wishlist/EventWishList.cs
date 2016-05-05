@@ -9,6 +9,11 @@ namespace ihff.Models
     {
         public List<WLEventModel> Events{ get; set; }
 
+        public EventWishList()
+        {
+
+        }
+
         public EventWishList(List<WLEventModel> events)
         {
             this.Events = events;

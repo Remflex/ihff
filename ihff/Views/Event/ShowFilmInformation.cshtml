@@ -1,7 +1,7 @@
 ﻿@using ihff.Models;
-@model List<FilmInformationModel>
+@model Tuple<List<FilmInformationModel>, WLEventModel>
 
-@foreach (FilmInformationModel filminfo in Model)
+@foreach (FilmInformationModel filminfo in Model.Item1)
 {
     foreach (Film film in filminfo.Film)
     {
@@ -10,9 +10,6 @@
 }
 <script>
     $(document).ready(function () {
-        var value= 7.50 * "#quantity.value";
-        var price = Math.round(value).toFixed(2);
-
         $("#TicketInfo").hide();
         $(".fa-info-circle").hover(
             function () {
@@ -20,74 +17,89 @@
             }, function () {
                 $("#TicketInfo").hide();
             });
+        $('#selection').change(function () {
+            var value = document.getElementById("selection").value;
+            var price = value * 7.50;
+            document.getElementById("totalPrice").textContent = price.toFixed(2);
+        })
     });
 
 
 </script>
-
-@{float rating;}
-@foreach (FilmInformationModel filminfo in Model)
+@using (Html.BeginForm())
 {
-    foreach (Film film in filminfo.Film)
+    float rating;
+    foreach (FilmInformationModel filminfo in Model.Item1)
     {
-        rating = (float)film.Rating / 10;
-        <div id="FilmPoster">
-            <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" width="204" height="300" />
-        </div>
-        <div id="FilmInfo">
-            <h3>@film.Name</h3>
-            <span id="titel"><i class="fa fa-star" aria-hidden="true"></i> @rating</span>
-            <span id="genre">@film.Genre | @film.Year</span>
-            <div id="description">
-                @film.FullDescription
-            </div>
-            <div id="Information">
-                <h4>Film Information:</h4>
-                <p>@film.Language</p>
-                <p>Runtime: @film.Runtime min</p>
-                <p>Rating: @film.Age</p>
-                <p>Directed by: @film.Director</p>
-            </div>
-            <div id="Cast">
-                <h4>Main Cast:</h4>
-                <p>@film.Cast</p>
-            </div>
-            <span id="imdb">For more information <a href=@film.Hyperlink target="_blank">Click Here</a> to visit the IMDB page of this movie.</span>
-        </div>
-        <div class="clearfix"></div>
-    }
-    <form action="" id="filmorder" runat="server">
-        <div id="left">
-            @foreach (DayTimeLocationModel dTL in filminfo.DTL)
-            {
-                <input type="radio" name="film" value="19:00"><span>@dTL.Time </span><span>@dTL.Day</span><span class="last">@dTL.Location</span><br>
-            }
-        </div>
-        <div id="right">
-            Quantity
-            
-            <select name="selection" id="selection">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-            @{ double price = 7.50;}
-            @*{ double price = 7.50 * quantity;} *@
-            Price: €@price
+        foreach (Film film in filminfo.Film)
+        {
+            @Html.Hidden("Id", film.Film_Id)
+            @Html.Hidden("Name", film.Name)
 
-            <i class="fa fa-info-circle" aria-hidden="true"></i>
-            <p id="TicketInfo">
-                Tickets must be added
-                to the wish list before
-                purchase.
-            </p>
-            <button type="submit" class="button">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
-            </button>
-        </div>
-    </form>
+            rating = (float)film.Rating / 10;
+
+            <div id="FilmPoster">
+                <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" width="204" height="300" />
+            </div>
+            <div id="FilmInfo">
+                <h3>@film.Name</h3>
+                <span id="titel"><i class="fa fa-star" aria-hidden="true"></i> @rating</span>
+                <span id="genre">@film.Genre | @film.Year</span>
+                <div id="description">
+                    @film.FullDescription
+                </div>
+                <div id="Information">
+                    <h4>Film Information:</h4>
+                    <p>@film.Language</p>
+                    <p>Runtime: @film.Runtime min</p>
+                    <p>Rating: @film.Age</p>
+                    <p>Directed by: @film.Director </p>
+                </div>
+                <div id="Cast">
+                    <h4>Main Cast:</h4>
+                    <p>@film.Cast</p>
+                </div>
+                <span id="imdb">For more information <a href=@film.Hyperlink target="_blank">Click Here</a> to visit the IMDB page of this movie.</span>
+            </div>
+            <div class="clearfix"></div>
+        }
+        <div id="filmorder">
+            <div id="left">
+                @{int i = 0;}
+                @foreach (DayTimeLocationModel dTL in filminfo.DTL)
+                {
+                    @Html.RadioButton("Showing", i) <span>@dTL.Time </span><span> @dTL.Day </span><span class="last"> @dTL.Location </span><br>
+                    i++;
                 }
+                
+            </div>
+
+            <div id="right">
+                Quantity
+                @Html.DropDownList("Quantity", new List<SelectListItem>()
+                            {
+                                 new SelectListItem() { Text= "1", Value = "1", Selected = true },
+                                 new SelectListItem() { Text= "2", Value = "2" },
+                                 new SelectListItem() { Text= "3", Value = "3" },
+                                 new SelectListItem() { Text= "4", Value = "4"},
+                            }, new {@id="selection"})
+
+
+                <span class="price">Price: €<span id="totalPrice">7.50</span></span>
+
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                <p id="TicketInfo">
+                    Tickets must be added
+                    to the wish list before
+                    purchase.
+                </p>
+                <button type="submit" class="button" name="ShowFilmInformation" value="AddToWishlist">
+                    <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Wishlist
+                </button>
+            </div>
+        </div>
+    }
+}
     </main>
 <!---<div class="slider" align="center">
     <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />

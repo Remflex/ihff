@@ -55,8 +55,7 @@
                     <td><img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", show.Id))" alt="Filmposter" width="60" height="90" /></td>
                     <td>@show.Name</td>
                     <td>@show.Type</td>
-                    <td>@show.DayTimeLocation.Day <br />
-                        @show.DayTimeLocation.Time</td>
+                    <td>@show.DayTimeLocation.Day <br /> @show.DayTimeLocation.Time</td>
                     <td>@show.Quantity x</td>
                     <td>€ @pricePerPerson</td>
                     <td>€ @show.Price</td>
