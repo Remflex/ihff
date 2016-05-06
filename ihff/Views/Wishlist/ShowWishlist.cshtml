@@ -1,5 +1,5 @@
 ﻿@using ihff.Models
-@model  Tuple<List<WLEventModel>, EventWishList>
+@model  List<WLEventModel>
 @{
     ViewBag.Title = "Wishlist";
 }
@@ -13,72 +13,62 @@
     });
 </script>
 
-@*using (Html.BeginForm()) {*@
 
-    </main>
-    <div class="slider" align="center">
-        <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />
-        <img src="~/Content/images/slider/en_Header_Films.jpg" class="sliderimage" />
-        <img src="~/Content/images/slider/Header_Bezienswaardigheid.jpg" class="sliderimage" />
-    </div>
-    <main>
-        <h2>Wish List</h2>
-        <p>Would you like to save your wish list? <a href="#" id="Save">Click here!</a></p>
-        <form id="WishListEmail">
-            <p>Wish list code: (code)</p>
-            <p>To retrieve your Wish list enter the code on your next visit of the website</p>
-            <br />
-            <p>If you want to receive your Wish list code via e-mail, enter your e-mail address.</p>
-            <input type="text" id="EmailInfo" placeholder="e-Mail address" />
-        </form>
-        <table id="TableWL">
-            <thead>
-                <tr>
-                    <td></td>
-                    <td>Name</td>
-                    <td>Activity</td>
-                    <td>Date/Time</td>
-                    <td>Quantity</td>
-                    <td>Price</td>
-                    <td>Price Total</td>
-                    <td></td>
-                </tr>
-            </thead>
-            <tbody>
+</main>
+<div class="slider" align="center">
+    <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/en_Header_Films.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/Header_Bezienswaardigheid.jpg" class="sliderimage" />
+</div>
+<main>
+    <h2>Wish List</h2>
+    <p>Would you like to save your wish list? <a href="#" id="Save">Click here!</a></p>
+    <form id="WishListEmail">
+        <p>Wish list code: (code)</p>
+        <p>To retrieve your Wish list enter the code on your next visit of the website</p>
+        <br />
+        <p>If you want to receive your Wish list code via e-mail, enter your e-mail address.</p>
+        <input type="text" id="EmailInfo" placeholder="e-Mail address" />
+    </form>
+    <table id="TableWL">
+        <thead>
+            <tr>
+                <td></td>
+                <td>Name</td>
+                <td>Activity</td>
+                <td>Date/Time</td>
+                <td>Quantity</td>
+                <td>Price</td>
+                <td>Price Total</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
                 @{float totalPrice = 0;}
 
-                @{List<WLEventModel> wishlist = (List<WLEventModel>)Session["WishlistSession"];}
-
-                @Html.Hidden("Events", wishlist)
+                @{List<WLEventModel> wishlist = Session["WishlistSession"] as List<WLEventModel>;}
 
                 @foreach (WLEventModel show in wishlist)
-            {
-                float pricePerPerson = show.Price / show.Quantity;
-                    <tr>
-                        @if (show.Type == "Film")
-                    {
-
-                            <td><img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", show.Id))" alt="Filmposter" width="60" height="90" /></td>
-                            <td>@show.Name</td>
-                            <td>@show.Type</td>
-                            <td>
-                                @show.DayTimeLocation.Day <br />
-                                @show.DayTimeLocation.Time
-                            </td>
-                            <td>@show.Quantity x</td>
-                            <td>€ @pricePerPerson</td>
-                            <td>€ @show.Price</td>
-                            <td><button class="button">Remove</button></td>
-                        totalPrice = totalPrice + show.Price;
-                    }
-                    </tr>
-            }
-            </tbody>
-        </table>
-        <p id="WLTotal">Price Total: € @totalPrice</p>
-        <div id="tijdelijk"></div>
-
-        <button type="submit" class="button" id="OrderButton">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Wish List
-        </button>
-        <div class="clearfix"></div>
+                {
+                    float pricePerPerson = show.Price / show.Quantity;
+                    <td><img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", show.Id))" alt="Filmposter" width="60" height="90" /></td>
+                    <td>@show.Name</td>
+                    <td>@show.Type</td>
+                    <td>@show.DayTimeLocation.Day <br />
+                        @show.DayTimeLocation.Time</td>
+                    <td>@show.Quantity x</td>
+                    <td>€ @pricePerPerson</td>
+                    <td>€ @show.Price</td>
+                    <td><button class="button">Remove</button></td>
+                    totalPrice = totalPrice + show.Price;
+                }
+            </tr>
+        </tbody>
+    </table>
+    <p id="WLTotal">Price Total: € @totalPrice</p>
+    <div id="tijdelijk"></div>
+    <button type="submit" class="button" id="OrderButton">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Wish List
+    </button>
+    <div class="clearfix"></div>
