@@ -24,7 +24,19 @@ namespace ihff.Controllers
         //show Wishlist withouth parameter
         public ActionResult ShowWishlist()
         {
-            return View(wishlist);
+            EventWishList order = new EventWishList();
+            var orderWishlist = new Tuple<List<WLEventModel>, EventWishList>(wishlist, order);
+            return View(orderWishlist);
+        }
+
+        [HttpPost]
+        public ActionResult ShowWishlist(EventWishList wishlist)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("ShowOrder", "Order", wishlist);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         //show Wishlist by selecting an event
@@ -34,7 +46,19 @@ namespace ihff.Controllers
             show.DayTimeLocation = allShows[show.Showing];
             Session["WishlistSession"] = wishlist;
             wishlist.Add(show);
-            return View(wishlist);
+            EventWishList order = new EventWishList();
+            var orderWishlist = new Tuple<List<WLEventModel>, EventWishList>(wishlist, order);
+            return View(orderWishlist);
+        }
+
+        [HttpPost]
+        public ActionResult MakeWishlist(EventWishList wishlist)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("ShowOrder", "Order", wishlist);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
     }
