@@ -1,4 +1,6 @@
-﻿@{
+﻿@using ihff.Models;
+@model  EventWishList
+@{
     ViewBag.Title = "Payment details";
 }
 
@@ -44,6 +46,7 @@
     </thead>
     <tbody>
         <tr>
+            @foreach (WLEventModel show in Model.Events) {
             <td>2001: A Space Odyssey</td>
             <td>Film</td>
             <td>Wedsnesday 19:00 - 22:30</td>

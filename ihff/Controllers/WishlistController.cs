@@ -15,16 +15,18 @@ namespace ihff.Controllers
 
         //lists
         List<WLEventModel> wishlist = new List<WLEventModel>();
-        
+
         public ActionResult Index()
         {
             return View();
         }
-        
+
         //show Wishlist withouth parameter
         public ActionResult ShowWishlist()
         {
-            return View(wishlist);
+            EventWishList order = new EventWishList();
+            var orderWishlist = new Tuple<List<WLEventModel>, EventWishList>(wishlist, order);
+            return View(orderWishlist);
         }
 
         //show Wishlist by selecting an event
@@ -34,7 +36,16 @@ namespace ihff.Controllers
             show.DayTimeLocation = allShows[show.Showing];
             Session["WishlistSession"] = wishlist;
             wishlist.Add(show);
-            return View(wishlist);
+            EventWishList order = new EventWishList();
+            var orderWishlist = new Tuple<List<WLEventModel>, EventWishList>(wishlist, order);
+            return View(orderWishlist);
+        }
+
+        //Set wishlist over to Order
+        [HttpPost]
+        public ActionResult MakeWishlist(EventWishList wishlist)
+        {
+            return RedirectToAction("ShowOrder", "Order", wishlist);
         }
 
     }

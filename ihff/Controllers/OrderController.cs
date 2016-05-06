@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ihff.Models;
+using ihff.Controllers;
 
 namespace ihff.Controllers
 {
@@ -16,9 +18,9 @@ namespace ihff.Controllers
             return View();
         }
 
-        public ActionResult ShowOrder()
+        public ActionResult ShowOrder(EventWishList wishlist)
         {
-            return View();
+            return View(wishlist);
         }
 
         public ActionResult ShowThanks()
