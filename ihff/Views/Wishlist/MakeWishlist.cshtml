@@ -69,7 +69,7 @@
                             <td>@show.Quantity x</td>
                             <td>€ @pricePerPerson</td>
                             <td>€ @show.Price</td>
-                            <td><button class="button">Remove</button></td>
+                            <td><button type ="button" class="button" onclick="@("location.href='"+ Url.Action("DeleteWishlistItem","Wishlist", show)+ "'")" >Remove</button></td>
                             totalPrice = totalPrice + show.Price;
                         }
                     </tr>

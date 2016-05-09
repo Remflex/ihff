@@ -21,7 +21,7 @@ namespace ihff.Controllers
             return View();
         }
         
-        //show Wishlist withouth parameter
+        //show Wishlist without parameter
         public ActionResult ShowWishlist()
         {
             EventWishList order = new EventWishList();
@@ -68,6 +68,16 @@ namespace ihff.Controllers
                 return RedirectToAction("ShowOrder", "Order", wishlist);
             }
             return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult DeleteWishlistItem(WLEventModel remove)
+        {
+            List<WLEventModel> list = this.Session["WishlistSession"] as List<WLEventModel>;
+            var item = list.First(x => x.Id == remove.Id);
+            list.Remove(item);
+            this.Session["WishlistSession"] = list;
+
+            return RedirectToAction("ShowWishlist", "Wishlist");
         }
     }
 }
