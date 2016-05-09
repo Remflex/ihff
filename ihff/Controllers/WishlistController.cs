@@ -44,8 +44,17 @@ namespace ihff.Controllers
         {
             List<DayTimeLocationModel> allShows = eventrep.GetAllShowings(show.Id);
             show.DayTimeLocation = allShows[show.Showing];
-            Session["WishlistSession"] = wishlist;
+            //Als session bestaat, maak hem niet opnieuw aan.
+            if (Session != null & Session["WishlistSession"] != null)
+            {
+                wishlist = this.Session["WishlistSession"] as List<WLEventModel>;
+            }
+            else
+            {
+                Session["WishlistSession"] = wishlist;
+            }
             wishlist.Add(show);
+            this.Session["WishlistSession"] = wishlist;
             EventWishList order = new EventWishList();
             var orderWishlist = new Tuple<List<WLEventModel>, EventWishList>(wishlist, order);
             return View(orderWishlist);
@@ -60,6 +69,5 @@ namespace ihff.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
-
     }
 }
