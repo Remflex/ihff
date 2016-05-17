@@ -50,7 +50,7 @@
 
                 @{List<WLEventModel> wishlist = (List<WLEventModel>)Session["WishlistSession"];}
 
-                @Html.Hidden("Events", wishlist)
+                @Html.Hidden("Events", (List<WLEventModel>)Session["WishlistSession"])
 
                 @foreach (WLEventModel show in wishlist)
                 {
@@ -67,8 +67,8 @@
                                 @show.DayTimeLocation.Time
                             </td>
                             <td>@show.Quantity x</td>
-                            <td>€ @pricePerPerson</td>
-                            <td>€ @show.Price</td>
+                            <td>€ @string.Format("{0:n2}", pricePerPerson)</td>
+                                <td>€ @string.Format("{0:n2}", show.Price)</td>
                             <td><button type ="button" class="button" onclick="@("location.href='"+ Url.Action("DeleteWishlistItem","Wishlist", show)+ "'")" >Remove</button></td>
                             totalPrice = totalPrice + show.Price;
                         }
@@ -76,7 +76,7 @@
                 }
             </tbody>
         </table>
-        <p id="WLTotal">Price Total: € @totalPrice</p>
+        <p id="WLTotal">Price Total: € @string.Format("{0:n2}",totalPrice)</p>
         <div id="tijdelijk"></div>
         <button type="submit" class="button" id="OrderButton" name="ShowWishlist" value="AddToOrder">
             <i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Wish List
