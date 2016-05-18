@@ -24,19 +24,13 @@ namespace ihff.Controllers
         //show Wishlist without parameter
         public ActionResult ShowWishlist()
         {
-            EventWishList order = new EventWishList();
-            var orderWishlist = new Tuple<List<WLEventModel>, EventWishList>(wishlist, order);
-            return View(orderWishlist);
+            return View(wishlist);
         }
 
         [HttpPost]
         public ActionResult ShowWishlist(EventWishList wishlist)
         {
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction("ShowOrder", "Order", wishlist);
-            }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("ShowOrder", "Order");
         }
 
         //show Wishlist by selecting an event
@@ -55,19 +49,13 @@ namespace ihff.Controllers
             }
             wishlist.Add(show);
             this.Session["WishlistSession"] = wishlist;
-            EventWishList order = new EventWishList();
-            var orderWishlist = new Tuple<List<WLEventModel>, EventWishList>(wishlist, order);
-            return View(orderWishlist);
+            return View(wishlist);
         }
 
         [HttpPost]
         public ActionResult MakeWishlist(EventWishList wishlist)
         {
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction("ShowOrder", "Order", wishlist);
-            }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("ShowOrder", "Order");
         }
 
         public ActionResult DeleteWishlistItem(WLEventModel remove)
