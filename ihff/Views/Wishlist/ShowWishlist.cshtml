@@ -52,11 +52,6 @@
 
                 @if (wishlist == null)
                 {
-                    <tr>
-                        <td>
-                            <h2>Wishlist is empty!</h2>
-                        </td>
-                    </tr>
                 }
                 else
                 {
@@ -87,11 +82,17 @@
 
             </tbody>
         </table>
+        if (wishlist == null)
+        {
+            <h2>Wishlist is empty!</h2>
+        }
         <p id="WLTotal">Price Total: € @string.Format("{0:n2}", totalPrice)</p>
         <div id="tijdelijk"></div>
+        
         <button type="submit" class="button" id="OrderButton" name="ShowWishlist" value="AddToOrder">
             <i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Wish List
         </button>
+
         <div class="clearfix"></div>
 
     }

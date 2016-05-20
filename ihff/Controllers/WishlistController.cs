@@ -30,7 +30,14 @@ namespace ihff.Controllers
         [HttpPost]
         public ActionResult ShowWishlist(EventWishList wishlist)
         {
-            return RedirectToAction("ShowOrder", "Order");
+            if (Session != null & Session["WishlistSession"] != null)
+            {
+                return RedirectToAction("ShowOrder", "Order");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         //show Wishlist by selecting an event
@@ -55,7 +62,14 @@ namespace ihff.Controllers
         [HttpPost]
         public ActionResult MakeWishlist(EventWishList wishlist)
         {
-            return RedirectToAction("ShowOrder", "Order");
+            if (Session != null & Session["WishlistSession"] != null)
+            {
+                return RedirectToAction("ShowOrder", "Order");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         public ActionResult DeleteWishlistItem(WLEventModel remove)

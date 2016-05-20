@@ -10,17 +10,24 @@ namespace ihff.Controllers
 {
     public class OrderController : Controller
     {
-        //
-        // GET: /Order/
-
+        List<WLEventModel> wishlist = new List<WLEventModel>();
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult ShowOrder(EventWishList wishlist)
+        public ActionResult ShowOrder()
         {
+            wishlist = this.Session["WishlistSession"] as List<WLEventModel>;
             return View(wishlist);
+        }
+
+        [HttpPost]
+        public ActionResult ShowOrder(Order order)
+        {
+            // Order naar DB
+
+            return RedirectToAction("ShowThanks");
         }
 
         public ActionResult ShowThanks()
