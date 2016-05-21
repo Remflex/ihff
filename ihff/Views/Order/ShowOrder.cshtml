@@ -1,5 +1,5 @@
 ﻿@using ihff.Models
-@model Order
+@model Tuple<List<WLEventModel>, Order>
 @{
     ViewBag.Title = "Payment details";
 }
@@ -42,7 +42,7 @@
             <td>Date/Time</td>
             <td>Quantity</td>
             <td>Price</td>
-            <td>Price Total</td>
+            <td>Total</td>
         </tr>
     </thead>
     <tbody>
@@ -59,8 +59,8 @@
                 <td>@show.Type</td>
                 <td>@show.DayTimeLocation.Day <br /> @show.DayTimeLocation.Time</td>
                 <td>@show.Quantity x</td>
-                <td>@String.Format("{00:n2}", pricePerPerson)</td>
-                <td>@String.Format("{00:n2}", show.Price)</td>
+                <td>€ @String.Format("{00:n2}", pricePerPerson)</td>
+                <td>€ @String.Format("{00:n2}", show.Price)</td>
              @{pricetotal = pricetotal + show.Price; }
             </tr>
         }
@@ -100,10 +100,10 @@
     <p>To complete your order, the following information is needed.</p>
 
     @Html.Hidden("TotalPrice", pricetotal);
-    <div id="InputName"><div id="NameInfo">Name:</div><form>@Html.TextBoxFor(m => m.Name, new { @class = "input" })</form><br /></div>
-    <div id="InputEmail"><div id="EmailInfo">e-Mail:</div><form>@Html.TextBoxFor(m => m.Email, new { @class = "input" })</form><br /></div>
+    <div id="InputName"><div id="NameInfo">Name:</div><form>@Html.TextBoxFor(m => m.Item2.Name, new { @class = "input" })</form></div>
+    <div id="InputEmail"><div id="EmailInfo">e-Mail:</div><form>@Html.TextBoxFor(m => m.Item2.Email, new { @class = "input" })</form></div>
     <p id="MailExtra">Your confirmation will be sent to you by email.</p>
-    <button type="submit" class="button" id="PayButton">
+    <button type="submit" class="button" id="PayButton" name="PayOrder" value="Order">
         <i class="fa fa-credit-card-alt" aria-hidden="true"></i> Pay
     </button>
 }

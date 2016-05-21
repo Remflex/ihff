@@ -19,20 +19,24 @@ namespace ihff.Controllers
         public ActionResult ShowOrder()
         {
             wishlist = this.Session["WishlistSession"] as List<WLEventModel>;
-            return View(wishlist);
+            Order newOrder = new Order();
+            var order = new Tuple<List<WLEventModel>, Order>(wishlist, newOrder);
+            return View(order);
         }
 
         [HttpPost]
         public ActionResult ShowOrder(Order order)
         {
             // Order naar DB
-
-            return RedirectToAction("ShowThanks");
+            
+            return RedirectToAction("ShowThanks", order);
         }
 
-        public ActionResult ShowThanks()
+        public ActionResult ShowThanks(Order order)
         {
-            return View();
+            wishlist = this.Session["WishlistSession"] as List<WLEventModel>;
+            var thanks = new Tuple<List<WLEventModel>, Order>(wishlist, order);
+            return View(thanks);
         }
 
     }
