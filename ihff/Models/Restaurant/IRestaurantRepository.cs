@@ -8,5 +8,7 @@ namespace ihff.Models
 {
     interface IRestaurantRepository
     {
+        IEnumerable<Restaurant> GetAllRestaurants();
+        RestaurantInformatieModel GetRestaurantInformation(int resId);
     }
 }

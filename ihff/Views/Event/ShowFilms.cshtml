@@ -285,6 +285,7 @@
         {
             if (film.Day == "Saturday")
             {
+                 <a href="@Url.Action("ShowFilmInformation", "Event", new {filmId = film.Film_Id})">
                 <div class="FilmDay">
                     <img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", film.Film_Id))" height="130" width="90" />
                     <h4>@film.Name</h4>
@@ -295,6 +296,7 @@
                         <p id="Extra">Family friendly</p>
                     }
                 </div>
+                     </a>
             }
         }
     </div>

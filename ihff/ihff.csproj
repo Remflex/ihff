@@ -199,6 +199,8 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\DayTimeLocationModel.cs" />
+    <Compile Include="Models\Restaurant\RestaurantAddressModel.cs" />
+    <Compile Include="Models\Restaurant\RestaurantInformatieModel.cs" />
     <Compile Include="Models\Wishlist\EventWishList.cs" />
     <Compile Include="Models\Film\FilmInformationModel.cs" />
     <Compile Include="Models\Film\FilmModel.cs" />
@@ -265,6 +267,11 @@
     <Content Include="Content\images\Flag\netherlands.jpg" />
     <Content Include="Content\images\Logo\LogoFooter.png" />
     <Content Include="Content\images\Logo\LogoHeader.PNG" />
+    <Content Include="Content\images\Restaurants\4012.png" />
+    <Content Include="Content\images\Restaurants\4013.png" />
+    <Content Include="Content\images\Restaurants\4014.png" />
+    <Content Include="Content\images\Restaurants\4015.png" />
+    <Content Include="Content\images\Restaurants\4016.png" />
     <Content Include="Content\images\slider\en_Header_Films.jpg" />
     <Content Include="Content\images\slider\en_Header_Restaurant.jpg" />
     <Content Include="Content\images\slider\Header_Bezienswaardigheid.jpg" />
@@ -383,6 +390,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Wishlist\MakeWishlist.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Event\ShowRestaurantInformation.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

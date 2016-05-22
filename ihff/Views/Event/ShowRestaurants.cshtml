@@ -1,5 +1,31 @@
-﻿@{
-    ViewBag.Title = "ShowRestaurants";
+﻿@using ihff.Models;
+@model IEnumerable<Restaurant>
+@{
+    ViewBag.Title = "Restaurants";
 }
 
-<h2>ShowRestaurants</h2>
+        </main>
+<div class="slider" align="center">
+    <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/en_Header_Films.jpg" class="sliderimage" />
+    <img src="~/Content/images/slider/Header_Bezienswaardigheid.jpg" class="sliderimage" />
+</div>
+<main>
+    
+    @foreach (Restaurant res in Model)
+    {
+        float rating = (float)res.Rating / 10;
+        <a href="@Url.Action("ShowRestaurantInformation", "Event", new { restaurantId = res.Restaurant_Id })">
+            <div class="Restaurant">
+                <img src="@Url.Content(String.Format("~/Content/images/Restaurants/{0}.png", res.Restaurant_Id))" height="130" width="90" />
+                <h4>@res.Name</h4>
+                <p>
+                    @res.ShortDescription
+                </p>
+                <div id="Rating"> <i class="fa fa-star" aria-hidden="true"></i> @string.Format("{00:n1}", rating)</div>
+            </div>
+        </a>
+    }
+
+    <div class="clearfix"></div>
+

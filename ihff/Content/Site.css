@@ -338,10 +338,11 @@ header a.wishlist {
     margin-top: 50px;
 }
 
-.filmcontainer a{
-    text-decoration: none;
-    color: #26282B;
-}
+    .filmcontainer a {
+        text-decoration: none;
+        color: #26282B;
+    }
+
 .film {
     float: left;
     width: 120px;
@@ -382,7 +383,7 @@ header a.wishlist {
 .FilmDay {
     width: 635px;
     height: 130px;
-    margin-bottom : 20px;
+    margin-bottom: 20px;
 }
 
     .FilmDay img {
@@ -416,13 +417,14 @@ header a.wishlist {
     font-weight: bold;
     margin-top: 0;
 }
-.FilmDay:hover img {
-        border: 2px solid #dd0426;
-    }
 
-    .FilmDay:hover h4 {
-        color: #dd0426;
-    }
+.FilmDay:hover img {
+    border: 2px solid #dd0426;
+}
+
+.FilmDay:hover h4 {
+    color: #dd0426;
+}
 
 /*----------Film Info----------*/
 #FilmPoster {
@@ -526,7 +528,7 @@ header a.wishlist {
 
     #filmorder input {
         margin-right: 10px;
-        margin-bottom:10px;
+        margin-bottom: 10px;
     }
 
     #filmorder span::after {
@@ -578,13 +580,242 @@ header a.wishlist {
     height: 48px;
 }
 
-#filmorder #right span.price::after{
+#filmorder #right span.price::after {
     content: none;
 }
 
-#filmorder #right span#totalPrice::after{
+#filmorder #right span#totalPrice::after {
     content: none;
 }
+
+/*          Food            */
+/*-------Restaurants--------*/
+
+.Restaurant {
+    height: 136px;
+    width: 750px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: black;
+}
+
+    .Restaurant img {
+        float: left;
+        margin-right: 20px;
+        border: 2px solid transparent;
+    }
+
+    .Restaurant h4 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 2px;
+        margin-top: 0;
+        line-height: 1;
+    }
+
+    .Restaurant p {
+        width: 530px;
+        margin-right: 20px;
+        font-size: 13px;
+        margin-bottom: 5px;
+        margin-top: 0;
+        float: left;
+    }
+
+    .Restaurant:hover {
+        cursor: pointer;
+    }
+
+        .Restaurant:hover img {
+            border: 2px solid #dd0426;
+        }
+
+        .Restaurant:hover h4 {
+            color: #dd0426;
+        }
+
+    .Restaurant #Rating {
+        font-size: 40px;
+        width: 85px;
+        margin-top: -10px;
+        float: right;
+    }
+
+        .Restaurant #Rating i {
+            font-size: 48px;
+            color: #FFCC00;
+        }
+
+/*------Restaurant Info-----*/
+#ResInfo {
+    float: right;
+    width: 708px;
+    margin-top: 10px;
+}
+
+    #ResInfo h3 {
+        display: inline;
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    #ResInfo i {
+        color: #FFCC00;
+    }
+
+    #ResInfo #titel {
+        display: inline;
+        font-size: 35px;
+        margin-left: 10px;
+    }
+
+    #ResInfo #genre {
+        display: inline;
+        float: right;
+        margin-top: 27px;
+        font-size: 13px;
+    }
+
+    #ResInfo #description {
+        margin-top: 15px;
+        height: 120px;
+        font-size: 15px;
+    }
+
+    #ResInfo #Kitchen {
+        margin-top: 0px;
+        font-size: 15px;
+    }
+
+    #ResInfo #Information {
+        float: left;
+        width: 134px;
+        margin-right: 190px;
+    }
+
+        #ResInfo #Information h4 {
+            font-size: 16px;
+            margin-bottom: 2px;
+            margin-top: 2px;
+        }
+
+        #ResInfo #Information p {
+            font-size: 14px;
+            margin-bottom: 2px;
+            margin-top: 2px;
+        }
+
+    #ResInfo #Address h4 {
+        font-size: 16px;
+        margin-bottom: 2px;
+        margin-top: 2px;
+    }
+
+    #ResInfo #Address p {
+        font-size: 14px;
+        margin-bottom: 2px;
+        margin-top: 2px;
+    }
+
+    #ResInfo #imdb {
+        float: left;
+        font-size: 14px;
+    }
+
+        #ResInfo #imdb a {
+            font-weight: bold;
+            color: #26282B;
+            text-decoration: underline;
+        }
+
+            #ResInfo #imdb a:hover {
+                font-weight: bold;
+                color: #dd0426;
+                text-decoration: underline;
+            }
+
+    #ResInfo #PriceInfo {
+        margin-top: 30px;
+        width: 365px;
+        font-size: 15px;
+    }
+
+        #ResInfo #PriceInfo i {
+            font-size: 28px;
+            float: left;
+            margin-right: 10px;
+            padding-top: 8px;
+            color: #26282B;
+        }
+
+.ResOrder {
+    margin-top: 10px;
+}
+
+    .ResOrder #ResDay {
+        margin-left: 10px;
+        margin-right: 50px;
+        width: 390px;
+        float: left;
+    }
+
+        .ResOrder #ResDay input {
+            margin-left: 65px;
+        }
+
+        .ResOrder #ResDay .NoM {
+            margin-left: 0;
+        }
+
+        .ResOrder #ResDay #MoM {
+            margin-left: 86px;
+        }
+
+    .ResOrder #Middle {
+        width: 205px;
+        margin-right: 10px;
+        float: left;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: right;
+    }
+
+        .ResOrder #Middle select {
+            width: 120px;
+            font-size: 16px;
+        }
+
+        .ResOrder #right {
+        float: right;
+        font-weight: bold;
+        margin-top: 21px;
+    }
+
+        .ResOrder #right select {
+            margin-right: 15px;
+        }
+
+        .ResOrder #right button {
+            margin-left: 15px;
+            width: 161px;
+            height: 33px;
+        }
+
+    .ResOrder .fa-info-circle {
+        margin-top: -22px;
+        position: absolute;
+        font-size: 20px;
+        margin-left: 15px;
+    }
+
+    .ResOrder #TicketInfo {
+        position: absolute;
+        margin-top: -87px;
+        margin-left: 145px;
+        font-size: 13px;
+        width: 133px;
+        height: 48px;
+    }
 
 /*         Haarlem          */
 /*-------- The City---------*/

@@ -14,9 +14,11 @@ namespace ihff.Controllers
         //All actions are done via eventrepository
         private IEventRepository eventrep = new DbEventRepository();
         private IFilmRepository filmrep = new DbFilmRepository();
+        private IRestaurantRepository resrep = new DbRestaurantRepository();
 
         //Lists
         List<FilmInformationModel> films = new List<FilmInformationModel>();
+        List<RestaurantInformatieModel> restaurants = new List<RestaurantInformatieModel>();
 
         public ActionResult Index()
         {
@@ -65,12 +67,18 @@ namespace ihff.Controllers
         //Show all restaurants
         public ActionResult ShowRestaurants()
         {
-            return View();
+            IEnumerable<Restaurant> allRestaurants = resrep.GetAllRestaurants();
+
+            return View(allRestaurants);
         }
 
-        public ActionResult ShowRestaurantInformation()
+        public ActionResult ShowRestaurantInformation(int restaurantId)
         {
-            return View();
+            RestaurantInformatieModel restaurant = resrep.GetRestaurantInformation(restaurantId);
+            restaurants.Add(restaurant);
+            WLEventModel show = new WLEventModel();
+            var allModels = new Tuple<List<RestaurantInformatieModel>, WLEventModel>(restaurants, show);
+            return View(allModels);
         }
 
 

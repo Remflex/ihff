@@ -25,12 +25,20 @@ namespace ihff.Controllers
         }
 
         [HttpPost]
-        public ActionResult ShowOrder(Order order)
+        public ActionResult ShowOrder(Order newOrder)
         {
-            // Order naar DB
-            
-            return RedirectToAction("ShowThanks", order);
-        }
+            if (ModelState.IsValid)
+            {
+                // Order naar DB
+                return RedirectToAction("ShowThanks", newOrder);
+            }
+            else
+            {
+                wishlist = this.Session["WishlistSession"] as List<WLEventModel>;
+                var order = new Tuple<List<WLEventModel>, Order>(wishlist, newOrder);
+                return View(order);
+            }
+            }
 
         public ActionResult ShowThanks(Order order)
         {

@@ -33,43 +33,43 @@
 </script>
 @using (Html.BeginForm())
 {
-<h2>Payment details</h2>
-<table id="TableOrder">
-    <thead>
-        <tr>
-            <td>Name</td>
-            <td>Activity</td>
-            <td>Date/Time</td>
-            <td>Quantity</td>
-            <td>Price</td>
-            <td>Total</td>
-        </tr>
-    </thead>
-    <tbody>
-        @{ float pricetotal = 0;}
-
-        @{List<WLEventModel> wishlist = (List<WLEventModel>)Session["WishlistSession"];}
-
-        @foreach(WLEventModel show in wishlist){
-
-
-           float pricePerPerson = show.Price / show.Quantity;
-         <tr>
-                <td>@show.Name</td>
-                <td>@show.Type</td>
-                <td>@show.DayTimeLocation.Day <br /> @show.DayTimeLocation.Time</td>
-                <td>@show.Quantity x</td>
-                <td>€ @String.Format("{00:n2}", pricePerPerson)</td>
-                <td>€ @String.Format("{00:n2}", show.Price)</td>
-             @{pricetotal = pricetotal + show.Price; }
+    <h2>Payment details</h2>
+    <table id="TableOrder">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Activity</td>
+                <td>Date/Time</td>
+                <td>Quantity</td>
+                <td>Price</td>
+                <td>Total</td>
             </tr>
-        }
+        </thead>
+        <tbody>
+            @{ float pricetotal = 0;}
+
+            @{List<WLEventModel> wishlist = (List<WLEventModel>)Session["WishlistSession"];}
+
+            @foreach (WLEventModel show in wishlist)
+            {
+
+
+                float pricePerPerson = show.Price / show.Quantity;
+                <tr>
+                    <td>@show.Name</td>
+                    <td>@show.Type</td>
+                    <td>@show.DayTimeLocation.Day <br /> @show.DayTimeLocation.Time</td>
+                    <td>@show.Quantity x</td>
+                    <td>€ @String.Format("{00:n2}", pricePerPerson)</td>
+                    <td>€ @String.Format("{00:n2}", show.Price)</td>
+                    @{pricetotal = pricetotal + show.Price; }
+                </tr>
+            }
         </tbody>
     </table>
     <p id="OrderTotal">Price Total: € @String.Format("{00:n2}", pricetotal)</p>
 
     <p>You can pick up your ticket(s) at the counter of your chosen cinema and/or restaurant</p>
-
     <div id="Payment">
         <div id="PayMeth">Payment method:</div>
         @Html.RadioButton("PaymentMethod", "Counter", new { id = "CounterBtn" })<span> Counter   </span>
@@ -77,6 +77,7 @@
         <span id="CounterInfo">   At the counter, you can pay with debit card or Creditcard.</span><br />
         @Html.RadioButton("PaymentMethod", "PayPal")<span> PayPal</span><br />
         @Html.RadioButton("PaymentMethod", "IDeal", new { id = "IDealBtn" })<span> I-Deal   </span><br />
+        @Html.ValidationMessageFor(m => m.Item2.PaymentMethod)
 
     </div>
     <div id="Bank">
@@ -98,13 +99,17 @@
     </div>
 
     <p>To complete your order, the following information is needed.</p>
-
+    @Html.ValidationSummary()
     @Html.Hidden("TotalPrice", pricetotal);
-    <div id="InputName"><div id="NameInfo">Name:</div><form>@Html.TextBoxFor(m => m.Item2.Name, new { @class = "input" })</form></div>
-    <div id="InputEmail"><div id="EmailInfo">e-Mail:</div><form>@Html.TextBoxFor(m => m.Item2.Email, new { @class = "input" })</form></div>
+    <div id="InputName"><div id="NameInfo">Name:</div>
+    @Html.TextBoxFor(m => m.Item2.Name, new { @class = "input"})
+    @Html.ValidationMessageFor(m => m.Item2.Name)</div>
+    <div id="InputEmail"><div id="EmailInfo">e-Mail:</div>
+    @Html.TextBoxFor(m => m.Item2.Email, new { @class = "input"})
+    @Html.ValidationMessageFor(m => m.Item2.Email)</div>
     <p id="MailExtra">Your confirmation will be sent to you by email.</p>
     <button type="submit" class="button" id="PayButton" name="PayOrder" value="Order">
         <i class="fa fa-credit-card-alt" aria-hidden="true"></i> Pay
     </button>
 }
-    <div class="clearfix"></div>
+<div class="clearfix"></div>

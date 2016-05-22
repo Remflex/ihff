@@ -18,12 +18,14 @@ namespace ihff.Models
 
         public string Type { get; set; }
 
-        [Required]
         [Display(Name = "Showing")]
         public int Showing { get; set; }
 
         [Display(Name = "DayTimeLocation")]
         public DayTimeLocationModel DayTimeLocation { get; set; }
+
+        [Display(Name = "Address")]
+        public RestaurantAddressModel Address { get; set; }
 
         [Required]
         [Display(Name = "Quantity")]

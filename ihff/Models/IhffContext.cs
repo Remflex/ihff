@@ -15,5 +15,6 @@ namespace ihff.Models
         public DbSet<Film> FILMS { get; set; }
         public DbSet<Event> EVENTS { get; set; }
         public DbSet<Location> LOCATIONS { get; set; }
+        public DbSet<Restaurant> RESTAURANTS { get; set; }
     }
 }
