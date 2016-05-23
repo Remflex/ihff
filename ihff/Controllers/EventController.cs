@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -79,6 +80,17 @@ namespace ihff.Controllers
             WLEventModel show = new WLEventModel();
             var allModels = new Tuple<List<RestaurantInformatieModel>, WLEventModel>(restaurants, show);
             return View(allModels);
+        }
+
+        [HttpPost]
+        public ActionResult ShowRestaurantInformation(WLEventModel show)
+        {
+            if (ModelState.IsValid)
+            {
+                show.Type = "Restaurant";
+                return RedirectToAction("MakeWishlist", "Wishlist", show);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
 

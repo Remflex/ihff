@@ -3,9 +3,9 @@
 
 @foreach (RestaurantInformatieModel restaurantInfo in Model.Item1)
 {
-    foreach(Restaurant restaurant in restaurantInfo.Restaurant)
+    foreach (Restaurant restaurant in restaurantInfo.Restaurant)
     {
-    ViewBag.Title = restaurant.Name;
+        ViewBag.Title = restaurant.Name;
     }
 }
 
@@ -22,91 +22,95 @@
 
 
 </script>
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     float rating;
     foreach (RestaurantInformatieModel restaurantInfo in Model.Item1)
-{
-    foreach(Restaurant restaurant in restaurantInfo.Restaurant)
     {
-        foreach(RestaurantAddressModel address in restaurantInfo.Address){
-            @Html.Hidden("Id", restaurant.Restaurant_Id)
-            @Html.Hidden("Name", restaurant.Name)
+        foreach (Restaurant restaurant in restaurantInfo.Restaurant)
+        {
+            foreach (RestaurantAddressModel address in restaurantInfo.Address)
+            {
+                @Html.Hidden("Id", restaurant.Restaurant_Id)
+                @Html.Hidden("Name", restaurant.Name)
 
-        rating = (float)restaurant.Rating / 10;
+                rating = (float)restaurant.Rating / 10;
 
-        <div id="FilmPoster">
-            <img src="@Url.Content(String.Format("~/Content/images/Restaurants/{0}.png", restaurant.Restaurant_Id))" width="204" height="300" />
-        </div>
-        <div id="ResInfo">
-            <h3>@restaurant.Name</h3>
-            <span id="titel"><i class="fa fa-star" aria-hidden="true"></i> @string.Format("{00:n1}", rating)</span>
-            <span id="genre">@address.City</span>
-            <div id="description">
-               @restaurant.FullDescription
-            </div>
-            <div id="Kitchen">Kitchen: @restaurant.Kitchen</div>
-            <div id="Information">
-                <h4>Opening hours:</h4>
-                <p>Lunch: @restaurant.LunchHours Diner: @restaurant.DinnerHours</p>
-            </div>
-            <div id="Address">
-                <h4>Address:</h4>
-                <p>@address.Address</p>
-                <p>@address.Postcode @address.City</p>
-            </div>
-            <span id="imdb">
-                For more information <a href="@restaurant.Hyperlink" target="_blank">Click Here</a>
-                to visit the website of this restuarant.
-            </span>
-            <div id="PriceInfo">
-                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                <div>
-                    The indicated price is the cost for reservation.
-                    This sum will be deducted from your lunch or dinner bill.
+                <div id="FilmPoster">
+                    <img src="@Url.Content(String.Format("~/Content/images/Restaurants/{0}.png", restaurant.Restaurant_Id))" width="204" height="300" />
                 </div>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-    }
-    }
+                <div id="ResInfo">
+                    <h3>@restaurant.Name</h3>
+                    <span id="titel"><i class="fa fa-star" aria-hidden="true"></i> @string.Format("{00:n1}", rating)</span>
+                    <span id="genre">@address.City</span>
+                    <div id="description">
+                        @restaurant.FullDescription
+                    </div>
+                    <div id="Kitchen">Kitchen: @restaurant.Kitchen</div>
+                    <div id="Information">
+                        <h4>Opening hours:</h4>
+                        <p>Lunch: @restaurant.LunchHours Diner: @restaurant.DinnerHours</p>
+                    </div>
+                    <div id="Address">
+                        <h4>Address:</h4>
+                        <p>@address.Address</p>
+                        <p>@address.Postcode @address.City</p>
+                    </div>
+                    <span id="imdb">
+                        For more information <a href="@restaurant.Hyperlink" target="_blank">Click Here</a>
+                        to visit the website of this restuarant.
+                    </span>
+                    <div id="PriceInfo">
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <div>
+                            The indicated price is the cost for reservation.
+                            This sum will be deducted from your lunch or dinner bill.
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            }
+        }
     }
     <div class="ResOrder">
         <div id="ResDay">
             <span>
-                <input type="radio" name="Day" value="Wednesday" class="NoM"> Wednesday
-                <input type="radio" name="Day" value="Thursday"> Thursday
-                <input type="radio" name="Day" value="Friday"> Friday
-                <input type="radio" name="Day" value="Saturday" class="NoM"> Saturday
-                <input type="radio" name="Day" value="Sunday" id="MoM"> Sunday
+                @Html.RadioButton("Day", "Wednesday", new { @class = "NoM" }) Wednesday
+                @Html.RadioButton("Day", "Thursday") Thursday
+                @Html.RadioButton("Day", "Friday") Friday
+                @Html.RadioButton("Day", "Saterday", new { @class = "NoM" }) Saturday
+                @Html.RadioButton("Day", "Sunday", new { @class = "MoM" }) Sunday
             </span>
         </div>
 
         <div id="Middle">
             <div>
-                Time: <select>
-                    <option>11:00 - 11:30</option>
-                    <option>11:30 - 12:00</option>
-                    <option>12:00 - 12:30</option>
-                    <option>12:30 - 13:00</option>
-                    <option>13:00 - 13:30</option>
-                    <option>13:30 - 14:00</option>
-                    <option>17:00 - 17:30</option>
-                    <option>17:30 - 18:00</option>
-                    <option>18:00 - 18:30</option>
-                    <option>18:30 - 19:00</option>
-                    <option>19:00 - 19:30</option>
-                    <option>19:30 - 20:00</option>
-                    <option>20:00 - 20:30</option>
-                    <option>20:30 - 21:00</option>
-                </select>
+                Time: @Html.DropDownList("Time", new List<SelectListItem>()
+                            {
+                                 new SelectListItem() { Text= "11:00 - 11:30", Value = "11:00 - 11:30", Selected = true },
+                                 new SelectListItem() { Text= "11:30 - 12:00", Value = "11:30 - 12:00" },
+                                 new SelectListItem() { Text= "12:00 - 12:30", Value = "12:00 - 12:30" },
+                                 new SelectListItem() { Text= "12:30 - 13:00", Value = "12:30 - 13:00"},
+                                 new SelectListItem() { Text= "13:00 - 13:30", Value = "13:00 - 13:30" },
+                                 new SelectListItem() { Text= "13:30 - 14:00", Value = "13:30 - 14:00" },
+                                 new SelectListItem() { Text= "17:00 - 17:30", Value = "17:00 - 17:30"},
+                                 new SelectListItem() { Text= "17:30 - 18:00", Value = "17:30 - 18:00" },
+                                 new SelectListItem() { Text= "18:00 - 18:30", Value = "18:00 - 18:30" },
+                                 new SelectListItem() { Text= "18:30 - 19:00", Value = "18:30 - 19:00"},
+                                 new SelectListItem() { Text= "19:00 - 19:30", Value = "19:00 - 19:30" },
+                                 new SelectListItem() { Text= "19:30 - 20:00", Value = "19:30 - 20:00" },
+                                 new SelectListItem() { Text= "20:00 - 20:30", Value = "20:00 - 20:30"},
+                                 new SelectListItem() { Text= "20:30 - 21:00", Value = "20:30 - 21:00"},
+                            }, new { @id = "selection" })
             </div>
             <div>
-                Quantity: <select>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
+                Quantity: @Html.DropDownList("Quantity", new List<SelectListItem>()
+                            {
+                                 new SelectListItem() { Text= "1", Value = "1", Selected = true },
+                                 new SelectListItem() { Text= "2", Value = "2" },
+                                 new SelectListItem() { Text= "3", Value = "3" },
+                                 new SelectListItem() { Text= "4", Value = "4"},
+                            }, new { @id = "selection" })
             </div>
         </div>
 

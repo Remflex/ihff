@@ -24,6 +24,12 @@ namespace ihff.Models
         [Display(Name = "DayTimeLocation")]
         public DayTimeLocationModel DayTimeLocation { get; set; }
 
+        [Display(Name = "Day")]
+        public string Day { get; set; }
+
+        [Display(Name = "Time")]
+        public string Time { get; set; }
+
         [Display(Name = "Address")]
         public RestaurantAddressModel Address { get; set; }
 

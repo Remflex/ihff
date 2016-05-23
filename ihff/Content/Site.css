@@ -522,7 +522,7 @@ header a.wishlist {
 }
 
     #filmorder #left {
-        width: 495px;
+        width: 520px;
         float: left;
     }
 
@@ -767,7 +767,7 @@ header a.wishlist {
             margin-left: 0;
         }
 
-        .ResOrder #ResDay #MoM {
+        .ResOrder #ResDay .MoM {
             margin-left: 86px;
         }
 
@@ -780,7 +780,7 @@ header a.wishlist {
         text-align: right;
     }
 
-        .ResOrder #Middle select {
+        .ResOrder #Middle #selection {
             width: 120px;
             font-size: 16px;
         }

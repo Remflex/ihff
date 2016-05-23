@@ -43,8 +43,11 @@ namespace ihff.Controllers
         //show Wishlist by selecting an event
         public ActionResult MakeWishlist(WLEventModel show)
         {
-            List<DayTimeLocationModel> allShows = eventrep.GetAllShowings(show.Id);
-            show.DayTimeLocation = allShows[show.Showing];
+            if (show.Type == "Film")
+            {
+                List<DayTimeLocationModel> allShows = eventrep.GetAllShowings(show.Id);
+                show.DayTimeLocation = allShows[show.Showing];
+            }
             //Als session bestaat, maak hem niet opnieuw aan.
             if (Session != null & Session["WishlistSession"] != null)
             {

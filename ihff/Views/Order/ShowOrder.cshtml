@@ -102,10 +102,10 @@
     @Html.ValidationSummary()
     @Html.Hidden("TotalPrice", pricetotal);
     <div id="InputName"><div id="NameInfo">Name:</div>
-    @Html.TextBoxFor(m => m.Item2.Name, new { @class = "input"})
+    @Html.TextBox("Name", null, new { @class = "input" })
     @Html.ValidationMessageFor(m => m.Item2.Name)</div>
     <div id="InputEmail"><div id="EmailInfo">e-Mail:</div>
-    @Html.TextBoxFor(m => m.Item2.Email, new { @class = "input"})
+    @Html.TextBox("Email", null, new { @class = "input" })
     @Html.ValidationMessageFor(m => m.Item2.Email)</div>
     <p id="MailExtra">Your confirmation will be sent to you by email.</p>
     <button type="submit" class="button" id="PayButton" name="PayOrder" value="Order">

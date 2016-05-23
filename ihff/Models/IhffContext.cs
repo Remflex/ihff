@@ -16,5 +16,8 @@ namespace ihff.Models
         public DbSet<Event> EVENTS { get; set; }
         public DbSet<Location> LOCATIONS { get; set; }
         public DbSet<Restaurant> RESTAURANTS { get; set; }
+        public DbSet<Order> ORDER { get; set; }
+
+        public DbSet<WLEventModel> ORDER_ITEMS { get; set; }
     }
 }
