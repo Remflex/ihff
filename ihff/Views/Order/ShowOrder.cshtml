@@ -52,17 +52,28 @@
 
             @foreach (WLEventModel show in wishlist)
             {
-
-
                 float pricePerPerson = show.Price / show.Quantity;
                 <tr>
+                    @if (show.Type == "Film") {
                     <td>@show.Name</td>
                     <td>@show.Type</td>
                     <td>@show.DayTimeLocation.Day <br /> @show.DayTimeLocation.Time</td>
                     <td>@show.Quantity x</td>
                     <td>€ @String.Format("{00:n2}", pricePerPerson)</td>
                     <td>€ @String.Format("{00:n2}", show.Price)</td>
-                    @{pricetotal = pricetotal + show.Price; }
+                    pricetotal = pricetotal + show.Price;
+                    }
+                    
+                    @if (show.Type == "Restaurant")
+                    {
+                        <td>@show.Name</td>
+                    <td>@show.Type</td>
+                    <td>@show.Day <br /> @show.Time</td>
+                    <td>@show.Quantity x</td>
+                    <td></td>
+                    <td>€ @String.Format("{00:n2}", show.Price)</td>
+                    pricetotal = pricetotal + show.Price;
+                    }
                 </tr>
             }
         </tbody>

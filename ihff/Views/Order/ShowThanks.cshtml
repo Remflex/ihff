@@ -1,9 +1,12 @@
-﻿@{
+﻿@using ihff.Models
+@model Tuple<List<WLEventModel>, Order>
+
+@{
     ViewBag.Title = "Order completed";
 }
 
 <h1>Order Completed</h1>
-<h3>Thank you for your reservation of:</h3>
+<h3>Thank you @Model.Item2.Name for your reservation of:</h3>
 <table id="TableComplete">
     <thead>
         <tr>
@@ -17,17 +20,41 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><img src="~/Content/images/Films/1007.png" alt="Film Poster" width="60" height="90" /></td>
-            <td>2001: A Space Odyssey</td>
-            <td>Film</td>
-            <td>Wedsnesday 19:00 - 22:30</td>
-            <td>2x</td>
-            <td>€ 7,50</td>
-            <td>€ 15,00</td>
-        </tr>
-    </tbody>
-</table>
+       @{float totalprice = 0;}
+        @foreach (WLEventModel show in Model.Item1) {
+            float pricePerPerson = show.Price / show.Quantity;
+            
+            <tr>
+                @if (show.Type == "Film") {
+                    <td><img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", show.Id))" width="60" height="90" /></td>
+                    <td>@show.Name</td>
+                    <td>@show.Type</td>
+                    <td>@show.DayTimeLocation.Day @show.DayTimeLocation.Time</td>
+                    <td>@show.Quantity x</td>
+                    <td>€ @string.Format("{00:n2}", pricePerPerson)</td>
+                    <td>€ @string.Format("{00:n2}", show.Price)</td>
+                totalprice = totalprice + show.Price;
+            }
 
-<div class="clearfix"></div>
-
+                @if (show.Type == "Restaurant") {
+                    <td><img src="@Url.Content(String.Format("~/Content/images/Restaurants/{0}.png", show.Id))" width="60" height="90" /></td>
+                    <td>@show.Name</td>
+                    <td>@show.Type</td>
+                    <td>@show.Day @show.Time</td>
+                    <td>@show.Quantity x</td>
+                    <td></td>
+                    <td>€ @string.Format("{00:n2}", show.Price)</td>
+                    totalprice = totalprice + show.Price;
+                    }
+    </tr>
+        }
+            </tbody>
+        </table>
+        <p id="WLTotal">Price Total: € @string.Format("{0:n2}", totalprice)</p>
+            @if (Model.Item2.PaymentMethod == "Counter")
+            {
+                <p>You can pick up your purchase at the counter of any participating venue</p>
+            }
+        
+        <div class="clearfix"></div>
+        

@@ -1,5 +1,12 @@
-﻿@{
-    ViewBag.Title = "Special naam";
+﻿@using ihff.Models;
+@model Tuple<List<SpecialInformationModel>, WLEventModel>
+
+@foreach (SpecialInformationModel specialInfo in Model.Item1)
+{
+    foreach (Special special in specialInfo.Special)
+    {
+        ViewBag.Title = special.Name;
+    }
 }
 
 <script>
@@ -13,42 +20,80 @@
             });
     })
 </script>
+@using (Html.BeginForm())
+{
+    foreach (SpecialInformationModel specialInfo in Model.Item1)
+    {
+        foreach (Special special in specialInfo.Special)
+        {
+            foreach (DayTimeLocationModel DTL in specialInfo.DTL)
+            {
+                @Html.Hidden("Id", special.Special_Id)
+                @Html.Hidden("Name", special.Name)
+                @Html.Hidden("DayTimeLocationModel", DTL)
+                
+                <div id="FilmPoster">
+                    <img src="@Url.Content(String.Format("~/Content/images/Specials/{0}.png", special.Special_Id))" alt=" film poster" width="204" height="300" />
+                </div>
+                <div id="FilmInfo">
+                    <h3>@special.Name</h3>
+                    @if (special.Special_Id == 2002 || special.Special_Id == 2006)
+                    {
+                        <span id="genre">Discussion | @DTL.Day</span>
+                    }
+                    else
+                    {
+                        <span id="genre">Lecture | @DTL.Day</span>
+                    }
+                    <div id="description">
+                        @special.FullDescription
+                    </div>
+                    @if (special.Special_Id == 2002 || special.Special_Id == 2006)
+                    {
+                        <div>Led by: @special.Salutation @special.Led_By</div>
+                    }
+                    else
+                    {
+                        <div>Given by: @special.Salutation @special.Led_By</div>
+                    }
+                </div>
+            }
+        }
+    }
+    <div class="clearfix"></div>
 
-<div id="FilmPoster">
-    <img src="~/Content/images/Specials/2005.png" alt=" film poster" width="204" height="300" />
-</div>
-<div id="FilmInfo">
-    <h3>Hollywood tijdens de crisis</h3>
-    <span id="genre">Lecture | Friday</span>
-    <div id="description">
-        Lecture about what the effect of the crisis of the century had on Hollywood. (given by director and scenarist Marleen Gorris.)
-    </div>
-</div>
-<div class="clearfix"></div>
+    <div action="" id="filmorder">
+        <div id="left">
+            @foreach (SpecialInformationModel specialInfo in Model.Item1)
+            {
+                foreach (DayTimeLocationModel DTL in specialInfo.DTL)
+                {
+                    <p>@DTL.Day | @DTL.Time | @DTL.Location</p>
+                }
+            }
 
-<form action="" id="filmorder">
-    <div id="left">
-<p>Friday | 15:30 - 16:30 | Patronaat - Small venue</p>
+        </div>
+        <div id="right">
+            Quantity
+            @Html.DropDownList("Quantity", new List<SelectListItem>()
+                            {
+                                 new SelectListItem() { Text= "1", Value = "1", Selected = true },
+                                 new SelectListItem() { Text= "2", Value = "2" },
+                                 new SelectListItem() { Text= "3", Value = "3" },
+                                 new SelectListItem() { Text= "4", Value = "4"},
+                            }, new { @id = "selection" })
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            <p id="SpecialTicketInfo">
+                Tickets must be added
+                to the wish list before
+                purchase.
+            </p>
+            <button type="submit" class="button">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
+            </button>
+        </div>
     </div>
-    <div id="right">
-        Quantity
-        <select name="quantity">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
-        <i class="fa fa-info-circle" aria-hidden="true"></i>
-        <p id="SpecialTicketInfo">
-            Tickets must be added
-            to the wish list before
-            purchase.
-        </p>
-        <button type="submit" class="button">
-            <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
-        </button>
-    </div>
-</form>
+}
 </main>
 <!---<div class="slider" align="center">
     <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />

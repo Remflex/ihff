@@ -75,6 +75,22 @@
                                 <td><button type="button" class="button" onclick="@("location.href='"+ Url.Action("DeleteWishlistItem","Wishlist", show)+ "'")">Remove</button></td>
                                 totalPrice = totalPrice + show.Price;
                             }
+                            
+                            @if (show.Type == "Restaurant")
+                            {
+                                <td><img src="@Url.Content(String.Format("~/Content/images/Restaurants/{0}.png", show.Id))" alt="Filmposter" width="60" height="90" /></td>
+                                <td>@show.Name</td>
+                                <td>@show.Type</td>
+                                <td>
+                                    @show.Day <br />
+                                    @show.Time
+                                </td>
+                                <td>@show.Quantity x</td>
+                                <td></td>
+                                <td>€ @string.Format("{0:n2}", show.Price)</td>
+                                <td><button type="button" class="button" onclick="@("location.href='"+ Url.Action("DeleteWishlistItem","Wishlist", show)+ "'")">Remove</button></td>
+                                totalPrice = totalPrice + show.Price;  
+                            }
                         </tr>
                     }
                 }

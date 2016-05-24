@@ -10,8 +10,12 @@ namespace ihff.Models
     public class Order
     {
         [Required]
-        [Display(Name = "Payment")]
-        public string PaymentMethod { get; set; }
+        [Key]
+        public int Order_Id { get; set; }
+
+        [Required]
+        [Display(Name = "TotalPrice")]
+        public float TotalPrice { get; set; }
 
         [Required]
         [Display(Name = "Name")]
@@ -21,9 +25,12 @@ namespace ihff.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
+        public string Code { get; set; }
+        public string Type { get; set; }
+
         [Required]
-        [Display(Name = "TotalPrice")]
-        public float TotalPrice { get; set; }
+        [Display(Name = "Payment")]
+        public string PaymentMethod { get; set; }
 
         public Order()
         {
@@ -36,6 +43,23 @@ namespace ihff.Models
             this.Name = name;
             this.Email = email;
             TotalPrice = total;
+            Code = GetCode();
+        }
+
+        public string GetCode()
+        {
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[8];
+            Random random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+
+            string finalString = new String(stringChars);
+
+            return finalString;
         }
     }
 }

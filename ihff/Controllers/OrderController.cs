@@ -32,9 +32,8 @@ namespace ihff.Controllers
             wishlist = this.Session["WishlistSession"] as List<WLEventModel>;
             if (ModelState.IsValid)
             {
-                orderep.OrderToDatabase(wishlist, newOrder);
+                //orderep.OrderToDatabase(wishlist, newOrder);
                 wishlist = null;
-                // Order naar DB
                 return RedirectToAction("ShowThanks", newOrder);
                 
             }

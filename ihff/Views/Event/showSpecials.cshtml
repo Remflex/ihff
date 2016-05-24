@@ -1,9 +1,5 @@
-﻿@{
-    ViewBag.Title = "All specials";
-}
-
-@using ihff.Models
-@model IEnumerable<Film>
+﻿@using ihff.Models
+@model Tuple<IEnumerable<Special>, IEnumerable<SpecialModel>>
 
 @{
     ViewBag.Title = "All Specials";
@@ -120,7 +116,7 @@
 </main>
 <div class="slider" align="center">
     <img src="~/Content/images/slider/en_Header_Restaurant.jpg" class="sliderimage" />
-    <img src="~/Content/images/slider/en_Header_Specials.jpg" class="sliderimage" />
+    <img src="~Content/images/slider/en_Header_Films.jpg" class="sliderimage" />
     <img src="~/Content/images/slider/Header_Bezienswaardigheid.jpg" class="sliderimage" />
 </div>
 <main>
@@ -141,60 +137,155 @@
     </div>
 
     <div class="filmcontainer" id="AllSpecials">
-        <div class="film">
-            <img src="~/Content/images/Specials/2000.png" alt="Filmpje" height="197" width="120" />
-            <h4>Space Oddissey</h4>
-        </div>
+        @foreach (Special special in Model.Item1)
+        {
+            <a href="@Url.Action("ShowSpecialInformation", "Event", new {specialId = special.Special_Id})">
+                <div class="film">
+                    <img src=@Url.Content(String.Format("~/Content/images/Specials/{0}.png", special.Special_Id)) alt="Filmpje" height="197" width="120" />
+                    <h4>@special.Name</h4>
+                </div>
+            </a>
+        }
     </div>
 
     <div class="filmcontainer" id="SpecialsWednesday">
-        <div class="FilmDay">
-            <img src="~/Content/images/Specials/2003.png" alt="Filmpje" height="130" width="90" />
-            <h4>Wall-E</h4>
-            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
-            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
-            <p id="Extra">Family friendly</p>
-        </div>
+        @foreach (SpecialModel special in Model.Item2)
+        {
+            if (special.Day == "Wednesday")
+            {
+                <a href="@Url.Action("ShowSpecialInformation", "Event", new {specialId = special.Special_Id})">
+                    <div class="FilmDay">
+                        <img src="@Url.Content(String.Format("~/Content/images/Specials/{0}.png", special.Special_Id))" height="130" width="90" />
+                        <h4>@special.Name</h4>
+                        <h5>WED @special.Time (@special.Location)</h5>
+                        @if (special.Special_Id == 2002 || special.Special_Id == 2006)
+                        {
+                            <p>@special.ShortDescription (Led By @special.Salutation @special.Led_By)</p>
+                        }
+                        else
+                        {
+                            <p>@special.ShortDescription (Given By @special.Salutation @special.Led_By)</p>
+                        }
+                        @if (special.ExtraInfo != null)
+                        {
+                            <p id="Extra">@special.ExtraInfo</p>
+                        }
+                    </div>
+                </a>
+            }
+        }
     </div>
 
     <div class="filmcontainer" id="SpecialsThursday">
-        <div class="FilmDay">
-            <img src="~/Content/images/Specials/2004.png" alt="Filmpje" height="130" width="90" />
-            <h4>Wall-E</h4>
-            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
-            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
-            <p id="Extra">Family friendly</p>
-        </div>
+        @foreach (SpecialModel special in Model.Item2)
+        {
+            if (special.Day == "Thursday")
+            {
+                <a href="@Url.Action("ShowSpecialInformation", "Event", new {specialId = special.Special_Id})">
+                    <div class="FilmDay">
+                        <img src="@Url.Content(String.Format("~/Content/images/Specials/{0}.png", special.Special_Id))" height="130" width="90" />
+                        <h4>@special.Name</h4>
+                        <h5>WED @special.Time (@special.Location)</h5>
+                        @if (special.Special_Id == 2002 || special.Special_Id == 2006)
+                        {
+                            <p>@special.ShortDescription (Led By @special.Salutation @special.Led_By)</p>
+                        }
+                        else
+                        {
+                            <p>@special.ShortDescription (Given By @special.Salutation @special.Led_By)</p>
+                        }
+                        @if (special.ExtraInfo != null)
+                        {
+                            <p id="Extra">@special.ExtraInfo</p>
+                        }
+                    </div>
+                </a>
+            }
+        }
     </div>
 
     <div class="filmcontainer" id="SpecialsFriday">
-        <div class="FilmDay">
-            <img src="~/Content/images/Specials/2005.png" alt="Filmpje" height="130" width="90" />
-            <h4>Wall-E</h4>
-            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
-            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
-            <p id="Extra">Family friendly</p>
-        </div>
+        @foreach (SpecialModel special in Model.Item2)
+        {
+            if (special.Day == "Friday")
+            {
+                <a href="@Url.Action("ShowSpecialInformation", "Event", new {specialId = special.Special_Id})">
+                    <div class="FilmDay">
+                        <img src="@Url.Content(String.Format("~/Content/images/Specials/{0}.png", special.Special_Id))" height="130" width="90" />
+                        <h4>@special.Name</h4>
+                        <h5>WED @special.Time (@special.Location)</h5>
+                        @if (special.Special_Id == 2002 || special.Special_Id == 2006)
+                        {
+                            <p>@special.ShortDescription (Led By @special.Salutation @special.Led_By)</p>
+                        }
+                        else
+                        {
+                            <p>@special.ShortDescription (Given By @special.Salutation @special.Led_By)</p>
+                        }
+                        @if (special.ExtraInfo != null)
+                        {
+                            <p id="Extra">@special.ExtraInfo</p>
+                        }
+                    </div>
+                </a>
+            }
+        }
     </div>
 
     <div class="filmcontainer" id="SpecialsSaturday">
-        <div class="FilmDay">
-            <img src="~/Content/images/Specials/2006.png" alt="Filmpje" height="130" width="90" />
-            <h4>Wall-E</h4>
-            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
-            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
-            <p id="Extra">Family friendly</p>
-        </div>
+        @foreach (SpecialModel special in Model.Item2)
+        {
+            if (special.Day == "Saturday")
+            {
+                <a href="@Url.Action("ShowSpecialInformation", "Event", new {specialId = special.Special_Id})">
+                    <div class="FilmDay">
+                        <img src="@Url.Content(String.Format("~/Content/images/Specials/{0}.png", special.Special_Id))" height="130" width="90" />
+                        <h4>@special.Name</h4>
+                        <h5>WED @special.Time (@special.Location)</h5>
+                        @if (special.Special_Id == 2002 || special.Special_Id == 2006)
+                        {
+                            <p>@special.ShortDescription (Led By @special.Salutation @special.Led_By)</p>
+                        }
+                        else
+                        {
+                            <p>@special.ShortDescription (Given By @special.Salutation @special.Led_By)</p>
+                        }
+                        @if (special.ExtraInfo != null)
+                        {
+                            <p id="Extra">@special.ExtraInfo</p>
+                        }
+                    </div>
+                </a>
+            }
+        }
     </div>
 
     <div class="filmcontainer" id="SpecialsSunday">
-        <div class="FilmDay">
-            <img src="~/Content/images/Specials/2007.png" alt="Filmpje" height="130" width="90" />
-            <h4>Wall-E</h4>
-            <h5>WED 14:30 - 16:45 (Pathé Haarlem - screen 1)</h5>
-            <p>In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind. </p>
-            <p id="Extra">Family friendly</p>
-        </div>
+        @foreach (SpecialModel special in Model.Item2)
+        {
+            if (special.Day == "Sunday")
+            {
+                <a href="@Url.Action("ShowSpecialInformation", "Event", new {specialId = special.Special_Id})">
+                    <div class="FilmDay">
+                        <img src="@Url.Content(String.Format("~/Content/images/Specials/{0}.png", special.Special_Id))" height="130" width="90" />
+                        <h4>@special.Name</h4>
+                        <h5>WED @special.Time (@special.Location)</h5>
+                        @if (special.Special_Id == 2002 || special.Special_Id == 2006)
+                        {
+                            <p>@special.ShortDescription (Led By @special.Salutation @special.Led_By)</p>
+                        }
+                        else
+                        {
+                            <p>@special.ShortDescription (Given By @special.Salutation @special.Led_By)</p>
+                        }
+                        @if (special.ExtraInfo != null)
+                        {
+                            <p id="Extra">@special.ExtraInfo</p>
+                        }
+                    </div>
+                </a>
+            }
+        }
     </div>
     <div class="clearfix"></div>
 

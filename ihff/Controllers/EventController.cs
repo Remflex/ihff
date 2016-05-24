@@ -16,10 +16,12 @@ namespace ihff.Controllers
         private IEventRepository eventrep = new DbEventRepository();
         private IFilmRepository filmrep = new DbFilmRepository();
         private IRestaurantRepository resrep = new DbRestaurantRepository();
+        private ISpecialRepository specrep = new DbSpecialRepository();
 
         //Lists
         List<FilmInformationModel> films = new List<FilmInformationModel>();
         List<RestaurantInformatieModel> restaurants = new List<RestaurantInformatieModel>();
+        List<SpecialInformationModel> specials = new List<SpecialInformationModel>();
 
         public ActionResult Index()
         {
@@ -88,6 +90,7 @@ namespace ihff.Controllers
             if (ModelState.IsValid)
             {
                 show.Type = "Restaurant";
+                show.Price = 10;
                 return RedirectToAction("MakeWishlist", "Wishlist", show);
             }
             return RedirectToAction("Index", "Home");
@@ -98,13 +101,20 @@ namespace ihff.Controllers
         //Show all specials and filters
         public ActionResult showSpecials()
         {
-            return View();
+            IEnumerable<Special> allSpecials = specrep.GetAllSpecials();
+            IEnumerable<SpecialModel> DaySpecials = specrep.GetDaySpecials();
+            var specials = new Tuple<IEnumerable<Special>,IEnumerable<SpecialModel>>(allSpecials,DaySpecials);
+            return View(specials);
         }
 
         //Show special information
-        public ActionResult ShowSpecialInformation()
+        public ActionResult ShowSpecialInformation(int specialId)
         {
-            return View();
+            SpecialInformationModel special = specrep.GetSpecialInformation(specialId);
+            specials.Add(special);
+            WLEventModel show = new WLEventModel();
+            var allModels = new Tuple<List<SpecialInformationModel>, WLEventModel>(specials, show);
+            return View(allModels);
         }
 
         //City

@@ -199,8 +199,11 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\DayTimeLocationModel.cs" />
+    <Compile Include="Models\Order\Order_Items.cs" />
     <Compile Include="Models\Restaurant\RestaurantAddressModel.cs" />
     <Compile Include="Models\Restaurant\RestaurantInformatieModel.cs" />
+    <Compile Include="Models\Special\SpecialInformationModel.cs" />
+    <Compile Include="Models\Special\SpecialModel.cs" />
     <Compile Include="Models\Wishlist\EventWishList.cs" />
     <Compile Include="Models\Film\FilmInformationModel.cs" />
     <Compile Include="Models\Film\FilmModel.cs" />

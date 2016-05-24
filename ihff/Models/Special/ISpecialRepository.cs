@@ -8,5 +8,8 @@ namespace ihff.Models
 {
     interface ISpecialRepository
     {
+        IEnumerable<Special> GetAllSpecials();
+        IEnumerable<SpecialModel> GetDaySpecials();
+        SpecialInformationModel GetSpecialInformation(int specId);
     }
 }
