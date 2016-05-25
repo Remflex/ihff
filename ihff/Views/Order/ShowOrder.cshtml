@@ -74,6 +74,16 @@
                     <td>€ @String.Format("{00:n2}", show.Price)</td>
                     pricetotal = pricetotal + show.Price;
                     }
+                    
+                    @if (show.Type == "Special")
+                    {
+                        <td>@show.Name</td>
+                        <td>@show.Type</td>
+                        <td>@show.Day <br /> @show.Time</td>
+                        <td>@show.Quantity x</td>
+                        <td></td>
+                        <td></td>
+                    }
                 </tr>
             }
         </tbody>

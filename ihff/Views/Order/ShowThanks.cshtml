@@ -20,12 +20,14 @@
         </tr>
     </thead>
     <tbody>
-       @{float totalprice = 0;}
-        @foreach (WLEventModel show in Model.Item1) {
+        @{float totalprice = 0;}
+        @foreach (WLEventModel show in Model.Item1)
+        {
             float pricePerPerson = show.Price / show.Quantity;
-            
+
             <tr>
-                @if (show.Type == "Film") {
+                @if (show.Type == "Film")
+                {
                     <td><img src="@Url.Content(String.Format("~/Content/images/Films/{0}.png", show.Id))" width="60" height="90" /></td>
                     <td>@show.Name</td>
                     <td>@show.Type</td>
@@ -33,10 +35,11 @@
                     <td>@show.Quantity x</td>
                     <td>€ @string.Format("{00:n2}", pricePerPerson)</td>
                     <td>€ @string.Format("{00:n2}", show.Price)</td>
-                totalprice = totalprice + show.Price;
-            }
+                    totalprice = totalprice + show.Price;
+                }
 
-                @if (show.Type == "Restaurant") {
+                @if (show.Type == "Restaurant")
+                {
                     <td><img src="@Url.Content(String.Format("~/Content/images/Restaurants/{0}.png", show.Id))" width="60" height="90" /></td>
                     <td>@show.Name</td>
                     <td>@show.Type</td>
@@ -45,16 +48,27 @@
                     <td></td>
                     <td>€ @string.Format("{00:n2}", show.Price)</td>
                     totalprice = totalprice + show.Price;
-                    }
-    </tr>
+                }
+
+                @if (show.Type == "Special")
+                {
+                    <td><img src="@Url.Content(String.Format("~/Content/images/Specials/{0}.png", show.Id))" width="60" height="90" /></td>
+                    <td>@show.Name</td>
+                    <td>@show.Type</td>
+                    <td>@show.Day @show.Time</td>
+                    <td>@show.Quantity x</td>
+                    <td></td>
+                    <td></td>
+                }
+            </tr>
         }
-            </tbody>
-        </table>
-        <p id="WLTotal">Price Total: € @string.Format("{0:n2}", totalprice)</p>
-            @if (Model.Item2.PaymentMethod == "Counter")
-            {
-                <p>You can pick up your purchase at the counter of any participating venue</p>
-            }
-        
-        <div class="clearfix"></div>
-        
+    </tbody>
+</table>
+<p id="WLTotal">Price Total: € @string.Format("{0:n2}", totalprice)</p>
+@if (Model.Item2.PaymentMethod == "Counter")
+{
+    <p>You can pick up your purchase at the counter of any participating venue</p>
+}
+
+<div class="clearfix"></div>
+

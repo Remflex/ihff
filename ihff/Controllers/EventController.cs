@@ -117,6 +117,18 @@ namespace ihff.Controllers
             return View(allModels);
         }
 
+        [HttpPost]
+        public ActionResult ShowSpecialInformation(WLEventModel show)
+        {
+            if (ModelState.IsValid)
+            {
+                show.Type = "Special";
+                return RedirectToAction("MakeWishlist", "Wishlist", show);
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+
         //City
         //Show Information about Haarlem
         public ActionResult ShowCity()

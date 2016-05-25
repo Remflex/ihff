@@ -30,8 +30,9 @@
             {
                 @Html.Hidden("Id", special.Special_Id)
                 @Html.Hidden("Name", special.Name)
-                @Html.Hidden("DayTimeLocationModel", DTL)
-                
+                @Html.Hidden("Day", DTL.Day)
+                @Html.Hidden("Time", DTL.Time)
+
                 <div id="FilmPoster">
                     <img src="@Url.Content(String.Format("~/Content/images/Specials/{0}.png", special.Special_Id))" alt=" film poster" width="204" height="300" />
                 </div>
@@ -50,11 +51,11 @@
                     </div>
                     @if (special.Special_Id == 2002 || special.Special_Id == 2006)
                     {
-                        <div>Led by: @special.Salutation @special.Led_By</div>
+                        <div id="By">Led by: @special.Salutation @special.Led_By</div>
                     }
                     else
                     {
-                        <div>Given by: @special.Salutation @special.Led_By</div>
+                        <div id="By">Given by: @special.Salutation @special.Led_By</div>
                     }
                 </div>
             }
@@ -62,7 +63,7 @@
     }
     <div class="clearfix"></div>
 
-    <div action="" id="filmorder">
+    <div id="filmorder">
         <div id="left">
             @foreach (SpecialInformationModel specialInfo in Model.Item1)
             {
@@ -73,7 +74,7 @@
             }
 
         </div>
-        <div id="right">
+        <div id="Specialright">
             Quantity
             @Html.DropDownList("Quantity", new List<SelectListItem>()
                             {
@@ -88,8 +89,8 @@
                 to the wish list before
                 purchase.
             </p>
-            <button type="submit" class="button">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
+            <button type="submit" class="button" name="ShowSpecialInformation" value="AddToWishlist">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Wishlist
             </button>
         </div>
     </div>
