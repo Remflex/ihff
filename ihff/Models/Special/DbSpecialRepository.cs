@@ -48,7 +48,7 @@ namespace ihff.Models
             (from s in ihff.SPECIALS
              where specId == s.Special_Id
              join e in ihff.EVENTS
-             on s.Special_Id equals e.Film_Id
+             on s.Special_Id equals e.Special_Id
              join l in ihff.LOCATIONS
              on e.Location_Id equals l.Location_Id
 
@@ -62,7 +62,7 @@ namespace ihff.Models
             List<Special> Special = special.ToList();
             List<DayTimeLocationModel> DTL = dTL.ToList();
 
-            SpecialInformationModel specialInformation = new SpecialInformationModel(Special, DTL);
+            SpecialInformationModel specialInformation = new SpecialInformationModel(special.ToList(), DTL);
 
             return specialInformation;
         }

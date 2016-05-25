@@ -17,7 +17,7 @@ namespace ihff.Models
 
         public SpecialInformationModel(List<Special> spec, List<DayTimeLocationModel> dtl)
         {
-            this.Special = Special;
+            Special = spec;
             this.DTL = dtl;
         }
     }
