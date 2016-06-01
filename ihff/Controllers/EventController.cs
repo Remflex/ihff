@@ -17,6 +17,7 @@ namespace ihff.Controllers
         private IFilmRepository filmrep = new DbFilmRepository();
         private IRestaurantRepository resrep = new DbRestaurantRepository();
         private ISpecialRepository specrep = new DbSpecialRepository();
+        private ISightRepository sightrep = new DbSightRepository();
 
         //Lists
         List<FilmInformationModel> films = new List<FilmInformationModel>();
@@ -139,7 +140,8 @@ namespace ihff.Controllers
         // show well known sights
         public ActionResult ShowSights()
         {
-            return View();
+            IEnumerable<Sight> allSights = sightrep.GetAllSights();
+            return View(allSights);
         }
 
     }

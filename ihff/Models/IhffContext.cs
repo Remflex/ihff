@@ -17,6 +17,7 @@ namespace ihff.Models
         public DbSet<Location> LOCATIONS { get; set; }
         public DbSet<Restaurant> RESTAURANTS { get; set; }
         public DbSet<Special> SPECIALS { get; set; }
+        public DbSet<Sight> SIGHTS { get; set; }
         public DbSet<Order> ORDER { get; set; }
         public DbSet<Order_Items> ORDER_ITEMS { get; set; }
         public DbSet<Ticket> TICKETS { get; set; }

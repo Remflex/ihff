@@ -8,5 +8,6 @@ namespace ihff.Models
 {
     interface ISightRepository
     {
+        IEnumerable<Sight> GetAllSights();
     }
 }

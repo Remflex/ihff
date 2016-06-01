@@ -13,7 +13,7 @@ namespace ihff.Models
         //Properties
         [Required]
         [Key]
-        public int Id { get; set; }
+        public int Sight_Id { get; set; }
         public string Name { get; set; }
         public string ShortDescription { get; set; }
         public string FullDescription { get; set; }
@@ -27,7 +27,7 @@ namespace ihff.Models
 
         public Sight(int id, string name, string shortd, string fulld, int location, string link)
         {
-            this.Id = id;
+            this.Sight_Id = id;
             this.Name = name;
             this.ShortDescription = shortd;
             this.FullDescription = fulld;

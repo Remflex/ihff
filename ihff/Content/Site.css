@@ -505,21 +505,21 @@ header a.wishlist {
         font-size: 14px;
     }
 
-    #FilmInfo #By{
+    #FilmInfo #By {
         margin-top: 111px;
     }
 
-        #FilmInfo #imdb a {
+    #FilmInfo #imdb a {
+        font-weight: bold;
+        color: #26282B;
+        text-decoration: underline;
+    }
+
+        #FilmInfo #imdb a:hover {
             font-weight: bold;
-            color: #26282B;
+            color: #dd0426;
             text-decoration: underline;
         }
-
-            #FilmInfo #imdb a:hover {
-                font-weight: bold;
-                color: #dd0426;
-                text-decoration: underline;
-            }
 
 #filmorder {
     margin-top: 10px;
@@ -555,15 +555,15 @@ header a.wishlist {
         margin-top: 10px;
     }
 
-        #filmorder #right select {
-            margin-right: 15px;
-        }
+    #filmorder #right select {
+        margin-right: 15px;
+    }
 
-        #filmorder #right button {
-            margin-left: 15px;
-            width: 161px;
-            height: 33px;
-        }
+    #filmorder #right button {
+        margin-left: 15px;
+        width: 161px;
+        height: 33px;
+    }
 
     #filmorder .fa-info-circle {
         margin-top: -22px;
@@ -866,6 +866,51 @@ header a.wishlist {
 
 #Skyline {
     margin-left: 8px;
+}
+
+/*--------- Sights-----------*/
+
+.Sight {
+    display: block;
+    width: 301px;
+    height: 168px;
+    margin-right: 21px;
+    margin-bottom: 60px;
+    float: left;
+}
+
+#SightLink {
+    text-decoration: none;
+    color: black;
+}
+
+.Sight img {
+    width: 117px;
+    height: 168px;
+    margin-right: 10px;
+    float: left;
+    border: 3px solid transparent;
+}
+
+    .Sight:hover img {
+        border: 3px solid #dd0426;
+    }
+
+.Sight h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.Sight:hover h5{
+    color: #dd0426;
+}
+
+.Sight p {
+    font-size: 11px;
+    height: 120px;
+    overflow: hidden;
+    margin-top: 5px;
 }
 
 /*---------WishList---------*/

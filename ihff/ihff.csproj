@@ -275,6 +275,15 @@
     <Content Include="Content\images\Restaurants\4014.png" />
     <Content Include="Content\images\Restaurants\4015.png" />
     <Content Include="Content\images\Restaurants\4016.png" />
+    <Content Include="Content\images\Sights\3000.png" />
+    <Content Include="Content\images\Sights\3001.png" />
+    <Content Include="Content\images\Sights\3002.png" />
+    <Content Include="Content\images\Sights\3003.png" />
+    <Content Include="Content\images\Sights\3004.png" />
+    <Content Include="Content\images\Sights\3005.png" />
+    <Content Include="Content\images\Sights\3006.png" />
+    <Content Include="Content\images\Sights\3007.png" />
+    <Content Include="Content\images\Sights\3008.png" />
     <Content Include="Content\images\slider\en_Header_Films.jpg" />
     <Content Include="Content\images\slider\en_Header_Restaurant.jpg" />
     <Content Include="Content\images\slider\Header_Bezienswaardigheid.jpg" />
