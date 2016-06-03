@@ -4,27 +4,31 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
 namespace ihff.Models
+
 {
-    [Table("TICKET")]
-    public class Ticket
+    [Table("TICKET_ITEMS")]
+    public class TicketItems
     {
         //Properties
         [Required]
         [Key]
         public int Id { get; set; }
-        public string Tickettype { get; set; }
+        public int Event_Id { get; set; }
+        public int Reservation_Id { get; set; }
+        public int Amount { get; set; }
 
         //constructor
-        public Ticket()
+        public TicketItems()
         {
         }
 
-        public Ticket(int id, string type)
+        public TicketItems(int id, int eid, int rid, int amount)
         {
             this.Id = id;
-            this.Tickettype = type;
+            this.Event_Id = eid;
+            this.Reservation_Id = rid;
+            this.Amount = amount;
         }
     }
 }

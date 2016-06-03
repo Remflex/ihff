@@ -24,14 +24,7 @@
     @using (Html.BeginForm())
     {
         <h2>Wish List</h2>
-        @*<p>Would you like to save your wish list? <a href="#" id="Save">Click here!</a></p>
-            <form id="WishListEmail">
-                <p>Wish list code: (code)</p>
-                <p>To retrieve your Wish list enter the code on your next visit of the website</p>
-                <br />
-                <p>If you want to receive your Wish list code via e-mail, enter your e-mail address.</p>
-                <input type="text" id="EmailInfo" placeholder="e-Mail address" />
-            </form>*@
+
         <table id="TableWL">
             <thead>
                 <tr>
@@ -118,6 +111,16 @@
             <h2>Wishlist is empty!</h2>
         }
         <p id="WLTotal">Price Total: € @string.Format("{0:n2}", totalPrice)</p>
+        @* if (wishlist != null)
+            {
+                <div class="Save">
+                    <h4 id="Save">Save Wishlist</h4>
+                    <div id="Code">
+                        <p>Code: </p>
+                        <p>Enter your Wishlistcode the next time you're on the IHFF-website</p>
+                    </div>
+                </div>
+            }*@
         <div id="tijdelijk"></div>
 
         <button type="submit" class="button" id="OrderButton" name="ShowWishlist" value="AddToOrder">

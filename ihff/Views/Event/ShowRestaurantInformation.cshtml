@@ -20,8 +20,9 @@
             });
     });
 
-
 </script>
+
+
 @using (Html.BeginForm())
 {
     float rating;
@@ -129,5 +130,55 @@
         </div>
     </div>
 }
+
+<div class="bottomsection">
+    @foreach (RestaurantInformatieModel restaurantInfo in Model.Item1)
+    {
+        foreach (Restaurant restaurant in restaurantInfo.Restaurant)
+        {
+            
+            if (restaurant.Restaurant_Id == 4013)
+            {
+                <img src="~/Content/images/Cross_Selling/Crosselling_Dijkers_Walle.jpg" />
+            }
+            else if (restaurant.Restaurant_Id == 4014)
+            {
+                <img src="~/Content/images/Cross_Selling/Crosselling_Uitkijk_Instellar.jpg" />
+            }
+            else if (restaurant.Restaurant_Id == 4015)
+            {
+                <img src="~/Content/images/Cross_Selling/Crosselling_Ratatouille_Her.jpg" />
+            }
+            else
+            {
+                <img src="~/Content/images/Cross_Selling/Crosselling_Minority.png" />
+            }
+
+            //Check the restaurant for the right google maps
+            if (restaurant.Location_Id == 5008)
+            {
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.4260201765933!2d4.636093316119038!3d52.38082697978816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDIyJzUxLjAiTiA0wrAzOCcxNy44IkU!5e0!3m2!1sen!2snl!4v1464953617941" width="557" height="310" frameborder="0" style="border:0" allowfullscreen></iframe>
+            }
+            else if (restaurant.Location_Id == 5009)
+            {
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.4422363724607!2d4.634429316119069!3d52.38053297978815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDIyJzQ5LjkiTiA0wrAzOCcxMS44IkU!5e0!3m2!1sen!2snl!4v1464953664430" width="557" height="310" frameborder="0" style="border:0" allowfullscreen></iframe>
+            }
+            else if (restaurant.Location_Id == 5010)
+            {
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.812188142854!2d4.6021453161199!3d52.41007997979359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDI0JzM2LjMiTiA0wrAzNicxNS42IkU!5e0!3m2!1sen!2snl!4v1464953697784" width="557" height="310" frameborder="0" style="border:0" allowfullscreen></iframe>
+            }
+            else if (restaurant.Location_Id == 5011)
+            {
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.5432827876875!2d4.635484316118975!3d52.37870097978768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDIyJzQzLjMiTiA0wrAzOCcxNS42IkU!5e0!3m2!1sen!2snl!4v1464953719554" width="557" height="310" frameborder="0" style="border:0" allowfullscreen></iframe>
+            }
+            else if (restaurant.Location_Id == 5012)
+            {
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.996923054299!2d4.620120316119809!3d52.40673197979286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDI0JzI0LjIiTiA0wrAzNycyMC4zIkU!5e0!3m2!1sen!2snl!4v1464953740422" width="557" height="310" frameborder="0" style="border:0" allowfullscreen></iframe>
+            }
+        }
+    }
+</div>
+    
+
 
 <div class="clearfix"></div>

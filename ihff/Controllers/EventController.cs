@@ -67,6 +67,11 @@ namespace ihff.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult ShowFilmLocations()
+        {
+            return View();
+        }
+
         //Restaurants
         //Show all restaurants
         public ActionResult ShowRestaurants()
@@ -129,6 +134,10 @@ namespace ihff.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult ShowSpecialLocations()
+        {
+            return View();
+        }
 
         //City
         //Show Information about Haarlem

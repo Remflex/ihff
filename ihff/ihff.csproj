@@ -199,11 +199,15 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\DayTimeLocationModel.cs" />
+    <Compile Include="Models\Home\DbHomeRepository.cs" />
+    <Compile Include="Models\Home\HomeModel.cs" />
+    <Compile Include="Models\Home\IHomeRepository.cs" />
     <Compile Include="Models\Order\Order_Items.cs" />
     <Compile Include="Models\Restaurant\RestaurantAddressModel.cs" />
     <Compile Include="Models\Restaurant\RestaurantInformatieModel.cs" />
     <Compile Include="Models\Special\SpecialInformationModel.cs" />
     <Compile Include="Models\Special\SpecialModel.cs" />
+    <Compile Include="Models\Ticket\TicketItems.cs" />
     <Compile Include="Models\Wishlist\EventWishList.cs" />
     <Compile Include="Models\Film\FilmInformationModel.cs" />
     <Compile Include="Models\Film\FilmModel.cs" />
@@ -242,6 +246,15 @@
     <Content Include="Content\fonts\font-awesome\HELP-US-OUT.txt" />
     <Content Include="Content\images\City\haarlem-skyline.png" />
     <Content Include="Content\images\City\Haarlem.png" />
+    <Content Include="Content\images\Cross_Selling\Crosselling_Dijkers_Her.jpg" />
+    <Content Include="Content\images\Cross_Selling\Crosselling_Dijkers_Instellar.jpg" />
+    <Content Include="Content\images\Cross_Selling\Crosselling_Dijkers_Walle.jpg" />
+    <Content Include="Content\images\Cross_Selling\Crosselling_Minority.png" />
+    <Content Include="Content\images\Cross_Selling\crosselling_Programma.jpg" />
+    <Content Include="Content\images\Cross_Selling\Crosselling_Ratatouille_Her.jpg" />
+    <Content Include="Content\images\Cross_Selling\Crosselling_Terra_Walle.jpg" />
+    <Content Include="Content\images\Cross_Selling\Crosselling_Uitkijk_Instellar.jpg" />
+    <Content Include="Content\images\Cross_Selling\crosselling_wishlist.jpg" />
     <Content Include="Content\images\Flag\english.jpg" />
     <Content Include="Content\images\Films\1000.png" />
     <Content Include="Content\images\Films\1001.png" />
@@ -268,6 +281,10 @@
     <Content Include="Content\images\Films\1036.png" />
     <Content Include="Content\images\IHFFBios.png" />
     <Content Include="Content\images\Flag\netherlands.jpg" />
+    <Content Include="Content\images\Locations\Pathe.png" />
+    <Content Include="Content\images\Locations\Patronaat.png" />
+    <Content Include="Content\images\Locations\Philharrmonie.png" />
+    <Content Include="Content\images\Locations\toneelschuur.png" />
     <Content Include="Content\images\Logo\LogoFooter.png" />
     <Content Include="Content\images\Logo\LogoHeader.PNG" />
     <Content Include="Content\images\Restaurants\4012.png" />
@@ -405,6 +422,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Event\ShowRestaurantInformation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Event\ShowSpecialLocations.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Event\ShowFilmLocations.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

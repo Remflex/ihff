@@ -16,8 +16,6 @@ namespace ihff.Models
         public int Sight_Id { get; set; }
         public string Name { get; set; }
         public string ShortDescription { get; set; }
-        public string FullDescription { get; set; }
-        public int Location_Id { get; set; }
         public string Hyperlink { get; set; }
 
         //Constructor
@@ -25,13 +23,11 @@ namespace ihff.Models
         {
         }
 
-        public Sight(int id, string name, string shortd, string fulld, int location, string link)
+        public Sight(int id, string name, string shortd, string link)
         {
             this.Sight_Id = id;
             this.Name = name;
             this.ShortDescription = shortd;
-            this.FullDescription = fulld;
-            this.Location_Id = location;
             this.Hyperlink = link;
         }
     }
