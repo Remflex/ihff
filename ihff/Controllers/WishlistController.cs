@@ -12,6 +12,7 @@ namespace ihff.Controllers
     {
         //repositorys
         private IEventRepository eventrep = new DbEventRepository();
+        private IOrderRepository orderrep = new DbOrderRepository();
 
         //lists
         List<WLEventModel> wishlist = new List<WLEventModel>();
@@ -24,7 +25,11 @@ namespace ihff.Controllers
         //show Wishlist without parameter
         public ActionResult ShowWishlist()
         {
-            return View(wishlist);
+            wishlist = this.Session["WishlistSession"] as List<WLEventModel>;
+            if (wishlist == null)
+                return RedirectToAction("GetWishlist", "Wishlist");
+            else
+                return View(wishlist);
         }
 
         [HttpPost]
@@ -73,6 +78,59 @@ namespace ihff.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+        }
+
+        public ActionResult SavedWishlist(Order newOrder)
+        {
+            var tuple = new Tuple<List<WLEventModel>, Order>(wishlist, newOrder);
+            return View(tuple);
+        }
+
+        [HttpPost]
+        public ActionResult SavedWishlist()
+        {
+            if (Session != null & Session["WishlistSession"] != null)
+            {
+                return RedirectToAction("ShowOrder", "Order");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        public ActionResult GetWishlist()
+        {
+            Order newOrder = new Order();
+            var tuple = new Tuple<List<WLEventModel>, Order>(wishlist, newOrder);
+            return View(tuple);
+        }
+
+        [HttpPost]
+        public ActionResult GetWishlist(Order order)
+        {
+            wishlist = orderrep.GetWishlist(order);
+            this.Session["WishlistSession"] = wishlist;
+            Order newOrder = new Order();
+            return RedirectToAction("ShowWishlist", "Wishlist");
+        }
+
+        public ActionResult SaveWishlist()
+        {
+            double totaal = 0;
+            string codeergeval;
+            wishlist = this.Session["WishlistSession"] as List<WLEventModel>;
+
+            foreach (WLEventModel wl in wishlist)
+            {
+                totaal = totaal + wl.Price;
+            }
+            Order savedOrder = new Order();
+            savedOrder.OrderType = "WishList";
+            savedOrder.TotalPrice = totaal;
+            orderrep.OrderToDatabase(wishlist, savedOrder, out codeergeval);
+            savedOrder.Code = codeergeval;
+            return RedirectToAction("SavedWishlist", "Wishlist", savedOrder);
         }
 
         public ActionResult DeleteWishlistItem(WLEventModel remove)

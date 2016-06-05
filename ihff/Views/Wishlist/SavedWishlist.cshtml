@@ -1,5 +1,5 @@
 ﻿@using ihff.Models
-@model  List<WLEventModel>
+@model  Tuple<List<WLEventModel>, Order>
 @{
     ViewBag.Title = "Wishlist";
 }
@@ -112,11 +112,11 @@
         <p id="WLTotal">Price Total: € @string.Format("{0:n2}", totalPrice)</p>
         if (wishlist != null)
         {
-            <div class="Save">
-                <a href="@Url.Action("SaveWishlist", "Wishlist")">
-                    <h4 id="Save">Save Wishlist</h4>
-                </a>
-            </div>
+
+                <div id="Code">
+                    <p>Code: @Model.Item2.Code</p>
+                    <p>Enter your Wishlistcode the next time you're on the IHFF-website</p>
+                </div>
         }
         <div id="tijdelijk"></div>
 

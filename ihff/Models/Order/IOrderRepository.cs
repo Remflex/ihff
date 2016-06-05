@@ -8,6 +8,7 @@ namespace ihff.Models
 {
     interface IOrderRepository
     {
-        void OrderToDatabase(List<WLEventModel> wishlist, Order information);
+        void OrderToDatabase(List<WLEventModel> wishlist, Order information, out string codeergeval);
+        List<WLEventModel> GetWishlist(Order order);
     }
 }

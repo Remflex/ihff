@@ -533,7 +533,7 @@ header a.wishlist {
 }
 
     #filmorder #left {
-        width: 520px;
+        width: 530px;
         float: left;
     }
 
@@ -961,7 +961,9 @@ header a.wishlist {
     margin-left: 595px;
     margin-top: 0;
 }
-
+.Save a{
+    color: black;
+}
 #Save{
     margin-bottom: 5px;
 }
@@ -973,8 +975,9 @@ header a.wishlist {
 
 #Code {
     margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 11px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-weight: Bold;
 }
 
 #tijdelijk {

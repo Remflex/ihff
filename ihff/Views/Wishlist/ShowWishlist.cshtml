@@ -98,35 +98,29 @@
                                 <td></td>
                                 <td><button type="button" class="button" onclick="@("location.href='"+ Url.Action("DeleteWishlistItem","Wishlist", show)+ "'")">Remove</button></td>
                             }
-                    </tr>
+                        </tr>
                     }
-                            }
+                }
 
 
-                        </tbody>
-                    </table>
-        if (wishlist == null)
-        {
-            <h2>Wishlist is empty!</h2>
-        }
+            </tbody>
+        </table>
+
         <p id="WLTotal">Price Total: € @string.Format("{0:n2}", totalPrice)</p>
-        @* if (wishlist != null)
-            {
-                <div class="Save">
+        if (wishlist != null)
+        {
+            <div class="Save">
+                <a href="@Url.Action("SaveWishlist", "Wishlist")">
                     <h4 id="Save">Save Wishlist</h4>
-                    <div id="Code">
-                        <p>Code: </p>
-                        <p>Enter your Wishlistcode the next time you're on the IHFF-website</p>
-                    </div>
-                </div>
-            }*@     
-
+                </a>
+            </div>
+        }
         <div id="tijdelijk"></div>
 
-                    <button type="submit" class="button" id="OrderButton" name="ShowWishlist" value="AddToOrder">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Wish List
-                    </button>
+        <button type="submit" class="button" id="OrderButton" name="ShowWishlist" value="AddToOrder">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Wish List
+        </button>
 
-                    <div class="clearfix"></div>
+        <div class="clearfix"></div>
 
     }

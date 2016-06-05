@@ -1,5 +1,5 @@
 ﻿@using ihff.Models
-@model  List<WLEventModel>
+@model  Tuple<List<WLEventModel>,Order>
 @{
     ViewBag.Title = "Wishlist";
 }
@@ -105,9 +105,18 @@
 
             </tbody>
         </table>
+
+
         if (wishlist == null)
         {
             <h2>Wishlist is empty!</h2>
+            <div>
+                <h4 id="search">Enter your wishlistcode: </h4>
+                @Html.TextBox("Code")
+                @Html.Hidden("Payment", "")
+                @Html.Hidden("Id", 0)
+                <input type="submit" value="Search" class="button">
+            </div>
         }
         <p id="WLTotal">Price Total: € @string.Format("{0:n2}", totalPrice)</p>
         if (wishlist != null)
@@ -127,3 +136,4 @@
         <div class="clearfix"></div>
 
     }
+

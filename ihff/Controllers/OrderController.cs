@@ -11,6 +11,7 @@ namespace ihff.Controllers
     public class OrderController : Controller
     {
         List<WLEventModel> wishlist = new List<WLEventModel>();
+        List<WLEventModel> thankYou = new List<WLEventModel>();
         private IOrderRepository orderep = new DbOrderRepository();
 
         public ActionResult Index()
@@ -29,11 +30,12 @@ namespace ihff.Controllers
         [HttpPost]
         public ActionResult ShowOrder(Order newOrder)
         {
+            string codeergeval;
             wishlist = this.Session["WishlistSession"] as List<WLEventModel>;
             if (ModelState.IsValid)
             {
-                //orderep.OrderToDatabase(wishlist, newOrder);
-                wishlist = null;
+                newOrder.OrderType = "Order";
+                orderep.OrderToDatabase(wishlist, newOrder, out codeergeval);
                 return RedirectToAction("ShowThanks", newOrder);
                 
             }
@@ -48,7 +50,9 @@ namespace ihff.Controllers
         public ActionResult ShowThanks(Order order)
         {
             wishlist = this.Session["WishlistSession"] as List<WLEventModel>;
-            var thanks = new Tuple<List<WLEventModel>, Order>(wishlist, order);
+            thankYou = wishlist;
+            this.Session["WishlistSession"] = null;
+            var thanks = new Tuple<List<WLEventModel>, Order>(thankYou, order);
             return View(thanks);
         }
 

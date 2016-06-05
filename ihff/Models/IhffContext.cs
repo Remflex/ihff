@@ -20,6 +20,5 @@ namespace ihff.Models
         public DbSet<Sight> SIGHTS { get; set; }
         public DbSet<Order> ORDER { get; set; }
         public DbSet<Order_Items> ORDER_ITEMS { get; set; }
-        public DbSet<Ticket> TICKETS { get; set; }
     }
 }

@@ -198,6 +198,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\CodeGenerator.cs" />
     <Compile Include="Models\DayTimeLocationModel.cs" />
     <Compile Include="Models\Home\DbHomeRepository.cs" />
     <Compile Include="Models\Home\HomeModel.cs" />
@@ -428,6 +429,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Event\ShowFilmLocations.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Wishlist\SavedWishlist.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Wishlist\GetWishlist.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

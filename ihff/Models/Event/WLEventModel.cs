@@ -38,5 +38,33 @@ namespace ihff.Models
         public int Quantity { get; set; }
 
         public float Price { get; set; }
+
+
+        public WLEventModel()
+        {
+
+        }
+
+        public WLEventModel(int id, string name,string type, DayTimeLocationModel dtl, int quantity, float price)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Type = type;
+            DayTimeLocation = dtl;
+            this.Quantity = quantity;
+            this.Price = price;
+        }
+
+        public WLEventModel(int id, string name,string type, string day,string time, RestaurantAddressModel address, int quantity, float price)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Type = type;
+            this.Day = day;
+            this.Time = time;
+            this.Address = address;
+            this.Quantity = quantity;
+            this.Price = price;
+        }
     }
 }
